@@ -4,6 +4,8 @@
 
 *\.vs*
 */obj/*
+*/bin/*
+*\Output
 *\packages*
 *.lock
 *.cache
@@ -27,3 +29,9 @@
 *.rsp
 *.targets
 *.pubxml*
+Andafa.Mes.Bll/Andafa.Mes.Bll.csproj.user
+Andafa.Mes.Common*/
+*.user
+Andafa.Mes.DataServer\Output*/
+Andafa.Mes.DataServer\Output*/
+Andafa.Mes.DataServer/Output/NLog.config
