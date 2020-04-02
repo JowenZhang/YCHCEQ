@@ -12,7 +12,7 @@ namespace Andafa.Mes.Model.ViewModel
     public class WorkerSelectedOrderView
     {
         /// <summary>
-        /// 
+        /// wka_no
         /// </summary>
         public string wka_no { get; set; }
         /// <summary>
