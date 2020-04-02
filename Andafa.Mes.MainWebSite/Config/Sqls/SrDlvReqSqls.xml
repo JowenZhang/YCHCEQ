@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				dlv_req_date, dlv_req_time, part_no, part_name, part_spec, part_idt, mrp_region_no, supplier_no, supplier_name, dlv_req_qty, dlv_req_rmk11, dlv_req_rmk12, dlv_req_rmk13, dlv_req_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, order_type1, order_type_name1, order_id1, order_no1, order_mrp_region_no1, order_type2, order_type_name2, order_id2, order_no2, order_mrp_region_no2
+			FROM sr_dlv_req;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				dlv_req_date, dlv_req_time, part_no, part_name, part_spec, part_idt, mrp_region_no, supplier_no, supplier_name, dlv_req_qty, dlv_req_rmk11, dlv_req_rmk12, dlv_req_rmk13, dlv_req_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, order_type1, order_type_name1, order_id1, order_no1, order_mrp_region_no1, order_type2, order_type_name2, order_id2, order_no2, order_mrp_region_no2
+			FROM sr_dlv_req
+			WHERE dlv_req_id = @dlv_req_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sr_dlv_req 
+			(dlv_req_date, dlv_req_time, part_no, part_name, part_spec, part_idt, mrp_region_no, supplier_no, supplier_name, dlv_req_qty, dlv_req_rmk11, dlv_req_rmk12, dlv_req_rmk13, dlv_req_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, order_type1, order_type_name1, order_id1, order_no1, order_mrp_region_no1, order_type2, order_type_name2, order_id2, order_no2, order_mrp_region_no2)
+			VALUES (@dlv_req_date, @dlv_req_time, @part_no, @part_name, @part_spec, @part_idt, @mrp_region_no, @supplier_no, @supplier_name, @dlv_req_qty, @dlv_req_rmk11, @dlv_req_rmk12, @dlv_req_rmk13, @dlv_req_rmk14, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @order_type1, @order_type_name1, @order_id1, @order_no1, @order_mrp_region_no1, @order_type2, @order_type_name2, @order_id2, @order_no2, @order_mrp_region_no2);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sr_dlv_req SET 
+			dlv_req_date = @dlv_req_date, dlv_req_time = @dlv_req_time, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, mrp_region_no = @mrp_region_no, supplier_no = @supplier_no, supplier_name = @supplier_name, dlv_req_qty = @dlv_req_qty, dlv_req_rmk11 = @dlv_req_rmk11, dlv_req_rmk12 = @dlv_req_rmk12, dlv_req_rmk13 = @dlv_req_rmk13, dlv_req_rmk14 = @dlv_req_rmk14, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, order_type1 = @order_type1, order_type_name1 = @order_type_name1, order_id1 = @order_id1, order_no1 = @order_no1, order_mrp_region_no1 = @order_mrp_region_no1, order_type2 = @order_type2, order_type_name2 = @order_type_name2, order_id2 = @order_id2, order_no2 = @order_no2, order_mrp_region_no2 = @order_mrp_region_no2
+			WHERE dlv_req_id = @dlv_req_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sr_dlv_req
+			WHERE dlv_req_id = @dlv_req_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

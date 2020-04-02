@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				task_datetime_length, task_resttime_length, cost_total, cost_wkc, cost_machine, cost_worker, cost_tools, plan_type, ps_task_h_rmk11, ps_task_h_rmk12, ps_task_h_rmk13, ps_task_h_rmk14, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ps_task_h;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				task_datetime_length, task_resttime_length, cost_total, cost_wkc, cost_machine, cost_worker, cost_tools, plan_type, ps_task_h_rmk11, ps_task_h_rmk12, ps_task_h_rmk13, ps_task_h_rmk14, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ps_task_h
+			WHERE ps_batch_id = @ps_batch_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_task_h 
+			(task_datetime_length, task_resttime_length, cost_total, cost_wkc, cost_machine, cost_worker, cost_tools, plan_type, ps_task_h_rmk11, ps_task_h_rmk12, ps_task_h_rmk13, ps_task_h_rmk14, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time)
+			VALUES (@task_datetime_length, @task_resttime_length, @cost_total, @cost_wkc, @cost_machine, @cost_worker, @cost_tools, @plan_type, @ps_task_h_rmk11, @ps_task_h_rmk12, @ps_task_h_rmk13, @ps_task_h_rmk14, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_task_h SET 
+			task_datetime_length = @task_datetime_length, task_resttime_length = @task_resttime_length, cost_total = @cost_total, cost_wkc = @cost_wkc, cost_machine = @cost_machine, cost_worker = @cost_worker, cost_tools = @cost_tools, plan_type = @plan_type, ps_task_h_rmk11 = @ps_task_h_rmk11, ps_task_h_rmk12 = @ps_task_h_rmk12, ps_task_h_rmk13 = @ps_task_h_rmk13, ps_task_h_rmk14 = @ps_task_h_rmk14, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time
+			WHERE ps_batch_id = @ps_batch_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_task_h
+			WHERE ps_batch_id = @ps_batch_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

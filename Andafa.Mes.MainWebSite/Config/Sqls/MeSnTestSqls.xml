@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				test_datetime, sn_no, qa_cause_no, qa_cause_name, test_worker_no, test_worker_name, test_position, factory_no, tools_no, tools_name, wkc_no, wkc_name, wks_no, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, me_wip_test_rmk11, me_wip_test_rmk12, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM me_sn_test;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				test_datetime, sn_no, qa_cause_no, qa_cause_name, test_worker_no, test_worker_name, test_position, factory_no, tools_no, tools_name, wkc_no, wkc_name, wks_no, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, me_wip_test_rmk11, me_wip_test_rmk12, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM me_sn_test
+			WHERE me_sn_test_id = @me_sn_test_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_sn_test 
+			(test_datetime, sn_no, qa_cause_no, qa_cause_name, test_worker_no, test_worker_name, test_position, factory_no, tools_no, tools_name, wkc_no, wkc_name, wks_no, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, me_wip_test_rmk11, me_wip_test_rmk12, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name)
+			VALUES (@test_datetime, @sn_no, @qa_cause_no, @qa_cause_name, @test_worker_no, @test_worker_name, @test_position, @factory_no, @tools_no, @tools_name, @wkc_no, @wkc_name, @wks_no, @lot_no, @unode, @wkn, @wkp_no, @wkp_name, @part_no, @part_name, @part_spec, @me_wip_test_rmk11, @me_wip_test_rmk12, @crt_user, @crt_host, @crt_time, @upd_user, @upd_host, @upd_time, @crt_user_no, @crt_user_name, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_sn_test SET 
+			test_datetime = @test_datetime, sn_no = @sn_no, qa_cause_no = @qa_cause_no, qa_cause_name = @qa_cause_name, test_worker_no = @test_worker_no, test_worker_name = @test_worker_name, test_position = @test_position, factory_no = @factory_no, tools_no = @tools_no, tools_name = @tools_name, wkc_no = @wkc_no, wkc_name = @wkc_name, wks_no = @wks_no, lot_no = @lot_no, unode = @unode, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, me_wip_test_rmk11 = @me_wip_test_rmk11, me_wip_test_rmk12 = @me_wip_test_rmk12, crt_user = @crt_user, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE me_sn_test_id = @me_sn_test_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_sn_test
+			WHERE me_sn_test_id = @me_sn_test_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

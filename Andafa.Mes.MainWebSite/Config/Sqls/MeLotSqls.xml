@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				lot_no, lot_status, me_lot_rmk01, me_lot_rmk02, me_lot_rmk03, me_lot_rmk04, me_lot_rmk05, me_lot_rmk06, me_lot_rmk07, me_lot_rmk08, me_lot_rmk09, me_lot_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_lot;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				lot_no, lot_status, me_lot_rmk01, me_lot_rmk02, me_lot_rmk03, me_lot_rmk04, me_lot_rmk05, me_lot_rmk06, me_lot_rmk07, me_lot_rmk08, me_lot_rmk09, me_lot_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_lot
+			WHERE lot_no = @lot_no OR me_lot_id = @me_lot_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_lot 
+			(lot_no, lot_status, me_lot_rmk01, me_lot_rmk02, me_lot_rmk03, me_lot_rmk04, me_lot_rmk05, me_lot_rmk06, me_lot_rmk07, me_lot_rmk08, me_lot_rmk09, me_lot_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@lot_no, @lot_status, @me_lot_rmk01, @me_lot_rmk02, @me_lot_rmk03, @me_lot_rmk04, @me_lot_rmk05, @me_lot_rmk06, @me_lot_rmk07, @me_lot_rmk08, @me_lot_rmk09, @me_lot_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_lot SET 
+			lot_status = @lot_status, me_lot_rmk01 = @me_lot_rmk01, me_lot_rmk02 = @me_lot_rmk02, me_lot_rmk03 = @me_lot_rmk03, me_lot_rmk04 = @me_lot_rmk04, me_lot_rmk05 = @me_lot_rmk05, me_lot_rmk06 = @me_lot_rmk06, me_lot_rmk07 = @me_lot_rmk07, me_lot_rmk08 = @me_lot_rmk08, me_lot_rmk09 = @me_lot_rmk09, me_lot_rmk10 = @me_lot_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE lot_no = @lot_no OR me_lot_id = @me_lot_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_lot
+			WHERE lot_no = @lot_no OR me_lot_id = @me_lot_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

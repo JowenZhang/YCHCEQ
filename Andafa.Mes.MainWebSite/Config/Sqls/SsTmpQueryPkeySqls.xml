@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				batch_no, data_id1, data_id2, data_id3, data_id4, data_id5, crt_time
+			FROM ss_tmp_query_pkey;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				batch_no, data_id1, data_id2, data_id3, data_id4, data_id5, crt_time
+			FROM ss_tmp_query_pkey;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_tmp_query_pkey 
+			(batch_no, data_id1, data_id2, data_id3, data_id4, data_id5, crt_time)
+			VALUES (@batch_no, @data_id1, @data_id2, @data_id3, @data_id4, @data_id5, @crt_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_tmp_query_pkey SET 
+			batch_no = @batch_no, data_id1 = @data_id1, data_id2 = @data_id2, data_id3 = @data_id3, data_id4 = @data_id4, data_id5 = @data_id5, crt_time = @crt_time;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_tmp_query_pkey;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

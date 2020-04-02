@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				part_id, req_qty, supply_qty, balance_qty, ps_task_mr_batch_no, part_no, part_name, part_spec
+			FROM ps_task_mr;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				part_id, req_qty, supply_qty, balance_qty, ps_task_mr_batch_no, part_no, part_name, part_spec
+			FROM ps_task_mr
+			WHERE mr_datetime = @mr_datetime;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_task_mr 
+			(part_id, req_qty, supply_qty, balance_qty, ps_task_mr_batch_no, part_no, part_name, part_spec)
+			VALUES (@part_id, @req_qty, @supply_qty, @balance_qty, @ps_task_mr_batch_no, @part_no, @part_name, @part_spec);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_task_mr SET 
+			part_id = @part_id, req_qty = @req_qty, supply_qty = @supply_qty, balance_qty = @balance_qty, ps_task_mr_batch_no = @ps_task_mr_batch_no, part_no = @part_no, part_name = @part_name, part_spec = @part_spec
+			WHERE mr_datetime = @mr_datetime;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_task_mr
+			WHERE mr_datetime = @mr_datetime;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

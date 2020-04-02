@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				job_status, job_no, job_name, job_qty, job_type1, job_type2, job_type3, job_type4, pd_job_rmk1, pd_job_rmk2, pd_job_rmk3, pd_job_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_job;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				job_status, job_no, job_name, job_qty, job_type1, job_type2, job_type3, job_type4, pd_job_rmk1, pd_job_rmk2, pd_job_rmk3, pd_job_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_job
+			WHERE job_id = @job_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_job 
+			(job_status, job_no, job_name, job_qty, job_type1, job_type2, job_type3, job_type4, pd_job_rmk1, pd_job_rmk2, pd_job_rmk3, pd_job_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@job_status, @job_no, @job_name, @job_qty, @job_type1, @job_type2, @job_type3, @job_type4, @pd_job_rmk1, @pd_job_rmk2, @pd_job_rmk3, @pd_job_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_job SET 
+			job_status = @job_status, job_no = @job_no, job_name = @job_name, job_qty = @job_qty, job_type1 = @job_type1, job_type2 = @job_type2, job_type3 = @job_type3, job_type4 = @job_type4, pd_job_rmk1 = @pd_job_rmk1, pd_job_rmk2 = @pd_job_rmk2, pd_job_rmk3 = @pd_job_rmk3, pd_job_rmk4 = @pd_job_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE job_id = @job_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_job
+			WHERE job_id = @job_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

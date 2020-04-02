@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkp_status, wkp_no, wkp_name, wkp_type1, wkp_type2, factory_no, wkc_rule, batch_rule, batch_qty_min, batch_qty_add, batch_qty_max, wkt_produce_unit, wkp_mtr_use_type, is_auto_fb, wkt_type, wkt_before_c, wkt_after_c, wkt_produce_c, qty_produce_c, wkt_worker_c, wkc_worker_num_c, wkt_before_b, wkt_after_b, wkt_produce_b, qty_produce_b, wkt_worker_b, wkc_worker_num_b, wkt_before_a, wkt_after_a, wkt_produce_a, qty_produce_a, wkt_worker_a, wkc_worker_num_a, pd_wkp_rmk01, pd_wkp_rmk02, pd_wkp_rmk03, pd_wkp_rmk04, pd_wkp_rmk05, pd_wkp_rmk06, pd_wkp_rmk07, pd_wkp_rmk08, pd_wkp_rmk09, pd_wkp_rmk010, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, need_fpi, need_fbi
+			FROM pd_wkp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkp_status, wkp_no, wkp_name, wkp_type1, wkp_type2, factory_no, wkc_rule, batch_rule, batch_qty_min, batch_qty_add, batch_qty_max, wkt_produce_unit, wkp_mtr_use_type, is_auto_fb, wkt_type, wkt_before_c, wkt_after_c, wkt_produce_c, qty_produce_c, wkt_worker_c, wkc_worker_num_c, wkt_before_b, wkt_after_b, wkt_produce_b, qty_produce_b, wkt_worker_b, wkc_worker_num_b, wkt_before_a, wkt_after_a, wkt_produce_a, qty_produce_a, wkt_worker_a, wkc_worker_num_a, pd_wkp_rmk01, pd_wkp_rmk02, pd_wkp_rmk03, pd_wkp_rmk04, pd_wkp_rmk05, pd_wkp_rmk06, pd_wkp_rmk07, pd_wkp_rmk08, pd_wkp_rmk09, pd_wkp_rmk010, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, need_fpi, need_fbi
+			FROM pd_wkp
+			WHERE wkp_no = @wkp_no OR wkp_id = @wkp_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wkp 
+			(wkp_status, wkp_no, wkp_name, wkp_type1, wkp_type2, factory_no, wkc_rule, batch_rule, batch_qty_min, batch_qty_add, batch_qty_max, wkt_produce_unit, wkp_mtr_use_type, is_auto_fb, wkt_type, wkt_before_c, wkt_after_c, wkt_produce_c, qty_produce_c, wkt_worker_c, wkc_worker_num_c, wkt_before_b, wkt_after_b, wkt_produce_b, qty_produce_b, wkt_worker_b, wkc_worker_num_b, wkt_before_a, wkt_after_a, wkt_produce_a, qty_produce_a, wkt_worker_a, wkc_worker_num_a, pd_wkp_rmk01, pd_wkp_rmk02, pd_wkp_rmk03, pd_wkp_rmk04, pd_wkp_rmk05, pd_wkp_rmk06, pd_wkp_rmk07, pd_wkp_rmk08, pd_wkp_rmk09, pd_wkp_rmk010, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, need_fpi, need_fbi)
+			VALUES (@wkp_status, @wkp_no, @wkp_name, @wkp_type1, @wkp_type2, @factory_no, @wkc_rule, @batch_rule, @batch_qty_min, @batch_qty_add, @batch_qty_max, @wkt_produce_unit, @wkp_mtr_use_type, @is_auto_fb, @wkt_type, @wkt_before_c, @wkt_after_c, @wkt_produce_c, @qty_produce_c, @wkt_worker_c, @wkc_worker_num_c, @wkt_before_b, @wkt_after_b, @wkt_produce_b, @qty_produce_b, @wkt_worker_b, @wkc_worker_num_b, @wkt_before_a, @wkt_after_a, @wkt_produce_a, @qty_produce_a, @wkt_worker_a, @wkc_worker_num_a, @pd_wkp_rmk01, @pd_wkp_rmk02, @pd_wkp_rmk03, @pd_wkp_rmk04, @pd_wkp_rmk05, @pd_wkp_rmk06, @pd_wkp_rmk07, @pd_wkp_rmk08, @pd_wkp_rmk09, @pd_wkp_rmk010, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @need_fpi, @need_fbi);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wkp SET 
+			wkp_status = @wkp_status, wkp_name = @wkp_name, wkp_type1 = @wkp_type1, wkp_type2 = @wkp_type2, factory_no = @factory_no, wkc_rule = @wkc_rule, batch_rule = @batch_rule, batch_qty_min = @batch_qty_min, batch_qty_add = @batch_qty_add, batch_qty_max = @batch_qty_max, wkt_produce_unit = @wkt_produce_unit, wkp_mtr_use_type = @wkp_mtr_use_type, is_auto_fb = @is_auto_fb, wkt_type = @wkt_type, wkt_before_c = @wkt_before_c, wkt_after_c = @wkt_after_c, wkt_produce_c = @wkt_produce_c, qty_produce_c = @qty_produce_c, wkt_worker_c = @wkt_worker_c, wkc_worker_num_c = @wkc_worker_num_c, wkt_before_b = @wkt_before_b, wkt_after_b = @wkt_after_b, wkt_produce_b = @wkt_produce_b, qty_produce_b = @qty_produce_b, wkt_worker_b = @wkt_worker_b, wkc_worker_num_b = @wkc_worker_num_b, wkt_before_a = @wkt_before_a, wkt_after_a = @wkt_after_a, wkt_produce_a = @wkt_produce_a, qty_produce_a = @qty_produce_a, wkt_worker_a = @wkt_worker_a, wkc_worker_num_a = @wkc_worker_num_a, pd_wkp_rmk01 = @pd_wkp_rmk01, pd_wkp_rmk02 = @pd_wkp_rmk02, pd_wkp_rmk03 = @pd_wkp_rmk03, pd_wkp_rmk04 = @pd_wkp_rmk04, pd_wkp_rmk05 = @pd_wkp_rmk05, pd_wkp_rmk06 = @pd_wkp_rmk06, pd_wkp_rmk07 = @pd_wkp_rmk07, pd_wkp_rmk08 = @pd_wkp_rmk08, pd_wkp_rmk09 = @pd_wkp_rmk09, pd_wkp_rmk010 = @pd_wkp_rmk010, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, need_fpi = @need_fpi, need_fbi = @need_fbi
+			WHERE wkp_no = @wkp_no OR wkp_id = @wkp_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wkp
+			WHERE wkp_no = @wkp_no OR wkp_id = @wkp_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

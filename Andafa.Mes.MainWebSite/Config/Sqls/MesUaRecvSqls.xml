@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ws_no, trig_time, m_id, p_id, operator_name, order_no, batch_no, steel_no, steel_spec, steel_width, prod_order, prod_brand, prod_spec, prod_batch, fill, steel_no_u, steel_spec_u, p_weight, net_check, material_check, steel_check, process_check, fingerprint
+			FROM mes_ua_recv;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ws_no, trig_time, m_id, p_id, operator_name, order_no, batch_no, steel_no, steel_spec, steel_width, prod_order, prod_brand, prod_spec, prod_batch, fill, steel_no_u, steel_spec_u, p_weight, net_check, material_check, steel_check, process_check, fingerprint
+			FROM mes_ua_recv
+			WHERE id = @id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mes_ua_recv 
+			(ws_no, trig_time, m_id, p_id, operator_name, order_no, batch_no, steel_no, steel_spec, steel_width, prod_order, prod_brand, prod_spec, prod_batch, fill, steel_no_u, steel_spec_u, p_weight, net_check, material_check, steel_check, process_check, fingerprint)
+			VALUES (@ws_no, @trig_time, @m_id, @p_id, @operator_name, @order_no, @batch_no, @steel_no, @steel_spec, @steel_width, @prod_order, @prod_brand, @prod_spec, @prod_batch, @fill, @steel_no_u, @steel_spec_u, @p_weight, @net_check, @material_check, @steel_check, @process_check, @fingerprint);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mes_ua_recv SET 
+			ws_no = @ws_no, trig_time = @trig_time, m_id = @m_id, p_id = @p_id, operator_name = @operator_name, order_no = @order_no, batch_no = @batch_no, steel_no = @steel_no, steel_spec = @steel_spec, steel_width = @steel_width, prod_order = @prod_order, prod_brand = @prod_brand, prod_spec = @prod_spec, prod_batch = @prod_batch, fill = @fill, steel_no_u = @steel_no_u, steel_spec_u = @steel_spec_u, p_weight = @p_weight, net_check = @net_check, material_check = @material_check, steel_check = @steel_check, process_check = @process_check, fingerprint = @fingerprint
+			WHERE id = @id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mes_ua_recv
+			WHERE id = @id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				plan_status, user_no, user_name, plan_start_date, plan_finish_date, seq, client_no, client_name, project_no, project_name, plan_subject, plan_content, is_must_finish, my_plan_rmk1, my_plan_rmk2, my_plan_rmk3, my_plan_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM my_plan;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				plan_status, user_no, user_name, plan_start_date, plan_finish_date, seq, client_no, client_name, project_no, project_name, plan_subject, plan_content, is_must_finish, my_plan_rmk1, my_plan_rmk2, my_plan_rmk3, my_plan_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM my_plan
+			WHERE plan_id = @plan_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO my_plan 
+			(plan_status, user_no, user_name, plan_start_date, plan_finish_date, seq, client_no, client_name, project_no, project_name, plan_subject, plan_content, is_must_finish, my_plan_rmk1, my_plan_rmk2, my_plan_rmk3, my_plan_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@plan_status, @user_no, @user_name, @plan_start_date, @plan_finish_date, @seq, @client_no, @client_name, @project_no, @project_name, @plan_subject, @plan_content, @is_must_finish, @my_plan_rmk1, @my_plan_rmk2, @my_plan_rmk3, @my_plan_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE my_plan SET 
+			plan_status = @plan_status, user_no = @user_no, user_name = @user_name, plan_start_date = @plan_start_date, plan_finish_date = @plan_finish_date, seq = @seq, client_no = @client_no, client_name = @client_name, project_no = @project_no, project_name = @project_name, plan_subject = @plan_subject, plan_content = @plan_content, is_must_finish = @is_must_finish, my_plan_rmk1 = @my_plan_rmk1, my_plan_rmk2 = @my_plan_rmk2, my_plan_rmk3 = @my_plan_rmk3, my_plan_rmk4 = @my_plan_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE plan_id = @plan_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM my_plan
+			WHERE plan_id = @plan_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

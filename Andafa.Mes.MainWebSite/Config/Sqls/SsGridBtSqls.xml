@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				grid_id, toolbar_id, toolbar_sequence, toolbar_is_visible, toolbar_location, line_before, toolbar_group, toolbar_control, toolbar_para, toolbar_condation, exec_procedure_after, toolbar_auth, toolbar_lang_str_id, grid_bt_rmk01, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, toolbar_confirm_before, grid_bt_rmk02, grid_bt_rmk03, grid_bt_rmk04, toolbar_icon
+			FROM ss_grid_bt;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				grid_id, toolbar_id, toolbar_sequence, toolbar_is_visible, toolbar_location, line_before, toolbar_group, toolbar_control, toolbar_para, toolbar_condation, exec_procedure_after, toolbar_auth, toolbar_lang_str_id, grid_bt_rmk01, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, toolbar_confirm_before, grid_bt_rmk02, grid_bt_rmk03, grid_bt_rmk04, toolbar_icon
+			FROM ss_grid_bt
+			WHERE grid_bt_id = @grid_bt_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_grid_bt 
+			(grid_id, toolbar_id, toolbar_sequence, toolbar_is_visible, toolbar_location, line_before, toolbar_group, toolbar_control, toolbar_para, toolbar_condation, exec_procedure_after, toolbar_auth, toolbar_lang_str_id, grid_bt_rmk01, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, toolbar_confirm_before, grid_bt_rmk02, grid_bt_rmk03, grid_bt_rmk04, toolbar_icon)
+			VALUES (@grid_id, @toolbar_id, @toolbar_sequence, @toolbar_is_visible, @toolbar_location, @line_before, @toolbar_group, @toolbar_control, @toolbar_para, @toolbar_condation, @exec_procedure_after, @toolbar_auth, @toolbar_lang_str_id, @grid_bt_rmk01, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time, @toolbar_confirm_before, @grid_bt_rmk02, @grid_bt_rmk03, @grid_bt_rmk04, @toolbar_icon);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_grid_bt SET 
+			grid_id = @grid_id, toolbar_id = @toolbar_id, toolbar_sequence = @toolbar_sequence, toolbar_is_visible = @toolbar_is_visible, toolbar_location = @toolbar_location, line_before = @line_before, toolbar_group = @toolbar_group, toolbar_control = @toolbar_control, toolbar_para = @toolbar_para, toolbar_condation = @toolbar_condation, exec_procedure_after = @exec_procedure_after, toolbar_auth = @toolbar_auth, toolbar_lang_str_id = @toolbar_lang_str_id, grid_bt_rmk01 = @grid_bt_rmk01, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time, toolbar_confirm_before = @toolbar_confirm_before, grid_bt_rmk02 = @grid_bt_rmk02, grid_bt_rmk03 = @grid_bt_rmk03, grid_bt_rmk04 = @grid_bt_rmk04, toolbar_icon = @toolbar_icon
+			WHERE grid_bt_id = @grid_bt_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_grid_bt
+			WHERE grid_bt_id = @grid_bt_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

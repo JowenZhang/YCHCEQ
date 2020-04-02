@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				client_status, client_no, client_name, client_name_py, client_name_abbr, client_name_abbr_py, client_country, client_province, client_city, client_address, client_postcode, client_tel, client_fax, client_email, client_website, client_priority, client_owner, client_payment, client_settle, client_trad_currency, client_discount, client_trans_days, client_owner_last, mrp_region_no, mrp_type, doc_keyword, client_type1, client_type2, client_type3, client_type4, client_type5, client_type6, client_type7, client_type8, client_type9, client_type10, client_rmk01, client_rmk02, client_rmk03, client_rmk04, client_rmk05, client_rmk06, client_rmk07, client_rmk08, client_rmk09, client_rmk10, client_rmk11, client_rmk12, client_rmk13, client_rmk14, client_rmk15, client_rmk16, client_rmk17, client_rmk18, client_rmk19, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_client;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				client_status, client_no, client_name, client_name_py, client_name_abbr, client_name_abbr_py, client_country, client_province, client_city, client_address, client_postcode, client_tel, client_fax, client_email, client_website, client_priority, client_owner, client_payment, client_settle, client_trad_currency, client_discount, client_trans_days, client_owner_last, mrp_region_no, mrp_type, doc_keyword, client_type1, client_type2, client_type3, client_type4, client_type5, client_type6, client_type7, client_type8, client_type9, client_type10, client_rmk01, client_rmk02, client_rmk03, client_rmk04, client_rmk05, client_rmk06, client_rmk07, client_rmk08, client_rmk09, client_rmk10, client_rmk11, client_rmk12, client_rmk13, client_rmk14, client_rmk15, client_rmk16, client_rmk17, client_rmk18, client_rmk19, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_client
+			WHERE client_no = @client_no OR client_id = @client_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_client 
+			(client_status, client_no, client_name, client_name_py, client_name_abbr, client_name_abbr_py, client_country, client_province, client_city, client_address, client_postcode, client_tel, client_fax, client_email, client_website, client_priority, client_owner, client_payment, client_settle, client_trad_currency, client_discount, client_trans_days, client_owner_last, mrp_region_no, mrp_type, doc_keyword, client_type1, client_type2, client_type3, client_type4, client_type5, client_type6, client_type7, client_type8, client_type9, client_type10, client_rmk01, client_rmk02, client_rmk03, client_rmk04, client_rmk05, client_rmk06, client_rmk07, client_rmk08, client_rmk09, client_rmk10, client_rmk11, client_rmk12, client_rmk13, client_rmk14, client_rmk15, client_rmk16, client_rmk17, client_rmk18, client_rmk19, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@client_status, @client_no, @client_name, @client_name_py, @client_name_abbr, @client_name_abbr_py, @client_country, @client_province, @client_city, @client_address, @client_postcode, @client_tel, @client_fax, @client_email, @client_website, @client_priority, @client_owner, @client_payment, @client_settle, @client_trad_currency, @client_discount, @client_trans_days, @client_owner_last, @mrp_region_no, @mrp_type, @doc_keyword, @client_type1, @client_type2, @client_type3, @client_type4, @client_type5, @client_type6, @client_type7, @client_type8, @client_type9, @client_type10, @client_rmk01, @client_rmk02, @client_rmk03, @client_rmk04, @client_rmk05, @client_rmk06, @client_rmk07, @client_rmk08, @client_rmk09, @client_rmk10, @client_rmk11, @client_rmk12, @client_rmk13, @client_rmk14, @client_rmk15, @client_rmk16, @client_rmk17, @client_rmk18, @client_rmk19, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_client SET 
+			client_status = @client_status, client_name = @client_name, client_name_py = @client_name_py, client_name_abbr = @client_name_abbr, client_name_abbr_py = @client_name_abbr_py, client_country = @client_country, client_province = @client_province, client_city = @client_city, client_address = @client_address, client_postcode = @client_postcode, client_tel = @client_tel, client_fax = @client_fax, client_email = @client_email, client_website = @client_website, client_priority = @client_priority, client_owner = @client_owner, client_payment = @client_payment, client_settle = @client_settle, client_trad_currency = @client_trad_currency, client_discount = @client_discount, client_trans_days = @client_trans_days, client_owner_last = @client_owner_last, mrp_region_no = @mrp_region_no, mrp_type = @mrp_type, doc_keyword = @doc_keyword, client_type1 = @client_type1, client_type2 = @client_type2, client_type3 = @client_type3, client_type4 = @client_type4, client_type5 = @client_type5, client_type6 = @client_type6, client_type7 = @client_type7, client_type8 = @client_type8, client_type9 = @client_type9, client_type10 = @client_type10, client_rmk01 = @client_rmk01, client_rmk02 = @client_rmk02, client_rmk03 = @client_rmk03, client_rmk04 = @client_rmk04, client_rmk05 = @client_rmk05, client_rmk06 = @client_rmk06, client_rmk07 = @client_rmk07, client_rmk08 = @client_rmk08, client_rmk09 = @client_rmk09, client_rmk10 = @client_rmk10, client_rmk11 = @client_rmk11, client_rmk12 = @client_rmk12, client_rmk13 = @client_rmk13, client_rmk14 = @client_rmk14, client_rmk15 = @client_rmk15, client_rmk16 = @client_rmk16, client_rmk17 = @client_rmk17, client_rmk18 = @client_rmk18, client_rmk19 = @client_rmk19, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE client_no = @client_no OR client_id = @client_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_client
+			WHERE client_no = @client_no OR client_id = @client_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

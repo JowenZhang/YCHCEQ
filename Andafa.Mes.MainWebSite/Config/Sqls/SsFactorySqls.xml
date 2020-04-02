@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				zstatus, factory_no, factory_name, factory_name_py, company_id, mrp_region_no, pl_id, factory_type1, factory_type2, factory_type3, factory_type4, rmk1, rmk2, rmk3, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_factory;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				zstatus, factory_no, factory_name, factory_name_py, company_id, mrp_region_no, pl_id, factory_type1, factory_type2, factory_type3, factory_type4, rmk1, rmk2, rmk3, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_factory
+			WHERE factory_id = @factory_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_factory 
+			(zstatus, factory_no, factory_name, factory_name_py, company_id, mrp_region_no, pl_id, factory_type1, factory_type2, factory_type3, factory_type4, rmk1, rmk2, rmk3, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@zstatus, @factory_no, @factory_name, @factory_name_py, @company_id, @mrp_region_no, @pl_id, @factory_type1, @factory_type2, @factory_type3, @factory_type4, @rmk1, @rmk2, @rmk3, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_factory SET 
+			zstatus = @zstatus, factory_no = @factory_no, factory_name = @factory_name, factory_name_py = @factory_name_py, company_id = @company_id, mrp_region_no = @mrp_region_no, pl_id = @pl_id, factory_type1 = @factory_type1, factory_type2 = @factory_type2, factory_type3 = @factory_type3, factory_type4 = @factory_type4, rmk1 = @rmk1, rmk2 = @rmk2, rmk3 = @rmk3, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE factory_id = @factory_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_factory
+			WHERE factory_id = @factory_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

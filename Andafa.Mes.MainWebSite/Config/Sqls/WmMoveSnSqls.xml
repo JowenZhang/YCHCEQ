@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				move_datetime, sn_no, move_from_invp_no, move_from_invp_name, move_to_invp_no, move_to_invp_name, move_worker_card_no, move_worker_no, move_worker_name, wm_move_type_no, wm_move_type_name, wm_move_reason_no, wm_move_reason_name, wm_move_sn_rmk1, wm_move_sn_rmk2, wm_move_sn_rmk3, wm_move_sn_rmk4, wm_move_sn_rmk5, wm_move_sn_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM wm_move_sn;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				move_datetime, sn_no, move_from_invp_no, move_from_invp_name, move_to_invp_no, move_to_invp_name, move_worker_card_no, move_worker_no, move_worker_name, wm_move_type_no, wm_move_type_name, wm_move_reason_no, wm_move_reason_name, wm_move_sn_rmk1, wm_move_sn_rmk2, wm_move_sn_rmk3, wm_move_sn_rmk4, wm_move_sn_rmk5, wm_move_sn_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM wm_move_sn
+			WHERE wm_move_sn_id = @wm_move_sn_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO wm_move_sn 
+			(move_datetime, sn_no, move_from_invp_no, move_from_invp_name, move_to_invp_no, move_to_invp_name, move_worker_card_no, move_worker_no, move_worker_name, wm_move_type_no, wm_move_type_name, wm_move_reason_no, wm_move_reason_name, wm_move_sn_rmk1, wm_move_sn_rmk2, wm_move_sn_rmk3, wm_move_sn_rmk4, wm_move_sn_rmk5, wm_move_sn_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@move_datetime, @sn_no, @move_from_invp_no, @move_from_invp_name, @move_to_invp_no, @move_to_invp_name, @move_worker_card_no, @move_worker_no, @move_worker_name, @wm_move_type_no, @wm_move_type_name, @wm_move_reason_no, @wm_move_reason_name, @wm_move_sn_rmk1, @wm_move_sn_rmk2, @wm_move_sn_rmk3, @wm_move_sn_rmk4, @wm_move_sn_rmk5, @wm_move_sn_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE wm_move_sn SET 
+			move_datetime = @move_datetime, sn_no = @sn_no, move_from_invp_no = @move_from_invp_no, move_from_invp_name = @move_from_invp_name, move_to_invp_no = @move_to_invp_no, move_to_invp_name = @move_to_invp_name, move_worker_card_no = @move_worker_card_no, move_worker_no = @move_worker_no, move_worker_name = @move_worker_name, wm_move_type_no = @wm_move_type_no, wm_move_type_name = @wm_move_type_name, wm_move_reason_no = @wm_move_reason_no, wm_move_reason_name = @wm_move_reason_name, wm_move_sn_rmk1 = @wm_move_sn_rmk1, wm_move_sn_rmk2 = @wm_move_sn_rmk2, wm_move_sn_rmk3 = @wm_move_sn_rmk3, wm_move_sn_rmk4 = @wm_move_sn_rmk4, wm_move_sn_rmk5 = @wm_move_sn_rmk5, wm_move_sn_rmk6 = @wm_move_sn_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE wm_move_sn_id = @wm_move_sn_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM wm_move_sn
+			WHERE wm_move_sn_id = @wm_move_sn_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

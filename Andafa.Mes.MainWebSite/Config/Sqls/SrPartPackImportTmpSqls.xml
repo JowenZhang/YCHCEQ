@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sr_part_pack_id, supplier_no, supplier_part_no, pack_type, part_qty, parent_pack_type, pack_length, pack_width, pack_height, pack_weight_gross, pack_weight_net, sr_part_pack_rmk01, sr_part_pack_rmk02, sr_part_pack_rmk03, sr_part_pack_rmk04, sr_part_pack_rmk05, sr_part_pack_rmk06, sr_part_pack_rmk07, sr_part_pack_rmk08, sr_part_pack_rmk09, sr_part_pack_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user_no, upd_user, upd_user_name, upd_host
+			FROM sr_part_pack_import_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sr_part_pack_id, supplier_no, supplier_part_no, pack_type, part_qty, parent_pack_type, pack_length, pack_width, pack_height, pack_weight_gross, pack_weight_net, sr_part_pack_rmk01, sr_part_pack_rmk02, sr_part_pack_rmk03, sr_part_pack_rmk04, sr_part_pack_rmk05, sr_part_pack_rmk06, sr_part_pack_rmk07, sr_part_pack_rmk08, sr_part_pack_rmk09, sr_part_pack_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user_no, upd_user, upd_user_name, upd_host
+			FROM sr_part_pack_import_tmp;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sr_part_pack_import_tmp 
+			(sr_part_pack_id, supplier_no, supplier_part_no, pack_type, part_qty, parent_pack_type, pack_length, pack_width, pack_height, pack_weight_gross, pack_weight_net, sr_part_pack_rmk01, sr_part_pack_rmk02, sr_part_pack_rmk03, sr_part_pack_rmk04, sr_part_pack_rmk05, sr_part_pack_rmk06, sr_part_pack_rmk07, sr_part_pack_rmk08, sr_part_pack_rmk09, sr_part_pack_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user_no, upd_user, upd_user_name, upd_host)
+			VALUES (@sr_part_pack_id, @supplier_no, @supplier_part_no, @pack_type, @part_qty, @parent_pack_type, @pack_length, @pack_width, @pack_height, @pack_weight_gross, @pack_weight_net, @sr_part_pack_rmk01, @sr_part_pack_rmk02, @sr_part_pack_rmk03, @sr_part_pack_rmk04, @sr_part_pack_rmk05, @sr_part_pack_rmk06, @sr_part_pack_rmk07, @sr_part_pack_rmk08, @sr_part_pack_rmk09, @sr_part_pack_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user_no, @upd_user, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sr_part_pack_import_tmp SET 
+			sr_part_pack_id = @sr_part_pack_id, supplier_no = @supplier_no, supplier_part_no = @supplier_part_no, pack_type = @pack_type, part_qty = @part_qty, parent_pack_type = @parent_pack_type, pack_length = @pack_length, pack_width = @pack_width, pack_height = @pack_height, pack_weight_gross = @pack_weight_gross, pack_weight_net = @pack_weight_net, sr_part_pack_rmk01 = @sr_part_pack_rmk01, sr_part_pack_rmk02 = @sr_part_pack_rmk02, sr_part_pack_rmk03 = @sr_part_pack_rmk03, sr_part_pack_rmk04 = @sr_part_pack_rmk04, sr_part_pack_rmk05 = @sr_part_pack_rmk05, sr_part_pack_rmk06 = @sr_part_pack_rmk06, sr_part_pack_rmk07 = @sr_part_pack_rmk07, sr_part_pack_rmk08 = @sr_part_pack_rmk08, sr_part_pack_rmk09 = @sr_part_pack_rmk09, sr_part_pack_rmk10 = @sr_part_pack_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user_no = @upd_user_no, upd_user = @upd_user, upd_user_name = @upd_user_name, upd_host = @upd_host;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sr_part_pack_import_tmp;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

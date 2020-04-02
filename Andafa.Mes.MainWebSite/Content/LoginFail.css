@@ -1,0 +1,11 @@
+﻿.fail-msg {
+    font-family:'Microsoft YaHei UI';
+    font-size:48px;
+    font-weight:800;
+    text-align:center;
+    color:#EAFF00;
+}
+
+.fail-btn {
+   max-width:540px;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				product_test_status_no, sample_delivery_date, trade_no, part_spc, lot_no, refrence_standard, chemical_analysis, extension_test, impact_test, radiographic_test, bending_test, right_angle_welding_test, hrc_value, other_test, regular_test, attach_test, repeat_test, other_description, tape_lot_no, product_wheel_no, powder_no, sample_delivery_worker_name, suggest_deadline, product_test_rmk01, product_test_rmk02, product_test_rmk03, product_test_rmk04, product_test_rmk05, product_test_rmk06, product_test_rmk07, product_test_rmk08, product_test_rmk09, product_test_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_product_test;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				product_test_status_no, sample_delivery_date, trade_no, part_spc, lot_no, refrence_standard, chemical_analysis, extension_test, impact_test, radiographic_test, bending_test, right_angle_welding_test, hrc_value, other_test, regular_test, attach_test, repeat_test, other_description, tape_lot_no, product_wheel_no, powder_no, sample_delivery_worker_name, suggest_deadline, product_test_rmk01, product_test_rmk02, product_test_rmk03, product_test_rmk04, product_test_rmk05, product_test_rmk06, product_test_rmk07, product_test_rmk08, product_test_rmk09, product_test_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_product_test
+			WHERE product_test_id = @product_test_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO qm_product_test 
+			(product_test_status_no, sample_delivery_date, trade_no, part_spc, lot_no, refrence_standard, chemical_analysis, extension_test, impact_test, radiographic_test, bending_test, right_angle_welding_test, hrc_value, other_test, regular_test, attach_test, repeat_test, other_description, tape_lot_no, product_wheel_no, powder_no, sample_delivery_worker_name, suggest_deadline, product_test_rmk01, product_test_rmk02, product_test_rmk03, product_test_rmk04, product_test_rmk05, product_test_rmk06, product_test_rmk07, product_test_rmk08, product_test_rmk09, product_test_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@product_test_status_no, @sample_delivery_date, @trade_no, @part_spc, @lot_no, @refrence_standard, @chemical_analysis, @extension_test, @impact_test, @radiographic_test, @bending_test, @right_angle_welding_test, @hrc_value, @other_test, @regular_test, @attach_test, @repeat_test, @other_description, @tape_lot_no, @product_wheel_no, @powder_no, @sample_delivery_worker_name, @suggest_deadline, @product_test_rmk01, @product_test_rmk02, @product_test_rmk03, @product_test_rmk04, @product_test_rmk05, @product_test_rmk06, @product_test_rmk07, @product_test_rmk08, @product_test_rmk09, @product_test_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE qm_product_test SET 
+			product_test_status_no = @product_test_status_no, sample_delivery_date = @sample_delivery_date, trade_no = @trade_no, part_spc = @part_spc, lot_no = @lot_no, refrence_standard = @refrence_standard, chemical_analysis = @chemical_analysis, extension_test = @extension_test, impact_test = @impact_test, radiographic_test = @radiographic_test, bending_test = @bending_test, right_angle_welding_test = @right_angle_welding_test, hrc_value = @hrc_value, other_test = @other_test, regular_test = @regular_test, attach_test = @attach_test, repeat_test = @repeat_test, other_description = @other_description, tape_lot_no = @tape_lot_no, product_wheel_no = @product_wheel_no, powder_no = @powder_no, sample_delivery_worker_name = @sample_delivery_worker_name, suggest_deadline = @suggest_deadline, product_test_rmk01 = @product_test_rmk01, product_test_rmk02 = @product_test_rmk02, product_test_rmk03 = @product_test_rmk03, product_test_rmk04 = @product_test_rmk04, product_test_rmk05 = @product_test_rmk05, product_test_rmk06 = @product_test_rmk06, product_test_rmk07 = @product_test_rmk07, product_test_rmk08 = @product_test_rmk08, product_test_rmk09 = @product_test_rmk09, product_test_rmk10 = @product_test_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE product_test_id = @product_test_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM qm_product_test
+			WHERE product_test_id = @product_test_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

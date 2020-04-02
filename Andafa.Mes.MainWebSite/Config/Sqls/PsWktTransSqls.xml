@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkt_trans_id, wkt_trans_name, wkt_trans_time, crt_user, crt_user_no, crt_user_name, crt_host, crt_time
+			FROM ps_wkt_trans;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkt_trans_id, wkt_trans_name, wkt_trans_time, crt_user, crt_user_no, crt_user_name, crt_host, crt_time
+			FROM ps_wkt_trans
+			WHERE wkt_trans_no = @wkt_trans_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_wkt_trans 
+			(wkt_trans_id, wkt_trans_name, wkt_trans_time, crt_user, crt_user_no, crt_user_name, crt_host, crt_time)
+			VALUES (@wkt_trans_id, @wkt_trans_name, @wkt_trans_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_wkt_trans SET 
+			wkt_trans_id = @wkt_trans_id, wkt_trans_name = @wkt_trans_name, wkt_trans_time = @wkt_trans_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time
+			WHERE wkt_trans_no = @wkt_trans_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_wkt_trans
+			WHERE wkt_trans_no = @wkt_trans_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

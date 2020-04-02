@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				dt_no, dt_data, da_opc_rmk01, da_opc_rmk02, crt_time, crt_host
+			FROM me_da_opc;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				dt_no, dt_data, da_opc_rmk01, da_opc_rmk02, crt_time, crt_host
+			FROM me_da_opc
+			WHERE da_opc_id = @da_opc_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_da_opc 
+			(dt_no, dt_data, da_opc_rmk01, da_opc_rmk02, crt_time, crt_host)
+			VALUES (@dt_no, @dt_data, @da_opc_rmk01, @da_opc_rmk02, @crt_time, @crt_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_da_opc SET 
+			dt_no = @dt_no, dt_data = @dt_data, da_opc_rmk01 = @da_opc_rmk01, da_opc_rmk02 = @da_opc_rmk02, crt_time = @crt_time, crt_host = @crt_host
+			WHERE da_opc_id = @da_opc_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_da_opc
+			WHERE da_opc_id = @da_opc_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

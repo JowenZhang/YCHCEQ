@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				pc_rst_h_id, wkc_no, wkc_name, factory_no, factory_name, wkc_valid_qty, wkc_valid_hour, wkc_require_hour, wkc_require_qty, pc_rst_wkc_rmk1, pc_rst_wkc_rmk2, pc_rst_wkc_rmk3, pc_rst_wkc_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM pc_rst_wkc;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				pc_rst_h_id, wkc_no, wkc_name, factory_no, factory_name, wkc_valid_qty, wkc_valid_hour, wkc_require_hour, wkc_require_qty, pc_rst_wkc_rmk1, pc_rst_wkc_rmk2, pc_rst_wkc_rmk3, pc_rst_wkc_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM pc_rst_wkc
+			WHERE pc_rst_wkc_id = @pc_rst_wkc_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pc_rst_wkc 
+			(pc_rst_h_id, wkc_no, wkc_name, factory_no, factory_name, wkc_valid_qty, wkc_valid_hour, wkc_require_hour, wkc_require_qty, pc_rst_wkc_rmk1, pc_rst_wkc_rmk2, pc_rst_wkc_rmk3, pc_rst_wkc_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host)
+			VALUES (@pc_rst_h_id, @wkc_no, @wkc_name, @factory_no, @factory_name, @wkc_valid_qty, @wkc_valid_hour, @wkc_require_hour, @wkc_require_qty, @pc_rst_wkc_rmk1, @pc_rst_wkc_rmk2, @pc_rst_wkc_rmk3, @pc_rst_wkc_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pc_rst_wkc SET 
+			pc_rst_h_id = @pc_rst_h_id, wkc_no = @wkc_no, wkc_name = @wkc_name, factory_no = @factory_no, factory_name = @factory_name, wkc_valid_qty = @wkc_valid_qty, wkc_valid_hour = @wkc_valid_hour, wkc_require_hour = @wkc_require_hour, wkc_require_qty = @wkc_require_qty, pc_rst_wkc_rmk1 = @pc_rst_wkc_rmk1, pc_rst_wkc_rmk2 = @pc_rst_wkc_rmk2, pc_rst_wkc_rmk3 = @pc_rst_wkc_rmk3, pc_rst_wkc_rmk4 = @pc_rst_wkc_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host
+			WHERE pc_rst_wkc_id = @pc_rst_wkc_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pc_rst_wkc
+			WHERE pc_rst_wkc_id = @pc_rst_wkc_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				lo_status, lo_no, part_no, part_name, part_spec, part_idt, mrp_region_no, part_unit, part_unit_name, lo_qty, rmh_no, rmh_version, lo_hope_start_datetime, lo_hope_end_datetime, lo_type, is_independent, is_fixed, lo_need_aps, lo_priority, factory_no, factory_name, client_no, client_name, order_type1, order_type_name1, order_no1, order_type2, order_type_name2, order_no2, ps_lo_rmk1, ps_lo_rmk2, ps_lo_rmk3, ps_lo_rmk4, ps_lo_rmk5, ps_lo_rmk6, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ps_lo;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				lo_status, lo_no, part_no, part_name, part_spec, part_idt, mrp_region_no, part_unit, part_unit_name, lo_qty, rmh_no, rmh_version, lo_hope_start_datetime, lo_hope_end_datetime, lo_type, is_independent, is_fixed, lo_need_aps, lo_priority, factory_no, factory_name, client_no, client_name, order_type1, order_type_name1, order_no1, order_type2, order_type_name2, order_no2, ps_lo_rmk1, ps_lo_rmk2, ps_lo_rmk3, ps_lo_rmk4, ps_lo_rmk5, ps_lo_rmk6, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ps_lo
+			WHERE lo_id = @lo_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_lo 
+			(lo_status, lo_no, part_no, part_name, part_spec, part_idt, mrp_region_no, part_unit, part_unit_name, lo_qty, rmh_no, rmh_version, lo_hope_start_datetime, lo_hope_end_datetime, lo_type, is_independent, is_fixed, lo_need_aps, lo_priority, factory_no, factory_name, client_no, client_name, order_type1, order_type_name1, order_no1, order_type2, order_type_name2, order_no2, ps_lo_rmk1, ps_lo_rmk2, ps_lo_rmk3, ps_lo_rmk4, ps_lo_rmk5, ps_lo_rmk6, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time)
+			VALUES (@lo_status, @lo_no, @part_no, @part_name, @part_spec, @part_idt, @mrp_region_no, @part_unit, @part_unit_name, @lo_qty, @rmh_no, @rmh_version, @lo_hope_start_datetime, @lo_hope_end_datetime, @lo_type, @is_independent, @is_fixed, @lo_need_aps, @lo_priority, @factory_no, @factory_name, @client_no, @client_name, @order_type1, @order_type_name1, @order_no1, @order_type2, @order_type_name2, @order_no2, @ps_lo_rmk1, @ps_lo_rmk2, @ps_lo_rmk3, @ps_lo_rmk4, @ps_lo_rmk5, @ps_lo_rmk6, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_lo SET 
+			lo_status = @lo_status, lo_no = @lo_no, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, mrp_region_no = @mrp_region_no, part_unit = @part_unit, part_unit_name = @part_unit_name, lo_qty = @lo_qty, rmh_no = @rmh_no, rmh_version = @rmh_version, lo_hope_start_datetime = @lo_hope_start_datetime, lo_hope_end_datetime = @lo_hope_end_datetime, lo_type = @lo_type, is_independent = @is_independent, is_fixed = @is_fixed, lo_need_aps = @lo_need_aps, lo_priority = @lo_priority, factory_no = @factory_no, factory_name = @factory_name, client_no = @client_no, client_name = @client_name, order_type1 = @order_type1, order_type_name1 = @order_type_name1, order_no1 = @order_no1, order_type2 = @order_type2, order_type_name2 = @order_type_name2, order_no2 = @order_no2, ps_lo_rmk1 = @ps_lo_rmk1, ps_lo_rmk2 = @ps_lo_rmk2, ps_lo_rmk3 = @ps_lo_rmk3, ps_lo_rmk4 = @ps_lo_rmk4, ps_lo_rmk5 = @ps_lo_rmk5, ps_lo_rmk6 = @ps_lo_rmk6, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time
+			WHERE lo_id = @lo_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_lo
+			WHERE lo_id = @lo_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

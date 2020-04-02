@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				param_name, param_value
+			FROM ss_rpt_param;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				param_name, param_value
+			FROM ss_rpt_param
+			WHERE rpt_id = @rpt_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_rpt_param 
+			(param_name, param_value)
+			VALUES (@param_name, @param_value);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_rpt_param SET 
+			param_name = @param_name, param_value = @param_value
+			WHERE rpt_id = @rpt_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_rpt_param
+			WHERE rpt_id = @rpt_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

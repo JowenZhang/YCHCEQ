@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				mo_qty, sales_order_type, sales_order_no, lo_no, crt_time
+			FROM ps_order_map;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				mo_qty, sales_order_type, sales_order_no, lo_no, crt_time
+			FROM ps_order_map
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_order_map 
+			(mo_qty, sales_order_type, sales_order_no, lo_no, crt_time)
+			VALUES (@mo_qty, @sales_order_type, @sales_order_no, @lo_no, @crt_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_order_map SET 
+			mo_qty = @mo_qty, sales_order_type = @sales_order_type, sales_order_no = @sales_order_no, lo_no = @lo_no, crt_time = @crt_time
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_order_map
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

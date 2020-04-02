@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				mo_id, mo_no, unode, wkn, wkp_name, part_id, part_no, part_name, part_spec, wkc_id, wkc_no, wkc_name, duty_worker, duty_worker_no, duty_worker_name, admin_worker, admin_worker_no, admin_worker_name, qa_cause_id, qa_cause_no, qa_cause_name, mtr_scrap_qty, mtr_scrap_worker, mtr_scrap_worker_no, mtr_scrap_worker_name, mtr_scrap_datetime, mtr_scrap_rmk01, mtr_scrap_rmk02, mtr_scrap_rmk03, mtr_scrap_rmk04, mtr_scrap_rmk05, crt_user, crt_host, crt_user_no, crt_user_name, crt_time, upd_user, upd_host, upd_time, upd_user_no, upd_user_name
+			FROM me_mtr_scrap;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				mo_id, mo_no, unode, wkn, wkp_name, part_id, part_no, part_name, part_spec, wkc_id, wkc_no, wkc_name, duty_worker, duty_worker_no, duty_worker_name, admin_worker, admin_worker_no, admin_worker_name, qa_cause_id, qa_cause_no, qa_cause_name, mtr_scrap_qty, mtr_scrap_worker, mtr_scrap_worker_no, mtr_scrap_worker_name, mtr_scrap_datetime, mtr_scrap_rmk01, mtr_scrap_rmk02, mtr_scrap_rmk03, mtr_scrap_rmk04, mtr_scrap_rmk05, crt_user, crt_host, crt_user_no, crt_user_name, crt_time, upd_user, upd_host, upd_time, upd_user_no, upd_user_name
+			FROM me_mtr_scrap
+			WHERE mtr_scrap_id = @mtr_scrap_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_mtr_scrap 
+			(mo_id, mo_no, unode, wkn, wkp_name, part_id, part_no, part_name, part_spec, wkc_id, wkc_no, wkc_name, duty_worker, duty_worker_no, duty_worker_name, admin_worker, admin_worker_no, admin_worker_name, qa_cause_id, qa_cause_no, qa_cause_name, mtr_scrap_qty, mtr_scrap_worker, mtr_scrap_worker_no, mtr_scrap_worker_name, mtr_scrap_datetime, mtr_scrap_rmk01, mtr_scrap_rmk02, mtr_scrap_rmk03, mtr_scrap_rmk04, mtr_scrap_rmk05, crt_user, crt_host, crt_user_no, crt_user_name, crt_time, upd_user, upd_host, upd_time, upd_user_no, upd_user_name)
+			VALUES (@mo_id, @mo_no, @unode, @wkn, @wkp_name, @part_id, @part_no, @part_name, @part_spec, @wkc_id, @wkc_no, @wkc_name, @duty_worker, @duty_worker_no, @duty_worker_name, @admin_worker, @admin_worker_no, @admin_worker_name, @qa_cause_id, @qa_cause_no, @qa_cause_name, @mtr_scrap_qty, @mtr_scrap_worker, @mtr_scrap_worker_no, @mtr_scrap_worker_name, @mtr_scrap_datetime, @mtr_scrap_rmk01, @mtr_scrap_rmk02, @mtr_scrap_rmk03, @mtr_scrap_rmk04, @mtr_scrap_rmk05, @crt_user, @crt_host, @crt_user_no, @crt_user_name, @crt_time, @upd_user, @upd_host, @upd_time, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_mtr_scrap SET 
+			mo_id = @mo_id, mo_no = @mo_no, unode = @unode, wkn = @wkn, wkp_name = @wkp_name, part_id = @part_id, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, wkc_id = @wkc_id, wkc_no = @wkc_no, wkc_name = @wkc_name, duty_worker = @duty_worker, duty_worker_no = @duty_worker_no, duty_worker_name = @duty_worker_name, admin_worker = @admin_worker, admin_worker_no = @admin_worker_no, admin_worker_name = @admin_worker_name, qa_cause_id = @qa_cause_id, qa_cause_no = @qa_cause_no, qa_cause_name = @qa_cause_name, mtr_scrap_qty = @mtr_scrap_qty, mtr_scrap_worker = @mtr_scrap_worker, mtr_scrap_worker_no = @mtr_scrap_worker_no, mtr_scrap_worker_name = @mtr_scrap_worker_name, mtr_scrap_datetime = @mtr_scrap_datetime, mtr_scrap_rmk01 = @mtr_scrap_rmk01, mtr_scrap_rmk02 = @mtr_scrap_rmk02, mtr_scrap_rmk03 = @mtr_scrap_rmk03, mtr_scrap_rmk04 = @mtr_scrap_rmk04, mtr_scrap_rmk05 = @mtr_scrap_rmk05, crt_user = @crt_user, crt_host = @crt_host, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_time = @crt_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE mtr_scrap_id = @mtr_scrap_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_mtr_scrap
+			WHERE mtr_scrap_id = @mtr_scrap_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				dev_req_no, dev_req_status, dev_req_status_name, project_no, dev_req_subject, dev_req_content, dev_req_type1, dev_req_type2, req_user_no, req_user_name, req_finish_date, plan_start_date, plan_finish_date, current_finish_rate, real_finish_date, dev_user_no, dev_user_name, test_user_no, test_user_name, confirm_user_no, confirm_user_name, dev_req_rmk1, dev_req_rmk2, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, dev_req_rmk3, dev_req_rmk4, dev_req_rmk5, dev_req_rmk6, dev_req_rmk7, dev_req_rmk8, dev_req_rmk9, dev_req_rmk10, dev_req_rmk11, dev_req_rmk12
+			FROM cr_dev_req;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				dev_req_no, dev_req_status, dev_req_status_name, project_no, dev_req_subject, dev_req_content, dev_req_type1, dev_req_type2, req_user_no, req_user_name, req_finish_date, plan_start_date, plan_finish_date, current_finish_rate, real_finish_date, dev_user_no, dev_user_name, test_user_no, test_user_name, confirm_user_no, confirm_user_name, dev_req_rmk1, dev_req_rmk2, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, dev_req_rmk3, dev_req_rmk4, dev_req_rmk5, dev_req_rmk6, dev_req_rmk7, dev_req_rmk8, dev_req_rmk9, dev_req_rmk10, dev_req_rmk11, dev_req_rmk12
+			FROM cr_dev_req
+			WHERE dev_req_id = @dev_req_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_dev_req 
+			(dev_req_no, dev_req_status, dev_req_status_name, project_no, dev_req_subject, dev_req_content, dev_req_type1, dev_req_type2, req_user_no, req_user_name, req_finish_date, plan_start_date, plan_finish_date, current_finish_rate, real_finish_date, dev_user_no, dev_user_name, test_user_no, test_user_name, confirm_user_no, confirm_user_name, dev_req_rmk1, dev_req_rmk2, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, dev_req_rmk3, dev_req_rmk4, dev_req_rmk5, dev_req_rmk6, dev_req_rmk7, dev_req_rmk8, dev_req_rmk9, dev_req_rmk10, dev_req_rmk11, dev_req_rmk12)
+			VALUES (@dev_req_no, @dev_req_status, @dev_req_status_name, @project_no, @dev_req_subject, @dev_req_content, @dev_req_type1, @dev_req_type2, @req_user_no, @req_user_name, @req_finish_date, @plan_start_date, @plan_finish_date, @current_finish_rate, @real_finish_date, @dev_user_no, @dev_user_name, @test_user_no, @test_user_name, @confirm_user_no, @confirm_user_name, @dev_req_rmk1, @dev_req_rmk2, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @dev_req_rmk3, @dev_req_rmk4, @dev_req_rmk5, @dev_req_rmk6, @dev_req_rmk7, @dev_req_rmk8, @dev_req_rmk9, @dev_req_rmk10, @dev_req_rmk11, @dev_req_rmk12);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_dev_req SET 
+			dev_req_no = @dev_req_no, dev_req_status = @dev_req_status, dev_req_status_name = @dev_req_status_name, project_no = @project_no, dev_req_subject = @dev_req_subject, dev_req_content = @dev_req_content, dev_req_type1 = @dev_req_type1, dev_req_type2 = @dev_req_type2, req_user_no = @req_user_no, req_user_name = @req_user_name, req_finish_date = @req_finish_date, plan_start_date = @plan_start_date, plan_finish_date = @plan_finish_date, current_finish_rate = @current_finish_rate, real_finish_date = @real_finish_date, dev_user_no = @dev_user_no, dev_user_name = @dev_user_name, test_user_no = @test_user_no, test_user_name = @test_user_name, confirm_user_no = @confirm_user_no, confirm_user_name = @confirm_user_name, dev_req_rmk1 = @dev_req_rmk1, dev_req_rmk2 = @dev_req_rmk2, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, dev_req_rmk3 = @dev_req_rmk3, dev_req_rmk4 = @dev_req_rmk4, dev_req_rmk5 = @dev_req_rmk5, dev_req_rmk6 = @dev_req_rmk6, dev_req_rmk7 = @dev_req_rmk7, dev_req_rmk8 = @dev_req_rmk8, dev_req_rmk9 = @dev_req_rmk9, dev_req_rmk10 = @dev_req_rmk10, dev_req_rmk11 = @dev_req_rmk11, dev_req_rmk12 = @dev_req_rmk12
+			WHERE dev_req_id = @dev_req_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_dev_req
+			WHERE dev_req_id = @dev_req_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

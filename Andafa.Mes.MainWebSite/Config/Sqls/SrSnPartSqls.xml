@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sn_status, sn_status_name, sn_no, part_no, part_name, part_spec, part_unit, part_idt, part_qty, lot_no, valid_date_to, supplier_no, supplier_name, invp_no, sr_dlv_h_no, sr_dlv_b_id, sr_sn_part_rmk01, sr_sn_part_rmk02, sr_sn_part_rmk03, sr_sn_part_rmk04, sr_sn_part_rmk05, sr_sn_part_rmk06, sr_sn_part_rmk07, sr_sn_part_rmk08, sr_sn_part_rmk09, sr_sn_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, qa_type, mrp_region_no
+			FROM sr_sn_part;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sn_status, sn_status_name, sn_no, part_no, part_name, part_spec, part_unit, part_idt, part_qty, lot_no, valid_date_to, supplier_no, supplier_name, invp_no, sr_dlv_h_no, sr_dlv_b_id, sr_sn_part_rmk01, sr_sn_part_rmk02, sr_sn_part_rmk03, sr_sn_part_rmk04, sr_sn_part_rmk05, sr_sn_part_rmk06, sr_sn_part_rmk07, sr_sn_part_rmk08, sr_sn_part_rmk09, sr_sn_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, qa_type, mrp_region_no
+			FROM sr_sn_part
+			WHERE sr_sn_part_id = @sr_sn_part_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sr_sn_part 
+			(sn_status, sn_status_name, sn_no, part_no, part_name, part_spec, part_unit, part_idt, part_qty, lot_no, valid_date_to, supplier_no, supplier_name, invp_no, sr_dlv_h_no, sr_dlv_b_id, sr_sn_part_rmk01, sr_sn_part_rmk02, sr_sn_part_rmk03, sr_sn_part_rmk04, sr_sn_part_rmk05, sr_sn_part_rmk06, sr_sn_part_rmk07, sr_sn_part_rmk08, sr_sn_part_rmk09, sr_sn_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, qa_type, mrp_region_no)
+			VALUES (@sn_status, @sn_status_name, @sn_no, @part_no, @part_name, @part_spec, @part_unit, @part_idt, @part_qty, @lot_no, @valid_date_to, @supplier_no, @supplier_name, @invp_no, @sr_dlv_h_no, @sr_dlv_b_id, @sr_sn_part_rmk01, @sr_sn_part_rmk02, @sr_sn_part_rmk03, @sr_sn_part_rmk04, @sr_sn_part_rmk05, @sr_sn_part_rmk06, @sr_sn_part_rmk07, @sr_sn_part_rmk08, @sr_sn_part_rmk09, @sr_sn_part_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @qa_type, @mrp_region_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sr_sn_part SET 
+			sn_status = @sn_status, sn_status_name = @sn_status_name, sn_no = @sn_no, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_unit = @part_unit, part_idt = @part_idt, part_qty = @part_qty, lot_no = @lot_no, valid_date_to = @valid_date_to, supplier_no = @supplier_no, supplier_name = @supplier_name, invp_no = @invp_no, sr_dlv_h_no = @sr_dlv_h_no, sr_dlv_b_id = @sr_dlv_b_id, sr_sn_part_rmk01 = @sr_sn_part_rmk01, sr_sn_part_rmk02 = @sr_sn_part_rmk02, sr_sn_part_rmk03 = @sr_sn_part_rmk03, sr_sn_part_rmk04 = @sr_sn_part_rmk04, sr_sn_part_rmk05 = @sr_sn_part_rmk05, sr_sn_part_rmk06 = @sr_sn_part_rmk06, sr_sn_part_rmk07 = @sr_sn_part_rmk07, sr_sn_part_rmk08 = @sr_sn_part_rmk08, sr_sn_part_rmk09 = @sr_sn_part_rmk09, sr_sn_part_rmk10 = @sr_sn_part_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, qa_type = @qa_type, mrp_region_no = @mrp_region_no
+			WHERE sr_sn_part_id = @sr_sn_part_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sr_sn_part
+			WHERE sr_sn_part_id = @sr_sn_part_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkc_no, wkc_name, wkc_pause_start_datetime, wkc_pause_end_datetime, wkc_pause_minute, wkc_pause_type, wkc_pause_cause_name, wkc_pause_reason, wkc_pause_reason_name, duty_dept, duty_dept_name, affect_worker_num, lot_no, unode, wkn, wkp_no, wkp_name, me_wkc_pause_rmk11, me_wkc_pause_rmk12, me_wkc_pause_rmk13, me_wkc_pause_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, pause_handle_datetime_start, pause_handle_datetime_end, pause_respond_minute, pause_handle_minute
+			FROM me_wkc_pause;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkc_no, wkc_name, wkc_pause_start_datetime, wkc_pause_end_datetime, wkc_pause_minute, wkc_pause_type, wkc_pause_cause_name, wkc_pause_reason, wkc_pause_reason_name, duty_dept, duty_dept_name, affect_worker_num, lot_no, unode, wkn, wkp_no, wkp_name, me_wkc_pause_rmk11, me_wkc_pause_rmk12, me_wkc_pause_rmk13, me_wkc_pause_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, pause_handle_datetime_start, pause_handle_datetime_end, pause_respond_minute, pause_handle_minute
+			FROM me_wkc_pause
+			WHERE me_wkc_pause_id = @me_wkc_pause_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_wkc_pause 
+			(wkc_no, wkc_name, wkc_pause_start_datetime, wkc_pause_end_datetime, wkc_pause_minute, wkc_pause_type, wkc_pause_cause_name, wkc_pause_reason, wkc_pause_reason_name, duty_dept, duty_dept_name, affect_worker_num, lot_no, unode, wkn, wkp_no, wkp_name, me_wkc_pause_rmk11, me_wkc_pause_rmk12, me_wkc_pause_rmk13, me_wkc_pause_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, pause_handle_datetime_start, pause_handle_datetime_end, pause_respond_minute, pause_handle_minute)
+			VALUES (@wkc_no, @wkc_name, @wkc_pause_start_datetime, @wkc_pause_end_datetime, @wkc_pause_minute, @wkc_pause_type, @wkc_pause_cause_name, @wkc_pause_reason, @wkc_pause_reason_name, @duty_dept, @duty_dept_name, @affect_worker_num, @lot_no, @unode, @wkn, @wkp_no, @wkp_name, @me_wkc_pause_rmk11, @me_wkc_pause_rmk12, @me_wkc_pause_rmk13, @me_wkc_pause_rmk14, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @pause_handle_datetime_start, @pause_handle_datetime_end, @pause_respond_minute, @pause_handle_minute);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_wkc_pause SET 
+			wkc_no = @wkc_no, wkc_name = @wkc_name, wkc_pause_start_datetime = @wkc_pause_start_datetime, wkc_pause_end_datetime = @wkc_pause_end_datetime, wkc_pause_minute = @wkc_pause_minute, wkc_pause_type = @wkc_pause_type, wkc_pause_cause_name = @wkc_pause_cause_name, wkc_pause_reason = @wkc_pause_reason, wkc_pause_reason_name = @wkc_pause_reason_name, duty_dept = @duty_dept, duty_dept_name = @duty_dept_name, affect_worker_num = @affect_worker_num, lot_no = @lot_no, unode = @unode, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, me_wkc_pause_rmk11 = @me_wkc_pause_rmk11, me_wkc_pause_rmk12 = @me_wkc_pause_rmk12, me_wkc_pause_rmk13 = @me_wkc_pause_rmk13, me_wkc_pause_rmk14 = @me_wkc_pause_rmk14, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, pause_handle_datetime_start = @pause_handle_datetime_start, pause_handle_datetime_end = @pause_handle_datetime_end, pause_respond_minute = @pause_respond_minute, pause_handle_minute = @pause_handle_minute
+			WHERE me_wkc_pause_id = @me_wkc_pause_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_wkc_pause
+			WHERE me_wkc_pause_id = @me_wkc_pause_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

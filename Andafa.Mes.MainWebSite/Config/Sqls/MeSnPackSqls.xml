@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sn_no, sn_status, sn_status_name, pack_type, pack_type_name, pack_rule, pack_rule_name, pack_qty_max, pack_qty_used, pack_is_closed, pack_weight_gross, pack_weight_net, pack_height, pack_length, pack_width, pack_no, invp_no, qa_type, order_flow_name, client_no, client_name, crt_batch_no, me_sn_pack_rmk01, me_sn_pack_rmk02, me_sn_pack_rmk03, me_sn_pack_rmk04, me_sn_pack_rmk05, me_sn_pack_rmk06, me_sn_pack_rmk07, me_sn_pack_rmk08, me_sn_pack_rmk09, me_sn_pack_rmk10, sn_print_times, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, lot_no
+			FROM me_sn_pack;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sn_no, sn_status, sn_status_name, pack_type, pack_type_name, pack_rule, pack_rule_name, pack_qty_max, pack_qty_used, pack_is_closed, pack_weight_gross, pack_weight_net, pack_height, pack_length, pack_width, pack_no, invp_no, qa_type, order_flow_name, client_no, client_name, crt_batch_no, me_sn_pack_rmk01, me_sn_pack_rmk02, me_sn_pack_rmk03, me_sn_pack_rmk04, me_sn_pack_rmk05, me_sn_pack_rmk06, me_sn_pack_rmk07, me_sn_pack_rmk08, me_sn_pack_rmk09, me_sn_pack_rmk10, sn_print_times, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, lot_no
+			FROM me_sn_pack
+			WHERE me_sn_pack_id = @me_sn_pack_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_sn_pack 
+			(sn_no, sn_status, sn_status_name, pack_type, pack_type_name, pack_rule, pack_rule_name, pack_qty_max, pack_qty_used, pack_is_closed, pack_weight_gross, pack_weight_net, pack_height, pack_length, pack_width, pack_no, invp_no, qa_type, order_flow_name, client_no, client_name, crt_batch_no, me_sn_pack_rmk01, me_sn_pack_rmk02, me_sn_pack_rmk03, me_sn_pack_rmk04, me_sn_pack_rmk05, me_sn_pack_rmk06, me_sn_pack_rmk07, me_sn_pack_rmk08, me_sn_pack_rmk09, me_sn_pack_rmk10, sn_print_times, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, lot_no)
+			VALUES (@sn_no, @sn_status, @sn_status_name, @pack_type, @pack_type_name, @pack_rule, @pack_rule_name, @pack_qty_max, @pack_qty_used, @pack_is_closed, @pack_weight_gross, @pack_weight_net, @pack_height, @pack_length, @pack_width, @pack_no, @invp_no, @qa_type, @order_flow_name, @client_no, @client_name, @crt_batch_no, @me_sn_pack_rmk01, @me_sn_pack_rmk02, @me_sn_pack_rmk03, @me_sn_pack_rmk04, @me_sn_pack_rmk05, @me_sn_pack_rmk06, @me_sn_pack_rmk07, @me_sn_pack_rmk08, @me_sn_pack_rmk09, @me_sn_pack_rmk10, @sn_print_times, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @lot_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_sn_pack SET 
+			sn_no = @sn_no, sn_status = @sn_status, sn_status_name = @sn_status_name, pack_type = @pack_type, pack_type_name = @pack_type_name, pack_rule = @pack_rule, pack_rule_name = @pack_rule_name, pack_qty_max = @pack_qty_max, pack_qty_used = @pack_qty_used, pack_is_closed = @pack_is_closed, pack_weight_gross = @pack_weight_gross, pack_weight_net = @pack_weight_net, pack_height = @pack_height, pack_length = @pack_length, pack_width = @pack_width, pack_no = @pack_no, invp_no = @invp_no, qa_type = @qa_type, order_flow_name = @order_flow_name, client_no = @client_no, client_name = @client_name, crt_batch_no = @crt_batch_no, me_sn_pack_rmk01 = @me_sn_pack_rmk01, me_sn_pack_rmk02 = @me_sn_pack_rmk02, me_sn_pack_rmk03 = @me_sn_pack_rmk03, me_sn_pack_rmk04 = @me_sn_pack_rmk04, me_sn_pack_rmk05 = @me_sn_pack_rmk05, me_sn_pack_rmk06 = @me_sn_pack_rmk06, me_sn_pack_rmk07 = @me_sn_pack_rmk07, me_sn_pack_rmk08 = @me_sn_pack_rmk08, me_sn_pack_rmk09 = @me_sn_pack_rmk09, me_sn_pack_rmk10 = @me_sn_pack_rmk10, sn_print_times = @sn_print_times, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, lot_no = @lot_no
+			WHERE me_sn_pack_id = @me_sn_pack_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_sn_pack
+			WHERE me_sn_pack_id = @me_sn_pack_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

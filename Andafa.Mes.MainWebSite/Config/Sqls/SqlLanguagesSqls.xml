@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sql_language_source, sql_language_year, sql_language_conformance, sql_language_integrity, sql_language_implementation, sql_language_binding_style, sql_language_programming_language
+			FROM sql_languages;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sql_language_source, sql_language_year, sql_language_conformance, sql_language_integrity, sql_language_implementation, sql_language_binding_style, sql_language_programming_language
+			FROM sql_languages;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sql_languages 
+			(sql_language_source, sql_language_year, sql_language_conformance, sql_language_integrity, sql_language_implementation, sql_language_binding_style, sql_language_programming_language)
+			VALUES (@sql_language_source, @sql_language_year, @sql_language_conformance, @sql_language_integrity, @sql_language_implementation, @sql_language_binding_style, @sql_language_programming_language);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sql_languages SET 
+			sql_language_source = @sql_language_source, sql_language_year = @sql_language_year, sql_language_conformance = @sql_language_conformance, sql_language_integrity = @sql_language_integrity, sql_language_implementation = @sql_language_implementation, sql_language_binding_style = @sql_language_binding_style, sql_language_programming_language = @sql_language_programming_language;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sql_languages;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

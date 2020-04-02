@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>登录</title>
+
+    <!-- 引入 图标 -->
+    <link rel="icon" href="~/Resource/icon/ico32.ico">
+    <!-- 引入 Bootstrap basic -->
+    <link href="~/Content/BaseStyle.css" rel="stylesheet" />
+    <!-- 引入 Bootstrap theme -->
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <!-- 引入 Bootstrap CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!-- 引入 自定义 CSS -->
+    <link href="~/Content/BaseStyle.css" rel="stylesheet" />
+    <link href="~/Content/SignIn.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="form-signin" action="/Home/Authority" method="post">
+            @*   *@
+            <img src="~/Resource/pic/apsabe.bmp" class="img-responsive" />
+            <h2 class="form-signin-heading">请登录</h2>
+            <label for="inputUserNo" class="sr-only">用户编号</label>
+            <input type="text" id="inputUserNo" class="form-control" placeholder="用户编号" name="loginTag" required autofocus>
+            <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="button" onclick="Login()">登录</button>
+            <div id="errorStatus" hidden="hidden"></div>
+        </div>
+    </div>
+
+    <!-- 引入 jQuery -->
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/MesScript/Jquery-min-334.js"></script>
+    <!-- 引入 自定义脚本 -->
+    <script src="~/Scripts/MesScript/Tools.js"></script>
+    <!-- 引入 Bootstrap JavaScript -->
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        ///bind enter key press
+        $('html').bind('keypress', function (e) {
+            if (e.keyCode == 13) {
+                $("#btnSubmit").click();
+            }
+        });
+        //login function
+        function Login() {
+            var workerNoVal = $('#inputUserNo').val();
+            if (workerNoVal == null || workerNoVal == '') {
+                ErrorShow("未输入用户");
+                return;
+            }
+            $.getJSON('/Home/Login', { worker_no: workerNoVal }, function (data) {
+                if (data == null) {
+                    ErrorShow("登录失败,用户不存在");
+                }
+                else {
+                    //IsSucceed = true,
+                    //ActionDirection = "None",
+                    //Worker_no = string.Empty,
+                    //Worker_name = string.Empty,
+                    //Msg = "登录失败"
+                    if (data.IsSucceed) {
+                        window.location.href = data.ActionDirection;
+                    }
+                    else {
+                        ErrorShow(data.Msg);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				zstatus, prog_rmk01, prog_rmk02, prog_no, prog_name, lang_str_id, prog_type, prog_cmd, prog_para, line_top, prog_icon, prog_remark, prog_tooltip, prog_location, prog_auto_load_data, prog_hide_search_form, prog_rmk03, prog_rmk04, prog_rmk05, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, grid_id, grid_layout, prog_help_file
+			FROM ss_prog;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				zstatus, prog_rmk01, prog_rmk02, prog_no, prog_name, lang_str_id, prog_type, prog_cmd, prog_para, line_top, prog_icon, prog_remark, prog_tooltip, prog_location, prog_auto_load_data, prog_hide_search_form, prog_rmk03, prog_rmk04, prog_rmk05, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, grid_id, grid_layout, prog_help_file
+			FROM ss_prog
+			WHERE prog_id = @prog_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_prog 
+			(zstatus, prog_rmk01, prog_rmk02, prog_no, prog_name, lang_str_id, prog_type, prog_cmd, prog_para, line_top, prog_icon, prog_remark, prog_tooltip, prog_location, prog_auto_load_data, prog_hide_search_form, prog_rmk03, prog_rmk04, prog_rmk05, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, grid_id, grid_layout, prog_help_file)
+			VALUES (@zstatus, @prog_rmk01, @prog_rmk02, @prog_no, @prog_name, @lang_str_id, @prog_type, @prog_cmd, @prog_para, @line_top, @prog_icon, @prog_remark, @prog_tooltip, @prog_location, @prog_auto_load_data, @prog_hide_search_form, @prog_rmk03, @prog_rmk04, @prog_rmk05, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @grid_id, @grid_layout, @prog_help_file);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_prog SET 
+			zstatus = @zstatus, prog_rmk01 = @prog_rmk01, prog_rmk02 = @prog_rmk02, prog_no = @prog_no, prog_name = @prog_name, lang_str_id = @lang_str_id, prog_type = @prog_type, prog_cmd = @prog_cmd, prog_para = @prog_para, line_top = @line_top, prog_icon = @prog_icon, prog_remark = @prog_remark, prog_tooltip = @prog_tooltip, prog_location = @prog_location, prog_auto_load_data = @prog_auto_load_data, prog_hide_search_form = @prog_hide_search_form, prog_rmk03 = @prog_rmk03, prog_rmk04 = @prog_rmk04, prog_rmk05 = @prog_rmk05, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, grid_id = @grid_id, grid_layout = @grid_layout, prog_help_file = @prog_help_file
+			WHERE prog_id = @prog_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_prog
+			WHERE prog_id = @prog_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

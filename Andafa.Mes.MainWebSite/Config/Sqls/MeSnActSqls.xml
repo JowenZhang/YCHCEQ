@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sn_no, sn_act_type_no, sn_act_type_name, sn_act_desc, me_sn_act_rmk01, me_sn_act_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_sn_act;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sn_no, sn_act_type_no, sn_act_type_name, sn_act_desc, me_sn_act_rmk01, me_sn_act_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_sn_act
+			WHERE me_sn_act_id = @me_sn_act_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_sn_act 
+			(sn_no, sn_act_type_no, sn_act_type_name, sn_act_desc, me_sn_act_rmk01, me_sn_act_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@sn_no, @sn_act_type_no, @sn_act_type_name, @sn_act_desc, @me_sn_act_rmk01, @me_sn_act_rmk02, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_sn_act SET 
+			sn_no = @sn_no, sn_act_type_no = @sn_act_type_no, sn_act_type_name = @sn_act_type_name, sn_act_desc = @sn_act_desc, me_sn_act_rmk01 = @me_sn_act_rmk01, me_sn_act_rmk02 = @me_sn_act_rmk02, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE me_sn_act_id = @me_sn_act_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_sn_act
+			WHERE me_sn_act_id = @me_sn_act_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

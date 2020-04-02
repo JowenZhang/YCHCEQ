@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ea_mtn_h_id, ea_peijian_no, ea_peijian_qty, ea_mtn_peijian_rmk01, ea_mtn_peijian_rmk02, ea_mtn_peijian_rmk03, ea_mtn_peijian_rmk04, ea_mtn_peijian_rmk05, ea_mtn_peijian_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, mtn_peijian_qty
+			FROM ea_mtn_peijian;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ea_mtn_h_id, ea_peijian_no, ea_peijian_qty, ea_mtn_peijian_rmk01, ea_mtn_peijian_rmk02, ea_mtn_peijian_rmk03, ea_mtn_peijian_rmk04, ea_mtn_peijian_rmk05, ea_mtn_peijian_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, mtn_peijian_qty
+			FROM ea_mtn_peijian
+			WHERE ea_mtn_peijian_id = @ea_mtn_peijian_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ea_mtn_peijian 
+			(ea_mtn_h_id, ea_peijian_no, ea_peijian_qty, ea_mtn_peijian_rmk01, ea_mtn_peijian_rmk02, ea_mtn_peijian_rmk03, ea_mtn_peijian_rmk04, ea_mtn_peijian_rmk05, ea_mtn_peijian_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, mtn_peijian_qty)
+			VALUES (@ea_mtn_h_id, @ea_peijian_no, @ea_peijian_qty, @ea_mtn_peijian_rmk01, @ea_mtn_peijian_rmk02, @ea_mtn_peijian_rmk03, @ea_mtn_peijian_rmk04, @ea_mtn_peijian_rmk05, @ea_mtn_peijian_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @mtn_peijian_qty);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ea_mtn_peijian SET 
+			ea_mtn_h_id = @ea_mtn_h_id, ea_peijian_no = @ea_peijian_no, ea_peijian_qty = @ea_peijian_qty, ea_mtn_peijian_rmk01 = @ea_mtn_peijian_rmk01, ea_mtn_peijian_rmk02 = @ea_mtn_peijian_rmk02, ea_mtn_peijian_rmk03 = @ea_mtn_peijian_rmk03, ea_mtn_peijian_rmk04 = @ea_mtn_peijian_rmk04, ea_mtn_peijian_rmk05 = @ea_mtn_peijian_rmk05, ea_mtn_peijian_rmk06 = @ea_mtn_peijian_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, mtn_peijian_qty = @mtn_peijian_qty
+			WHERE ea_mtn_peijian_id = @ea_mtn_peijian_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ea_mtn_peijian
+			WHERE ea_mtn_peijian_id = @ea_mtn_peijian_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

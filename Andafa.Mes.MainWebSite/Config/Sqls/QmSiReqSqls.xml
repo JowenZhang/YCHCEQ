@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				si_req_status, factory_id, factory_no, factory_name, si_lot_move_type, si_lot_move_type_name, part_id, part_no, part_name, part_spec, part_idt, order_type, order_type_name, order_id, order_no, order_qty, supplier_id, supplier_no, supplier_name, si_type, si_type_name, si_std_type, si_std_type_name, si_std_no, si_std_name, si_req_qty, qm_si_req_rmk01, qm_si_req_rmk02, qm_si_req_rmk03, qm_si_req_rmk04, qm_si_req_rmk05, qm_si_req_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, io_is_sucessed, io_last_time, io_times
+			FROM qm_si_req;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				si_req_status, factory_id, factory_no, factory_name, si_lot_move_type, si_lot_move_type_name, part_id, part_no, part_name, part_spec, part_idt, order_type, order_type_name, order_id, order_no, order_qty, supplier_id, supplier_no, supplier_name, si_type, si_type_name, si_std_type, si_std_type_name, si_std_no, si_std_name, si_req_qty, qm_si_req_rmk01, qm_si_req_rmk02, qm_si_req_rmk03, qm_si_req_rmk04, qm_si_req_rmk05, qm_si_req_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, io_is_sucessed, io_last_time, io_times
+			FROM qm_si_req
+			WHERE qm_si_req_id = @qm_si_req_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO qm_si_req 
+			(si_req_status, factory_id, factory_no, factory_name, si_lot_move_type, si_lot_move_type_name, part_id, part_no, part_name, part_spec, part_idt, order_type, order_type_name, order_id, order_no, order_qty, supplier_id, supplier_no, supplier_name, si_type, si_type_name, si_std_type, si_std_type_name, si_std_no, si_std_name, si_req_qty, qm_si_req_rmk01, qm_si_req_rmk02, qm_si_req_rmk03, qm_si_req_rmk04, qm_si_req_rmk05, qm_si_req_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, io_is_sucessed, io_last_time, io_times)
+			VALUES (@si_req_status, @factory_id, @factory_no, @factory_name, @si_lot_move_type, @si_lot_move_type_name, @part_id, @part_no, @part_name, @part_spec, @part_idt, @order_type, @order_type_name, @order_id, @order_no, @order_qty, @supplier_id, @supplier_no, @supplier_name, @si_type, @si_type_name, @si_std_type, @si_std_type_name, @si_std_no, @si_std_name, @si_req_qty, @qm_si_req_rmk01, @qm_si_req_rmk02, @qm_si_req_rmk03, @qm_si_req_rmk04, @qm_si_req_rmk05, @qm_si_req_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @io_is_sucessed, @io_last_time, @io_times);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE qm_si_req SET 
+			si_req_status = @si_req_status, factory_id = @factory_id, factory_no = @factory_no, factory_name = @factory_name, si_lot_move_type = @si_lot_move_type, si_lot_move_type_name = @si_lot_move_type_name, part_id = @part_id, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, order_type = @order_type, order_type_name = @order_type_name, order_id = @order_id, order_no = @order_no, order_qty = @order_qty, supplier_id = @supplier_id, supplier_no = @supplier_no, supplier_name = @supplier_name, si_type = @si_type, si_type_name = @si_type_name, si_std_type = @si_std_type, si_std_type_name = @si_std_type_name, si_std_no = @si_std_no, si_std_name = @si_std_name, si_req_qty = @si_req_qty, qm_si_req_rmk01 = @qm_si_req_rmk01, qm_si_req_rmk02 = @qm_si_req_rmk02, qm_si_req_rmk03 = @qm_si_req_rmk03, qm_si_req_rmk04 = @qm_si_req_rmk04, qm_si_req_rmk05 = @qm_si_req_rmk05, qm_si_req_rmk06 = @qm_si_req_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, io_is_sucessed = @io_is_sucessed, io_last_time = @io_last_time, io_times = @io_times
+			WHERE qm_si_req_id = @qm_si_req_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM qm_si_req
+			WHERE qm_si_req_id = @qm_si_req_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

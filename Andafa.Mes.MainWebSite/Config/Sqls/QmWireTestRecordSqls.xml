@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				test_record_no, test_record_status_no, serial_no, me_sn_part_id, trade_no, part_no, part_name, part_spec, part_lot_no, mo_no, refrence_stadard, document_no, document_desc, use_dept_name, test_type, sample_delievry_worker_no, sample_delievry_worker_name, welding_type, welding_airdot_value, welding_hole_value, welding_residue, welding_dust, electric_arc_stability, splash_situation, welding_seam_surface, welding_residue_fluidity, welding_wire_feed, evaluate_result, welding_technique_no, welding_technique_name, weiding_date, confirm_egineer_no, confirm_egineer_name, confirm_date, test_record_rmk01, test_record_rmk02, test_record_rmk03, test_record_rmk04, test_record_rmk05, test_record_rmk06, test_record_rmk07, test_record_rmk08, test_record_rmk09, test_record_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_wire_test_record;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				test_record_no, test_record_status_no, serial_no, me_sn_part_id, trade_no, part_no, part_name, part_spec, part_lot_no, mo_no, refrence_stadard, document_no, document_desc, use_dept_name, test_type, sample_delievry_worker_no, sample_delievry_worker_name, welding_type, welding_airdot_value, welding_hole_value, welding_residue, welding_dust, electric_arc_stability, splash_situation, welding_seam_surface, welding_residue_fluidity, welding_wire_feed, evaluate_result, welding_technique_no, welding_technique_name, weiding_date, confirm_egineer_no, confirm_egineer_name, confirm_date, test_record_rmk01, test_record_rmk02, test_record_rmk03, test_record_rmk04, test_record_rmk05, test_record_rmk06, test_record_rmk07, test_record_rmk08, test_record_rmk09, test_record_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_wire_test_record
+			WHERE test_record_id = @test_record_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO qm_wire_test_record 
+			(test_record_no, test_record_status_no, serial_no, me_sn_part_id, trade_no, part_no, part_name, part_spec, part_lot_no, mo_no, refrence_stadard, document_no, document_desc, use_dept_name, test_type, sample_delievry_worker_no, sample_delievry_worker_name, welding_type, welding_airdot_value, welding_hole_value, welding_residue, welding_dust, electric_arc_stability, splash_situation, welding_seam_surface, welding_residue_fluidity, welding_wire_feed, evaluate_result, welding_technique_no, welding_technique_name, weiding_date, confirm_egineer_no, confirm_egineer_name, confirm_date, test_record_rmk01, test_record_rmk02, test_record_rmk03, test_record_rmk04, test_record_rmk05, test_record_rmk06, test_record_rmk07, test_record_rmk08, test_record_rmk09, test_record_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@test_record_no, @test_record_status_no, @serial_no, @me_sn_part_id, @trade_no, @part_no, @part_name, @part_spec, @part_lot_no, @mo_no, @refrence_stadard, @document_no, @document_desc, @use_dept_name, @test_type, @sample_delievry_worker_no, @sample_delievry_worker_name, @welding_type, @welding_airdot_value, @welding_hole_value, @welding_residue, @welding_dust, @electric_arc_stability, @splash_situation, @welding_seam_surface, @welding_residue_fluidity, @welding_wire_feed, @evaluate_result, @welding_technique_no, @welding_technique_name, @weiding_date, @confirm_egineer_no, @confirm_egineer_name, @confirm_date, @test_record_rmk01, @test_record_rmk02, @test_record_rmk03, @test_record_rmk04, @test_record_rmk05, @test_record_rmk06, @test_record_rmk07, @test_record_rmk08, @test_record_rmk09, @test_record_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE qm_wire_test_record SET 
+			test_record_no = @test_record_no, test_record_status_no = @test_record_status_no, serial_no = @serial_no, me_sn_part_id = @me_sn_part_id, trade_no = @trade_no, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_lot_no = @part_lot_no, mo_no = @mo_no, refrence_stadard = @refrence_stadard, document_no = @document_no, document_desc = @document_desc, use_dept_name = @use_dept_name, test_type = @test_type, sample_delievry_worker_no = @sample_delievry_worker_no, sample_delievry_worker_name = @sample_delievry_worker_name, welding_type = @welding_type, welding_airdot_value = @welding_airdot_value, welding_hole_value = @welding_hole_value, welding_residue = @welding_residue, welding_dust = @welding_dust, electric_arc_stability = @electric_arc_stability, splash_situation = @splash_situation, welding_seam_surface = @welding_seam_surface, welding_residue_fluidity = @welding_residue_fluidity, welding_wire_feed = @welding_wire_feed, evaluate_result = @evaluate_result, welding_technique_no = @welding_technique_no, welding_technique_name = @welding_technique_name, weiding_date = @weiding_date, confirm_egineer_no = @confirm_egineer_no, confirm_egineer_name = @confirm_egineer_name, confirm_date = @confirm_date, test_record_rmk01 = @test_record_rmk01, test_record_rmk02 = @test_record_rmk02, test_record_rmk03 = @test_record_rmk03, test_record_rmk04 = @test_record_rmk04, test_record_rmk05 = @test_record_rmk05, test_record_rmk06 = @test_record_rmk06, test_record_rmk07 = @test_record_rmk07, test_record_rmk08 = @test_record_rmk08, test_record_rmk09 = @test_record_rmk09, test_record_rmk10 = @test_record_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE test_record_id = @test_record_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM qm_wire_test_record
+			WHERE test_record_id = @test_record_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

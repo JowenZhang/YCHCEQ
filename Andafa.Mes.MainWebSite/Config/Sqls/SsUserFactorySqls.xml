@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				factory_no, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM ss_user_factory;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				factory_no, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM ss_user_factory
+			WHERE user_no = @user_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_user_factory 
+			(factory_no, crt_time, crt_user, crt_user_no, crt_user_name, crt_host)
+			VALUES (@factory_no, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_user_factory SET 
+			factory_no = @factory_no, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host
+			WHERE user_no = @user_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_user_factory
+			WHERE user_no = @user_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

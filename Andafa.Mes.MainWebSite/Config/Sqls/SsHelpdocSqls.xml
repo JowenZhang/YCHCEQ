@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				helpdoc_status, helpdoc_type, helpdoc_type2, helpdoc_no, helpdoc_name, helpdoc_rmk1, helpdoc_rmk2, helpdoc_rmk3, helpdoc_rmk4, helpdoc_rmk5, helpdoc_rmk6, helpdoc_has_upload, helpdoc_upload_user, helpdoc_upload_user_no, helpdoc_upload_user_name, helpdoc_upload_host, helpdoc_upload_time, helpdoc_play_times, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ss_helpdoc;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				helpdoc_status, helpdoc_type, helpdoc_type2, helpdoc_no, helpdoc_name, helpdoc_rmk1, helpdoc_rmk2, helpdoc_rmk3, helpdoc_rmk4, helpdoc_rmk5, helpdoc_rmk6, helpdoc_has_upload, helpdoc_upload_user, helpdoc_upload_user_no, helpdoc_upload_user_name, helpdoc_upload_host, helpdoc_upload_time, helpdoc_play_times, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ss_helpdoc
+			WHERE helpdoc_id = @helpdoc_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_helpdoc 
+			(helpdoc_status, helpdoc_type, helpdoc_type2, helpdoc_no, helpdoc_name, helpdoc_rmk1, helpdoc_rmk2, helpdoc_rmk3, helpdoc_rmk4, helpdoc_rmk5, helpdoc_rmk6, helpdoc_has_upload, helpdoc_upload_user, helpdoc_upload_user_no, helpdoc_upload_user_name, helpdoc_upload_host, helpdoc_upload_time, helpdoc_play_times, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time)
+			VALUES (@helpdoc_status, @helpdoc_type, @helpdoc_type2, @helpdoc_no, @helpdoc_name, @helpdoc_rmk1, @helpdoc_rmk2, @helpdoc_rmk3, @helpdoc_rmk4, @helpdoc_rmk5, @helpdoc_rmk6, @helpdoc_has_upload, @helpdoc_upload_user, @helpdoc_upload_user_no, @helpdoc_upload_user_name, @helpdoc_upload_host, @helpdoc_upload_time, @helpdoc_play_times, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_helpdoc SET 
+			helpdoc_status = @helpdoc_status, helpdoc_type = @helpdoc_type, helpdoc_type2 = @helpdoc_type2, helpdoc_no = @helpdoc_no, helpdoc_name = @helpdoc_name, helpdoc_rmk1 = @helpdoc_rmk1, helpdoc_rmk2 = @helpdoc_rmk2, helpdoc_rmk3 = @helpdoc_rmk3, helpdoc_rmk4 = @helpdoc_rmk4, helpdoc_rmk5 = @helpdoc_rmk5, helpdoc_rmk6 = @helpdoc_rmk6, helpdoc_has_upload = @helpdoc_has_upload, helpdoc_upload_user = @helpdoc_upload_user, helpdoc_upload_user_no = @helpdoc_upload_user_no, helpdoc_upload_user_name = @helpdoc_upload_user_name, helpdoc_upload_host = @helpdoc_upload_host, helpdoc_upload_time = @helpdoc_upload_time, helpdoc_play_times = @helpdoc_play_times, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time
+			WHERE helpdoc_id = @helpdoc_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_helpdoc
+			WHERE helpdoc_id = @helpdoc_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

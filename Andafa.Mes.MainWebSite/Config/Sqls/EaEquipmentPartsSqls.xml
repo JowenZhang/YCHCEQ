@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ea_id, ea_equipment_parts_no, ea_equipment_parts_name, ea_replacement_date, ea_plan_replacement_date, is_overdue_extended, ea_equipment_parts_rmk01, ea_equipment_parts_rmk02, ea_equipment_parts_rmk03, ea_equipment_parts_rmk04, ea_equipment_parts_rmk05, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ea_equipment_parts;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ea_id, ea_equipment_parts_no, ea_equipment_parts_name, ea_replacement_date, ea_plan_replacement_date, is_overdue_extended, ea_equipment_parts_rmk01, ea_equipment_parts_rmk02, ea_equipment_parts_rmk03, ea_equipment_parts_rmk04, ea_equipment_parts_rmk05, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ea_equipment_parts
+			WHERE ea_equipment_parts_id = @ea_equipment_parts_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ea_equipment_parts 
+			(ea_id, ea_equipment_parts_no, ea_equipment_parts_name, ea_replacement_date, ea_plan_replacement_date, is_overdue_extended, ea_equipment_parts_rmk01, ea_equipment_parts_rmk02, ea_equipment_parts_rmk03, ea_equipment_parts_rmk04, ea_equipment_parts_rmk05, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@ea_id, @ea_equipment_parts_no, @ea_equipment_parts_name, @ea_replacement_date, @ea_plan_replacement_date, @is_overdue_extended, @ea_equipment_parts_rmk01, @ea_equipment_parts_rmk02, @ea_equipment_parts_rmk03, @ea_equipment_parts_rmk04, @ea_equipment_parts_rmk05, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ea_equipment_parts SET 
+			ea_id = @ea_id, ea_equipment_parts_no = @ea_equipment_parts_no, ea_equipment_parts_name = @ea_equipment_parts_name, ea_replacement_date = @ea_replacement_date, ea_plan_replacement_date = @ea_plan_replacement_date, is_overdue_extended = @is_overdue_extended, ea_equipment_parts_rmk01 = @ea_equipment_parts_rmk01, ea_equipment_parts_rmk02 = @ea_equipment_parts_rmk02, ea_equipment_parts_rmk03 = @ea_equipment_parts_rmk03, ea_equipment_parts_rmk04 = @ea_equipment_parts_rmk04, ea_equipment_parts_rmk05 = @ea_equipment_parts_rmk05, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE ea_equipment_parts_id = @ea_equipment_parts_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ea_equipment_parts
+			WHERE ea_equipment_parts_id = @ea_equipment_parts_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

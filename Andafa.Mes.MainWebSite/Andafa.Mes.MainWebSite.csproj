@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF2EBE12-D7F8-45A8-A57C-4AD1B0BCB79E}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Andafa.Mes.MainWebSite</RootNamespace>
+    <AssemblyName>Andafa.Mes.MainWebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Andafa.Mes.MainWebSite.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Andafa.Mes.Bll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Andafa.Mes.Bll\Output\Andafa.Mes.Bll.dll</HintPath>
+    </Reference>
+    <Reference Include="Andafa.Mes.Common">
+      <HintPath>..\Andafa.Mes.Common\Output\Andafa.Mes.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Andafa.Mes.Model">
+      <HintPath>..\Andafa.Mes.Model\Output\Andafa.Mes.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdoController.cs" />
+    <Compile Include="Controllers\BasicController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Mes_ua_submitController.cs" />
+    <Compile Include="Controllers\Me_workerController.cs" />
+    <Compile Include="Controllers\OperatorController.cs" />
+    <Compile Include="Filters\ValidUserFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ControllerTool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Config\DbConfig.xml" />
+    <Content Include="Config\Sqls\CoCenterSqls.xml" />
+    <Content Include="Config\Sqls\CqCostSqls.xml" />
+    <Content Include="Config\Sqls\CqMtrSqls.xml" />
+    <Content Include="Config\Sqls\CqQuoteBSqls.xml" />
+    <Content Include="Config\Sqls\CqQuoteHSqls.xml" />
+    <Content Include="Config\Sqls\CqRmbSqls.xml" />
+    <Content Include="Config\Sqls\CqRmhSqls.xml" />
+    <Content Include="Config\Sqls\CrAmountIoSqls.xml" />
+    <Content Include="Config\Sqls\CrClientSqls.xml" />
+    <Content Include="Config\Sqls\CrClientUserSqls.xml" />
+    <Content Include="Config\Sqls\CrClientWkpWkcSqls.xml" />
+    <Content Include="Config\Sqls\CrContactsSqls.xml" />
+    <Content Include="Config\Sqls\CrDevReqSqls.xml" />
+    <Content Include="Config\Sqls\CrDlvBSqls.xml" />
+    <Content Include="Config\Sqls\CrDlvBTmpSqls.xml" />
+    <Content Include="Config\Sqls\CrDlvHisSqls.xml" />
+    <Content Include="Config\Sqls\CrDlvHSqls.xml" />
+    <Content Include="Config\Sqls\CrDlvSnPartSqls.xml" />
+    <Content Include="Config\Sqls\CrDlvSnSqls.xml" />
+    <Content Include="Config\Sqls\CrDoExtSqls.xml" />
+    <Content Include="Config\Sqls\CrDoSqls.xml" />
+    <Content Include="Config\Sqls\CrFollowSqls.xml" />
+    <Content Include="Config\Sqls\CrPartMapImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\CrPartMapSqls.xml" />
+    <Content Include="Config\Sqls\CrPartPackSqls.xml" />
+    <Content Include="Config\Sqls\CrProjectResourceSqls.xml" />
+    <Content Include="Config\Sqls\CrProjectSqls.xml" />
+    <Content Include="Config\Sqls\CrProjectTaskResourceSqls.xml" />
+    <Content Include="Config\Sqls\CrProjectTaskSqls.xml" />
+    <Content Include="Config\Sqls\CrQuoteBSqls.xml" />
+    <Content Include="Config\Sqls\CrQuoteHSqls.xml" />
+    <Content Include="Config\Sqls\CrRefundSqls.xml" />
+    <Content Include="Config\Sqls\CrRtnBSqls.xml" />
+    <Content Include="Config\Sqls\CrRtnHSqls.xml" />
+    <Content Include="Config\Sqls\CrRtnSnPartSqls.xml" />
+    <Content Include="Config\Sqls\CrRtnSnSqls.xml" />
+    <Content Include="Config\Sqls\CrSfBExtSqls.xml" />
+    <Content Include="Config\Sqls\CrSfBSqls.xml" />
+    <Content Include="Config\Sqls\CrSfHSqls.xml" />
+    <Content Include="Config\Sqls\CrSoBbSqls.xml" />
+    <Content Include="Config\Sqls\CrSoBExtSqls.xml" />
+    <Content Include="Config\Sqls\CrSoBSqls.xml" />
+    <Content Include="Config\Sqls\CrSoHExtSqls.xml" />
+    <Content Include="Config\Sqls\CrSoHSqls.xml" />
+    <Content Include="Config\Sqls\CrTransCalendarSqls.xml" />
+    <Content Include="Config\Sqls\CrTransLocationSqls.xml" />
+    <Content Include="Config\Sqls\CrTransMeansSqls.xml" />
+    <Content Include="Config\Sqls\CrTransPartSqls.xml" />
+    <Content Include="Config\Sqls\CrTransTaskSqls.xml" />
+    <Content Include="Config\Sqls\DemoBSqls.xml" />
+    <Content Include="Config\Sqls\DemoCSqls.xml" />
+    <Content Include="Config\Sqls\DemoHSqls.xml" />
+    <Content Include="Config\Sqls\DmFileActSqls.xml" />
+    <Content Include="Config\Sqls\DmFileKeywordSqls.xml" />
+    <Content Include="Config\Sqls\DmFileLastSqls.xml" />
+    <Content Include="Config\Sqls\DmFileLinkSqls.xml" />
+    <Content Include="Config\Sqls\DmFileReleaseSqls.xml" />
+    <Content Include="Config\Sqls\DmFileSqls.xml" />
+    <Content Include="Config\Sqls\DmFolderRightsSqls.xml" />
+    <Content Include="Config\Sqls\DmFolderSqls.xml" />
+    <Content Include="Config\Sqls\EaCheckItemBSqls.xml" />
+    <Content Include="Config\Sqls\EaCheckItemHSqls.xml" />
+    <Content Include="Config\Sqls\EaCheckItemMSqls.xml" />
+    <Content Include="Config\Sqls\EaCheckLotBSqls.xml" />
+    <Content Include="Config\Sqls\EaCheckLotHSqls.xml" />
+    <Content Include="Config\Sqls\EaCheckPlanSqls.xml" />
+    <Content Include="Config\Sqls\EaEquipmentPartsSqls.xml" />
+    <Content Include="Config\Sqls\EaExceptionSqls.xml" />
+    <Content Include="Config\Sqls\EaImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\EaMatKbHSqls.xml" />
+    <Content Include="Config\Sqls\EaMtnHSqls.xml" />
+    <Content Include="Config\Sqls\EaMtnPeijianSqls.xml" />
+    <Content Include="Config\Sqls\EaMtnPlanSqls.xml" />
+    <Content Include="Config\Sqls\EaParaBSqls.xml" />
+    <Content Include="Config\Sqls\EaParaEaSqls.xml" />
+    <Content Include="Config\Sqls\EaParaGroupSqls.xml" />
+    <Content Include="Config\Sqls\EaParaHSqls.xml" />
+    <Content Include="Config\Sqls\EaParaPartSqls.xml" />
+    <Content Include="Config\Sqls\EaParaWkpSqls.xml" />
+    <Content Include="Config\Sqls\EaSqls.xml" />
+    <Content Include="Config\Sqls\FiIoSqls.xml" />
+    <Content Include="Config\Sqls\InvQtySqls.xml" />
+    <Content Include="Config\Sqls\InvQtyTmpSqls.xml" />
+    <Content Include="Config\Sqls\JsonrowSqls.xml" />
+    <Content Include="Config\Sqls\JsonvarSqls.xml" />
+    <Content Include="Config\Sqls\KingCalendarSqls.xml" />
+    <Content Include="Config\Sqls\KingEquipmentSqls.xml" />
+    <Content Include="Config\Sqls\KingMoSqls.xml" />
+    <Content Include="Config\Sqls\KingOperDispatchSqls.xml" />
+    <Content Include="Config\Sqls\KingOperSqls.xml" />
+    <Content Include="Config\Sqls\KingShiftSqls.xml" />
+    <Content Include="Config\Sqls\MeContainerSetSqls.xml" />
+    <Content Include="Config\Sqls\MeDaAct2Sqls.xml" />
+    <Content Include="Config\Sqls\MeDaActSqls.xml" />
+    <Content Include="Config\Sqls\MeDaActWkpSqls.xml" />
+    <Content Include="Config\Sqls\MeDaActWorkerSqls.xml" />
+    <Content Include="Config\Sqls\MeDaAugrpActSqls.xml" />
+    <Content Include="Config\Sqls\MeDaAugrpSqls.xml" />
+    <Content Include="Config\Sqls\MeDaAugrpWorkerSqls.xml" />
+    <Content Include="Config\Sqls\MeDaCountSqls.xml" />
+    <Content Include="Config\Sqls\MeDaOpcSqls.xml" />
+    <Content Include="Config\Sqls\MeDaOpcWriteSqls.xml" />
+    <Content Include="Config\Sqls\MeDaQaSqls.xml" />
+    <Content Include="Config\Sqls\MeDaRawSqls.xml" />
+    <Content Include="Config\Sqls\MeDaSwitchSqls.xml" />
+    <Content Include="Config\Sqls\MeDtImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\MeDtLastSqls.xml" />
+    <Content Include="Config\Sqls\MeDtSqls.xml" />
+    <Content Include="Config\Sqls\MeFbChildInfoSqls.xml" />
+    <Content Include="Config\Sqls\MeFbQaSqls.xml" />
+    <Content Include="Config\Sqls\MeFbSnSqls.xml" />
+    <Content Include="Config\Sqls\MeFbSqls.xml" />
+    <Content Include="Config\Sqls\MeFinishIoSqls.xml" />
+    <Content Include="Config\Sqls\MeLotPartSqls.xml" />
+    <Content Include="Config\Sqls\MeLotSqls.xml" />
+    <Content Include="Config\Sqls\MeMrtCallHSqls.xml" />
+    <Content Include="Config\Sqls\MeMtrCallHSqls.xml" />
+    <Content Include="Config\Sqls\MeMtrScrapSqls.xml" />
+    <Content Include="Config\Sqls\MeMtrUseBSqls.xml" />
+    <Content Include="Config\Sqls\MeMtrUseHSqls.xml" />
+    <Content Include="Config\Sqls\MeMtrUseSnPartSqls.xml" />
+    <Content Include="Config\Sqls\MeMtrUseSnSqls.xml" />
+    <Content Include="Config\Sqls\MePadSqls.xml" />
+    <Content Include="Config\Sqls\MePadWkcSqls.xml" />
+    <Content Include="Config\Sqls\MeQaCauseImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\MeQaCauseSqls.xml" />
+    <Content Include="Config\Sqls\MeReportworkSqls.xml" />
+    <Content Include="Config\Sqls\MeRmbParaSqls.xml" />
+    <Content Include="Config\Sqls\MesFbTraceSqls.xml" />
+    <Content Include="Config\Sqls\MeSkillSqls.xml" />
+    <Content Include="Config\Sqls\MeSnActSqls.xml" />
+    <Content Include="Config\Sqls\MeSnAllOtherSqls.xml" />
+    <Content Include="Config\Sqls\MeSnAllSqls.xml" />
+    <Content Include="Config\Sqls\MeSnNoImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\MeSnNoSqls.xml" />
+    <Content Include="Config\Sqls\MesNoNextSqls.xml" />
+    <Content Include="Config\Sqls\MesNoRecordSqls.xml" />
+    <Content Include="Config\Sqls\MeSnPackSqls.xml" />
+    <Content Include="Config\Sqls\MeSnPartInfoSqls.xml" />
+    <Content Include="Config\Sqls\MeSnPartSqls.xml" />
+    <Content Include="Config\Sqls\MeSnRepairSqls.xml" />
+    <Content Include="Config\Sqls\MeSnTestSqls.xml" />
+    <Content Include="Config\Sqls\MesSubmitLastRawSqls.xml" />
+    <Content Include="Config\Sqls\MesSubmitNgSqls.xml" />
+    <Content Include="Config\Sqls\MesUaRecvSqls.xml" />
+    <Content Include="Config\Sqls\MesUaSubmitAutoSqls.xml" />
+    <Content Include="Config\Sqls\MesUaSubmitManuSqls.xml" />
+    <Content Include="Config\Sqls\MesUaSubmitSqls.xml" />
+    <Content Include="Config\Sqls\MesWkaMoSqls.xml" />
+    <Content Include="Config\Sqls\MesWorkerWkcSqls.xml" />
+    <Content Include="Config\Sqls\MeTaskSqls.xml" />
+    <Content Include="Config\Sqls\MeTaskToolsSqls.xml" />
+    <Content Include="Config\Sqls\MeTaskWorkerSqls.xml" />
+    <Content Include="Config\Sqls\MeToolsLoadSqls.xml" />
+    <Content Include="Config\Sqls\MeToolsMoveSqls.xml" />
+    <Content Include="Config\Sqls\MeToolsMtnPlanSqls.xml" />
+    <Content Include="Config\Sqls\MeToolsMtnRstSqls.xml" />
+    <Content Include="Config\Sqls\MeWeightSqls.xml" />
+    <Content Include="Config\Sqls\MeWipDispatchSqls.xml" />
+    <Content Include="Config\Sqls\MeWipIoSqls.xml" />
+    <Content Include="Config\Sqls\MeWipMoveSqls.xml" />
+    <Content Include="Config\Sqls\MeWipScrapSqls.xml" />
+    <Content Include="Config\Sqls\MeWipTransSqls.xml" />
+    <Content Include="Config\Sqls\MeWkcCallSqls.xml" />
+    <Content Include="Config\Sqls\MeWkcCauseSqls.xml" />
+    <Content Include="Config\Sqls\MeWkcLastSqls.xml" />
+    <Content Include="Config\Sqls\MeWkcPauseSqls.xml" />
+    <Content Include="Config\Sqls\MeWknTableSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerClockinoutSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerMeritpayMonthSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerMeritpaySqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerPartakeSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerPartakeTmpSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerReworkSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerSkillSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerTmpSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkerWktSqls.xml" />
+    <Content Include="Config\Sqls\MeWorkTypeSqls.xml" />
+    <Content Include="Config\Sqls\MoApsSqls.xml" />
+    <Content Include="Config\Sqls\MoBomMtrSqls.xml" />
+    <Content Include="Config\Sqls\MoCostPunishSqls.xml" />
+    <Content Include="Config\Sqls\MoCostSqls.xml" />
+    <Content Include="Config\Sqls\MoExtSqls.xml" />
+    <Content Include="Config\Sqls\MoFbSqls.xml" />
+    <Content Include="Config\Sqls\MoFinishTotalSqls.xml" />
+    <Content Include="Config\Sqls\MoMtrTotalSqls.xml" />
+    <Content Include="Config\Sqls\MoqtyintSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbApsHisSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbApsSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbCostSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbEaParaBSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbEaParaSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbFbSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbMtrSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbMtrsSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbSubsSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbToolsSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbToolsSubsSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbWkcgSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbWkcSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbWksMtrSqls.xml" />
+    <Content Include="Config\Sqls\MoRmbWksSqls.xml" />
+    <Content Include="Config\Sqls\MoSqls.xml" />
+    <Content Include="Config\Sqls\MoTmp2Sqls.xml" />
+    <Content Include="Config\Sqls\MoTmpSqls.xml" />
+    <Content Include="Config\Sqls\MyCycleSqls.xml" />
+    <Content Include="Config\Sqls\MyFollowSqls.xml" />
+    <Content Include="Config\Sqls\MyPlanKeyrstSqls.xml" />
+    <Content Include="Config\Sqls\MyPlanSqls.xml" />
+    <Content Include="Config\Sqls\MyPlanStdSqls.xml" />
+    <Content Include="Config\Sqls\OperatorSqls.xml" />
+    <Content Include="Config\Sqls\PcRstHSqls.xml" />
+    <Content Include="Config\Sqls\PcRstJobSqls.xml" />
+    <Content Include="Config\Sqls\PcRstToolsSqls.xml" />
+    <Content Include="Config\Sqls\PcRstWkcSqls.xml" />
+    <Content Include="Config\Sqls\PcWkcValidWktSqls.xml" />
+    <Content Include="Config\Sqls\PdJobSqls.xml" />
+    <Content Include="Config\Sqls\PdPartImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdPartLangSqls.xml" />
+    <Content Include="Config\Sqls\PdPartPackSqls.xml" />
+    <Content Include="Config\Sqls\PdPartParaSqls.xml" />
+    <Content Include="Config\Sqls\PdPartSqls.xml" />
+    <Content Include="Config\Sqls\PdPartTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdPartTwinSqls.xml" />
+    <Content Include="Config\Sqls\PdPartUnitSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbMtrPreloadImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbMtrPreloadSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbMtrSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbMtrsSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbParaSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbSubsSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbToolsSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbToolsSubsSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbUpdateRuleBSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbUpdateRuleSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWkcgParaSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWkcgSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWkcgWkaMtrSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWkcgWkaSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWkcgWkaToolsSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWkcSqls.xml" />
+    <Content Include="Config\Sqls\PdRmbWksSqls.xml" />
+    <Content Include="Config\Sqls\PdRmhImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdRmhRuleSqls.xml" />
+    <Content Include="Config\Sqls\PdRmhSqls.xml" />
+    <Content Include="Config\Sqls\PdToolsImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdToolsSqls.xml" />
+    <Content Include="Config\Sqls\PdToolsSubsSqls.xml" />
+    <Content Include="Config\Sqls\PdToolsTwinSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcerpSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcJobSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcJobWorkerSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcSubsSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcWkaImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcWkaSqls.xml" />
+    <Content Include="Config\Sqls\PdWkcWorkerSqls.xml" />
+    <Content Include="Config\Sqls\PdWklSqls.xml" />
+    <Content Include="Config\Sqls\PdWklWkcSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpgSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpgWkpSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpOptimizeRuleSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpProgSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpQaCauseSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpSqls.xml" />
+    <Content Include="Config\Sqls\PdWkpWkcSqls.xml" />
+    <Content Include="Config\Sqls\PdWksbomBSqls.xml" />
+    <Content Include="Config\Sqls\PdWksbomHSqls.xml" />
+    <Content Include="Config\Sqls\PdWksbomMSqls.xml" />
+    <Content Include="Config\Sqls\PdWksBomSqls.xml" />
+    <Content Include="Config\Sqls\PdWksEaParaSqls.xml" />
+    <Content Include="Config\Sqls\PdWksHSqls.xml" />
+    <Content Include="Config\Sqls\PdWksSqls.xml" />
+    <Content Include="Config\Sqls\PdWksToolSqls.xml" />
+    <Content Include="Config\Sqls\PdWksWkaSqls.xml" />
+    <Content Include="Config\Sqls\ProcTempSqls.xml" />
+    <Content Include="Config\Sqls\PsCalendar1Sqls.xml" />
+    <Content Include="Config\Sqls\PsCalendar2Sqls.xml" />
+    <Content Include="Config\Sqls\PsCalendarToolsSqls.xml" />
+    <Content Include="Config\Sqls\PsCostSqls.xml" />
+    <Content Include="Config\Sqls\PsDutyPlanSqls.xml" />
+    <Content Include="Config\Sqls\PsHolidaySqls.xml" />
+    <Content Include="Config\Sqls\PsLoApsSqls.xml" />
+    <Content Include="Config\Sqls\PsLoPlanSqls.xml" />
+    <Content Include="Config\Sqls\PsLoSqls.xml" />
+    <Content Include="Config\Sqls\PsMtrSetB1Sqls.xml" />
+    <Content Include="Config\Sqls\PsMtrSetB2Sqls.xml" />
+    <Content Include="Config\Sqls\PsMtrSetHSqls.xml" />
+    <Content Include="Config\Sqls\PsOrderHisSqls.xml" />
+    <Content Include="Config\Sqls\PsOrderMapSqls.xml" />
+    <Content Include="Config\Sqls\PsPartFactorySqls.xml" />
+    <Content Include="Config\Sqls\PsPrSqls.xml" />
+    <Content Include="Config\Sqls\PsRestSqls.xml" />
+    <Content Include="Config\Sqls\PsShiftRestSqls.xml" />
+    <Content Include="Config\Sqls\PsShiftSqls.xml" />
+    <Content Include="Config\Sqls\PsShiftTimeSqls.xml" />
+    <Content Include="Config\Sqls\PsSortRuleBSqls.xml" />
+    <Content Include="Config\Sqls\PsSortRuleSltSqls.xml" />
+    <Content Include="Config\Sqls\PsSupplySqls.xml" />
+    <Content Include="Config\Sqls\PsTaskHisSqls.xml" />
+    <Content Include="Config\Sqls\PsTaskHSqls.xml" />
+    <Content Include="Config\Sqls\PsTaskMrSqls.xml" />
+    <Content Include="Config\Sqls\PsTaskSqls.xml" />
+    <Content Include="Config\Sqls\PsTaskToolsSqls.xml" />
+    <Content Include="Config\Sqls\PsTaskWorkerReqSqls.xml" />
+    <Content Include="Config\Sqls\PsWkcMtnPlanSqls.xml" />
+    <Content Include="Config\Sqls\PsWktBeforeSpecSqls.xml" />
+    <Content Include="Config\Sqls\PsWktTransSqls.xml" />
+    <Content Include="Config\Sqls\QmBadTraceSqls.xml" />
+    <Content Include="Config\Sqls\QmEvaluateRecordSqls.xml" />
+    <Content Include="Config\Sqls\QmProductTestSqls.xml" />
+    <Content Include="Config\Sqls\QmQaCauseSqls.xml" />
+    <Content Include="Config\Sqls\QmSiCharSqls.xml" />
+    <Content Include="Config\Sqls\QmSiItemBSqls.xml" />
+    <Content Include="Config\Sqls\QmSiItemHSqls.xml" />
+    <Content Include="Config\Sqls\QmSiItemShowSqls.xml" />
+    <Content Include="Config\Sqls\QmSiLotBSqls.xml" />
+    <Content Include="Config\Sqls\QmSiLotBsSqls.xml" />
+    <Content Include="Config\Sqls\QmSiLotBTmpSqls.xml" />
+    <Content Include="Config\Sqls\QmSiLotHSqls.xml" />
+    <Content Include="Config\Sqls\QmSiLotSSqls.xml" />
+    <Content Include="Config\Sqls\QmSiPlanSqls.xml" />
+    <Content Include="Config\Sqls\QmSiReqSqls.xml" />
+    <Content Include="Config\Sqls\QmSiStdSqls.xml" />
+    <Content Include="Config\Sqls\QmWeldingWireReportSqls.xml" />
+    <Content Include="Config\Sqls\QmWireTestEvaluateRecordSqls.xml" />
+    <Content Include="Config\Sqls\QmWireTestRecordSqls.xml" />
+    <Content Include="Config\Sqls\ReturndatasSqls.xml" />
+    <Content Include="Config\Sqls\SiitemhnoSqls.xml" />
+    <Content Include="Config\Sqls\SqlFeaturesSqls.xml" />
+    <Content Include="Config\Sqls\SqlImplementationInfoSqls.xml" />
+    <Content Include="Config\Sqls\SqlLanguagesSqls.xml" />
+    <Content Include="Config\Sqls\SqlPackagesSqls.xml" />
+    <Content Include="Config\Sqls\SqlPartsSqls.xml" />
+    <Content Include="Config\Sqls\SqlSizingProfilesSqls.xml" />
+    <Content Include="Config\Sqls\SqlSizingSqls.xml" />
+    <Content Include="Config\Sqls\SrAmountIoSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvBSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvHSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvReqBSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvReqHSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvReqReplySqls.xml" />
+    <Content Include="Config\Sqls\SrDlvReqSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvSnPartSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvSnPartTmprcvSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvSnSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvSnTmprcvSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvTimeBSqls.xml" />
+    <Content Include="Config\Sqls\SrDlvTimeHSqls.xml" />
+    <Content Include="Config\Sqls\SrDoBSqls.xml" />
+    <Content Include="Config\Sqls\SrDoHSqls.xml" />
+    <Content Include="Config\Sqls\SrDoReplySqls.xml" />
+    <Content Include="Config\Sqls\SrInquiryBSqls.xml" />
+    <Content Include="Config\Sqls\SrInquiryHSqls.xml" />
+    <Content Include="Config\Sqls\SrPartMapImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\SrPartMapSqls.xml" />
+    <Content Include="Config\Sqls\SrPartPackImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\SrPartPackSqls.xml" />
+    <Content Include="Config\Sqls\SrPoBbRecordSqls.xml" />
+    <Content Include="Config\Sqls\SrPoBbSqls.xml" />
+    <Content Include="Config\Sqls\SrPoBRealSqls.xml" />
+    <Content Include="Config\Sqls\SrPoBSqls.xml" />
+    <Content Include="Config\Sqls\SrPoBTmpSqls.xml" />
+    <Content Include="Config\Sqls\SrPoHSqls.xml" />
+    <Content Include="Config\Sqls\SrPoHTmpSqls.xml" />
+    <Content Include="Config\Sqls\SrRefundSqls.xml" />
+    <Content Include="Config\Sqls\SrRtnBSqls.xml" />
+    <Content Include="Config\Sqls\SrRtnHSqls.xml" />
+    <Content Include="Config\Sqls\SrRtnSnSqls.xml" />
+    <Content Include="Config\Sqls\SrSnPartSqls.xml" />
+    <Content Include="Config\Sqls\SrSupplierImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\SrSupplierSqls.xml" />
+    <Content Include="Config\Sqls\SrSupplierUserSqls.xml" />
+    <Content Include="Config\Sqls\SsAugrpaSqls.xml" />
+    <Content Include="Config\Sqls\SsAugrpSqls.xml" />
+    <Content Include="Config\Sqls\SsAugrpuSqls.xml" />
+    <Content Include="Config\Sqls\SsAuthSqls.xml" />
+    <Content Include="Config\Sqls\SsCdtpSqls.xml" />
+    <Content Include="Config\Sqls\SsCdtpuSqls.xml" />
+    <Content Include="Config\Sqls\SsCdvlSqls.xml" />
+    <Content Include="Config\Sqls\SsCtrlLinkSqls.xml" />
+    <Content Include="Config\Sqls\SsDeptImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\SsDeptSqls.xml" />
+    <Content Include="Config\Sqls\SsDeptWkpSqls.xml" />
+    <Content Include="Config\Sqls\SsDevReqCommentSqls.xml" />
+    <Content Include="Config\Sqls\SsDevReqSqls.xml" />
+    <Content Include="Config\Sqls\SsEditFormBSqls.xml" />
+    <Content Include="Config\Sqls\SsEditFormHSqls.xml" />
+    <Content Include="Config\Sqls\SsExcelRptSourceSqls.xml" />
+    <Content Include="Config\Sqls\SsExcelRptSqls.xml" />
+    <Content Include="Config\Sqls\SsFactorySqls.xml" />
+    <Content Include="Config\Sqls\SsFoldProgSqls.xml" />
+    <Content Include="Config\Sqls\SsFoldSqls.xml" />
+    <Content Include="Config\Sqls\SsFunctionSqls.xml" />
+    <Content Include="Config\Sqls\SsGridBbSqls.xml" />
+    <Content Include="Config\Sqls\SsGridBcSqls.xml" />
+    <Content Include="Config\Sqls\SsGridBhSqls.xml" />
+    <Content Include="Config\Sqls\SsGridBsSqls.xml" />
+    <Content Include="Config\Sqls\SsGridBtSqls.xml" />
+    <Content Include="Config\Sqls\SsGridSbSqls.xml" />
+    <Content Include="Config\Sqls\SsGridShSqls.xml" />
+    <Content Include="Config\Sqls\SsGridSsSqls.xml" />
+    <Content Include="Config\Sqls\SsGridUbSqls.xml" />
+    <Content Include="Config\Sqls\SsGridUhSqls.xml" />
+    <Content Include="Config\Sqls\SsHelpdocRelateSqls.xml" />
+    <Content Include="Config\Sqls\SsHelpdocSqls.xml" />
+    <Content Include="Config\Sqls\SsIoAuthSqls.xml" />
+    <Content Include="Config\Sqls\SsIoCmdSqls.xml" />
+    <Content Include="Config\Sqls\SsIoExcelFSqls.xml" />
+    <Content Include="Config\Sqls\SsIoExcelSqls.xml" />
+    <Content Include="Config\Sqls\SsIoTblfSqls.xml" />
+    <Content Include="Config\Sqls\SsIoTblSqls.xml" />
+    <Content Include="Config\Sqls\SsIoTypeSqls.xml" />
+    <Content Include="Config\Sqls\SsKbgBSqls.xml" />
+    <Content Include="Config\Sqls\SsKbgSqls.xml" />
+    <Content Include="Config\Sqls\SsKbpBSqls.xml" />
+    <Content Include="Config\Sqls\SsKbpCSqls.xml" />
+    <Content Include="Config\Sqls\SsKbpSqls.xml" />
+    <Content Include="Config\Sqls\SsLangStrImportTmpSqls.xml" />
+    <Content Include="Config\Sqls\SsLangStrMySqls.xml" />
+    <Content Include="Config\Sqls\SsLangStrSqls.xml" />
+    <Content Include="Config\Sqls\SsLogDeleteSqls.xml" />
+    <Content Include="Config\Sqls\SsLogObjectSqls.xml" />
+    <Content Include="Config\Sqls\SsLogRunErrorSqls.xml" />
+    <Content Include="Config\Sqls\SsLogRunProcessSqls.xml" />
+    <Content Include="Config\Sqls\SsLogRunSqls.xml" />
+    <Content Include="Config\Sqls\SsLogTypeSqls.xml" />
+    <Content Include="Config\Sqls\SsLogUpdateSqls.xml" />
+    <Content Include="Config\Sqls\SsMsgRuleHSqls.xml" />
+    <Content Include="Config\Sqls\SsMsgRuleRSqls.xml" />
+    <Content Include="Config\Sqls\SsMsgSendSqls.xml" />
+    <Content Include="Config\Sqls\SsMsgSqls.xml" />
+    <Content Include="Config\Sqls\SsNoElementSqls.xml" />
+    <Content Include="Config\Sqls\SsNoNextSqls.xml" />
+    <Content Include="Config\Sqls\SsNoRuleBSqls.xml" />
+    <Content Include="Config\Sqls\SsNoRuleHSqls.xml" />
+    <Content Include="Config\Sqls\SsNoticeSqls.xml" />
+    <Content Include="Config\Sqls\SsOrgSqls.xml" />
+    <Content Include="Config\Sqls\SsOrgUserSqls.xml" />
+    <Content Include="Config\Sqls\SsParaLSqls.xml" />
+    <Content Include="Config\Sqls\SsParaRunSqls.xml" />
+    <Content Include="Config\Sqls\SsParaSqls.xml" />
+    <Content Include="Config\Sqls\SsPdaLogSqls.xml" />
+    <Content Include="Config\Sqls\SsPlantaskBSqls.xml" />
+    <Content Include="Config\Sqls\SsPlantaskSqls.xml" />
+    <Content Include="Config\Sqls\SsPluginRunSqls.xml" />
+    <Content Include="Config\Sqls\SsProgAuthSqls.xml" />
+    <Content Include="Config\Sqls\SsProgHelpdocSqls.xml" />
+    <Content Include="Config\Sqls\SsProgSqls.xml" />
+    <Content Include="Config\Sqls\SsRptParamSqls.xml" />
+    <Content Include="Config\Sqls\SsRptSqls.xml" />
+    <Content Include="Config\Sqls\SsRptSqlSqls.xml" />
+    <Content Include="Config\Sqls\SsSqlSqls.xml" />
+    <Content Include="Config\Sqls\SsStatusHisSqls.xml" />
+    <Content Include="Config\Sqls\SsSynRecordSqls.xml" />
+    <Content Include="Config\Sqls\SsSynRuleDtSqls.xml" />
+    <Content Include="Config\Sqls\SsSynRuleHSqls.xml" />
+    <Content Include="Config\Sqls\SsSynRuleTableSqls.xml" />
+    <Content Include="Config\Sqls\SsTaskSqls.xml" />
+    <Content Include="Config\Sqls\SsTbl1Sqls.xml" />
+    <Content Include="Config\Sqls\SsTbl2Sqls.xml" />
+    <Content Include="Config\Sqls\SsTbl3Sqls.xml" />
+    <Content Include="Config\Sqls\SsTbl4Sqls.xml" />
+    <Content Include="Config\Sqls\SsTbl5Sqls.xml" />
+    <Content Include="Config\Sqls\SsTbl6Sqls.xml" />
+    <Content Include="Config\Sqls\SsTblfSqls.xml" />
+    <Content Include="Config\Sqls\SsTblSqls.xml" />
+    <Content Include="Config\Sqls\SsTmpQueryPkeySqls.xml" />
+    <Content Include="Config\Sqls\SsTmpQuerySqls.xml" />
+    <Content Include="Config\Sqls\SsToolbar2Sqls.xml" />
+    <Content Include="Config\Sqls\SsToolbar3Sqls.xml" />
+    <Content Include="Config\Sqls\SsToolbarSqls.xml" />
+    <Content Include="Config\Sqls\SsUserAssessScoreSqls.xml" />
+    <Content Include="Config\Sqls\SsUserExtSystemSqls.xml" />
+    <Content Include="Config\Sqls\SsUserFactorySqls.xml" />
+    <Content Include="Config\Sqls\SsUserLoginLogSqls.xml" />
+    <Content Include="Config\Sqls\SsUserProgFavoriteSqls.xml" />
+    <Content Include="Config\Sqls\SsUserProgLogSqls.xml" />
+    <Content Include="Config\Sqls\SsUserProgRecentSqls.xml" />
+    <Content Include="Config\Sqls\SsUserSqls.xml" />
+    <Content Include="Config\Sqls\SsUserSuperiorAllSqls.xml" />
+    <Content Include="Config\Sqls\SsUserSuperiorSqls.xml" />
+    <Content Include="Config\Sqls\SsVerHPdaSqls.xml" />
+    <Content Include="Config\Sqls\SsVerHSqls.xml" />
+    <Content Include="Config\Sqls\ToolMoveSqls.xml" />
+    <Content Include="Config\Sqls\ToolMtnHSqls.xml" />
+    <Content Include="Config\Sqls\ToolMtnPeijianSqls.xml" />
+    <Content Include="Config\Sqls\ToolMtnPlanSqls.xml" />
+    <Content Include="Config\Sqls\ToolPeijianSqls.xml" />
+    <Content Include="Config\Sqls\ToolSqls.xml" />
+    <Content Include="Config\Sqls\ToolSubsSqls.xml" />
+    <Content Include="Config\Sqls\ToolTwinSqls.xml" />
+    <Content Include="Config\Sqls\TrCalendarSqls.xml" />
+    <Content Include="Config\Sqls\TrLocationSqls.xml" />
+    <Content Include="Config\Sqls\TrModeSqls.xml" />
+    <Content Include="Config\Sqls\TrPartSqls.xml" />
+    <Content Include="Config\Sqls\TrTaskSqls.xml" />
+    <Content Include="Config\Sqls\WmInvpAreaSqls.xml" />
+    <Content Include="Config\Sqls\WmInvpSqls.xml" />
+    <Content Include="Config\Sqls\WmInvpUserSqls.xml" />
+    <Content Include="Config\Sqls\WmIoBSqls.xml" />
+    <Content Include="Config\Sqls\WmIoHSqls.xml" />
+    <Content Include="Config\Sqls\WmIoSnPartSqls.xml" />
+    <Content Include="Config\Sqls\WmIoSnSqls.xml" />
+    <Content Include="Config\Sqls\WmIoSqls.xml" />
+    <Content Include="Config\Sqls\WmMoveSnPartSqls.xml" />
+    <Content Include="Config\Sqls\WmMoveSnSqls.xml" />
+    <Content Include="Config\Sqls\WmMoveSqls.xml" />
+    <Content Include="Config\Sqls\WmQtySqls.xml" />
+    <Content Include="Config\Sqls\WmTakestockAreaSqls.xml" />
+    <Content Include="Config\Sqls\WmTakestockBSqls.xml" />
+    <Content Include="Config\Sqls\WmTakestockHSqls.xml" />
+    <Content Include="Config\Sqls\WmTakestockSnPartSqls.xml" />
+    <Content Include="Config\Sqls\WmTakestockSnSqls.xml" />
+    <Content Include="Content\BaseStyle.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap-table.css" />
+    <Content Include="Content\bootstrap-table.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\LoginFail.css" />
+    <Content Include="Content\LoginFatail.css" />
+    <Content Include="Content\SignIn.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\AndafaMesMainWebsiteConfig.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Resource\icon\ico32.ico" />
+    <Content Include="Resource\pic\apsabe.bmp" />
+    <Content Include="Scripts\bootstrap-table-locale-all.js" />
+    <Content Include="Scripts\bootstrap-table-locale-all.min.js" />
+    <Content Include="Scripts\bootstrap-table.js" />
+    <Content Include="Scripts\bootstrap-table.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\MesScript\AutoHideTable.js" />
+    <Content Include="Scripts\MesScript\Jquery-min-334.js" />
+    <Content Include="Scripts\MesScript\jquery.base64.js" />
+    <Content Include="Scripts\MesScript\Tools.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\_basicLayoutPage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Operator\BasicPage.cshtml" />
+    <Content Include="Views\Operator\WorkerSelectedWkc.cshtml" />
+    <Content Include="Views\Operator\WorkerSelectedWka.cshtml" />
+    <Content Include="Views\Operator\WorkerSelectedOrder.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1394</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64500/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

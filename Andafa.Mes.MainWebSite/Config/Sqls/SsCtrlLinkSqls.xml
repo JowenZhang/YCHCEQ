@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				link_ctrl_id, link_ctrl_desc, link_ctrl_sort, link_ctrl_is_default, link_ctrl_is_enabled, link_ctrl_title_lang, link_ctrl_group_lang, link_ctrl_prog_cmd, link_ctrl_prog_para, crt_time, crt_host, crt_user, crt_user_no, crt_user_name, upd_time, upd_host, upd_user, upd_user_no, upd_user_name
+			FROM ss_ctrl_link;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				link_ctrl_id, link_ctrl_desc, link_ctrl_sort, link_ctrl_is_default, link_ctrl_is_enabled, link_ctrl_title_lang, link_ctrl_group_lang, link_ctrl_prog_cmd, link_ctrl_prog_para, crt_time, crt_host, crt_user, crt_user_no, crt_user_name, upd_time, upd_host, upd_user, upd_user_no, upd_user_name
+			FROM ss_ctrl_link
+			WHERE ctrl_id = @ctrl_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_ctrl_link 
+			(link_ctrl_id, link_ctrl_desc, link_ctrl_sort, link_ctrl_is_default, link_ctrl_is_enabled, link_ctrl_title_lang, link_ctrl_group_lang, link_ctrl_prog_cmd, link_ctrl_prog_para, crt_time, crt_host, crt_user, crt_user_no, crt_user_name, upd_time, upd_host, upd_user, upd_user_no, upd_user_name)
+			VALUES (@link_ctrl_id, @link_ctrl_desc, @link_ctrl_sort, @link_ctrl_is_default, @link_ctrl_is_enabled, @link_ctrl_title_lang, @link_ctrl_group_lang, @link_ctrl_prog_cmd, @link_ctrl_prog_para, @crt_time, @crt_host, @crt_user, @crt_user_no, @crt_user_name, @upd_time, @upd_host, @upd_user, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_ctrl_link SET 
+			link_ctrl_id = @link_ctrl_id, link_ctrl_desc = @link_ctrl_desc, link_ctrl_sort = @link_ctrl_sort, link_ctrl_is_default = @link_ctrl_is_default, link_ctrl_is_enabled = @link_ctrl_is_enabled, link_ctrl_title_lang = @link_ctrl_title_lang, link_ctrl_group_lang = @link_ctrl_group_lang, link_ctrl_prog_cmd = @link_ctrl_prog_cmd, link_ctrl_prog_para = @link_ctrl_prog_para, crt_time = @crt_time, crt_host = @crt_host, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, upd_time = @upd_time, upd_host = @upd_host, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE ctrl_id = @ctrl_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_ctrl_link
+			WHERE ctrl_id = @ctrl_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

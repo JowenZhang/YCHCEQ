@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				kbp_name, kbp_table_id, kbp_control, kbp_color_background, kbp_head_height, kbp_head_color_background, kbp_head_color_front, kbp_head_font_size, kbp_title_is_visible, kbp_title_font_size, kbp_title_font_color, kbp_row_height, kbp_row_color_background1, kbp_row_color_front1, kbp_row_color_background2, kbp_row_color_front2, kbp_page_size, kbp_sql_where, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, kbp_para
+			FROM ss_kbp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				kbp_name, kbp_table_id, kbp_control, kbp_color_background, kbp_head_height, kbp_head_color_background, kbp_head_color_front, kbp_head_font_size, kbp_title_is_visible, kbp_title_font_size, kbp_title_font_color, kbp_row_height, kbp_row_color_background1, kbp_row_color_front1, kbp_row_color_background2, kbp_row_color_front2, kbp_page_size, kbp_sql_where, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, kbp_para
+			FROM ss_kbp
+			WHERE kbp_id = @kbp_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_kbp 
+			(kbp_name, kbp_table_id, kbp_control, kbp_color_background, kbp_head_height, kbp_head_color_background, kbp_head_color_front, kbp_head_font_size, kbp_title_is_visible, kbp_title_font_size, kbp_title_font_color, kbp_row_height, kbp_row_color_background1, kbp_row_color_front1, kbp_row_color_background2, kbp_row_color_front2, kbp_page_size, kbp_sql_where, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, kbp_para)
+			VALUES (@kbp_name, @kbp_table_id, @kbp_control, @kbp_color_background, @kbp_head_height, @kbp_head_color_background, @kbp_head_color_front, @kbp_head_font_size, @kbp_title_is_visible, @kbp_title_font_size, @kbp_title_font_color, @kbp_row_height, @kbp_row_color_background1, @kbp_row_color_front1, @kbp_row_color_background2, @kbp_row_color_front2, @kbp_page_size, @kbp_sql_where, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time, @kbp_para);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_kbp SET 
+			kbp_name = @kbp_name, kbp_table_id = @kbp_table_id, kbp_control = @kbp_control, kbp_color_background = @kbp_color_background, kbp_head_height = @kbp_head_height, kbp_head_color_background = @kbp_head_color_background, kbp_head_color_front = @kbp_head_color_front, kbp_head_font_size = @kbp_head_font_size, kbp_title_is_visible = @kbp_title_is_visible, kbp_title_font_size = @kbp_title_font_size, kbp_title_font_color = @kbp_title_font_color, kbp_row_height = @kbp_row_height, kbp_row_color_background1 = @kbp_row_color_background1, kbp_row_color_front1 = @kbp_row_color_front1, kbp_row_color_background2 = @kbp_row_color_background2, kbp_row_color_front2 = @kbp_row_color_front2, kbp_page_size = @kbp_page_size, kbp_sql_where = @kbp_sql_where, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time, kbp_para = @kbp_para
+			WHERE kbp_id = @kbp_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_kbp
+			WHERE kbp_id = @kbp_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

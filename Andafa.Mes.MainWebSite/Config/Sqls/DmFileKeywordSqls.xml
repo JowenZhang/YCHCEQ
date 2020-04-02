@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				file_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM dm_file_keyword;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				file_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM dm_file_keyword
+			WHERE file_keyword_id = @file_keyword_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO dm_file_keyword 
+			(file_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host)
+			VALUES (@file_id, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE dm_file_keyword SET 
+			file_id = @file_id, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host
+			WHERE file_keyword_id = @file_keyword_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM dm_file_keyword
+			WHERE file_keyword_id = @file_keyword_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

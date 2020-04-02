@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				si_degree, si_char, si_sample_qty, si_sample_qty_0d010, si_ac_qty_aql_0d010, si_re_qty_aql_0d010, si_sample_qty_0d015, si_ac_qty_aql_0d015, si_re_qty_aql_0d015, si_sample_qty_0d025, si_ac_qty_aql_0d025, si_re_qty_aql_0d025, si_sample_qty_0d040, si_ac_qty_aql_0d040, si_re_qty_aql_0d040, si_sample_qty_0d065, si_ac_qty_aql_0d065, si_re_qty_aql_0d065, si_sample_qty_0d10, si_ac_qty_aql_0d10, si_re_qty_aql_0d10, si_sample_qty_0d15, si_ac_qty_aql_0d15, si_re_qty_aql_0d15, si_sample_qty_0d25, si_ac_qty_aql_0d25, si_re_qty_aql_0d25, si_sample_qty_0d40, si_ac_qty_aql_0d40, si_re_qty_aql_0d40, si_sample_qty_0d65, si_ac_qty_aql_0d65, si_re_qty_aql_0d65, si_sample_qty_1d0, si_ac_qty_aql_1d0, si_re_qty_aql_1d0, si_sample_qty_1d5, si_ac_qty_aql_1d5, si_re_qty_aql_1d5, si_sample_qty_2d5, si_ac_qty_aql_2d5, si_re_qty_aql_2d5, si_sample_qty_4d0, si_ac_qty_aql_4d0, si_re_qty_aql_4d0, si_sample_qty_6d5, si_ac_qty_aql_6d5, si_re_qty_aql_6d5, si_sample_qty_10, si_ac_qty_aql_10, si_re_qty_aql_10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_si_plan;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				si_degree, si_char, si_sample_qty, si_sample_qty_0d010, si_ac_qty_aql_0d010, si_re_qty_aql_0d010, si_sample_qty_0d015, si_ac_qty_aql_0d015, si_re_qty_aql_0d015, si_sample_qty_0d025, si_ac_qty_aql_0d025, si_re_qty_aql_0d025, si_sample_qty_0d040, si_ac_qty_aql_0d040, si_re_qty_aql_0d040, si_sample_qty_0d065, si_ac_qty_aql_0d065, si_re_qty_aql_0d065, si_sample_qty_0d10, si_ac_qty_aql_0d10, si_re_qty_aql_0d10, si_sample_qty_0d15, si_ac_qty_aql_0d15, si_re_qty_aql_0d15, si_sample_qty_0d25, si_ac_qty_aql_0d25, si_re_qty_aql_0d25, si_sample_qty_0d40, si_ac_qty_aql_0d40, si_re_qty_aql_0d40, si_sample_qty_0d65, si_ac_qty_aql_0d65, si_re_qty_aql_0d65, si_sample_qty_1d0, si_ac_qty_aql_1d0, si_re_qty_aql_1d0, si_sample_qty_1d5, si_ac_qty_aql_1d5, si_re_qty_aql_1d5, si_sample_qty_2d5, si_ac_qty_aql_2d5, si_re_qty_aql_2d5, si_sample_qty_4d0, si_ac_qty_aql_4d0, si_re_qty_aql_4d0, si_sample_qty_6d5, si_ac_qty_aql_6d5, si_re_qty_aql_6d5, si_sample_qty_10, si_ac_qty_aql_10, si_re_qty_aql_10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_si_plan
+			WHERE si_plan_id = @si_plan_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO qm_si_plan 
+			(si_degree, si_char, si_sample_qty, si_sample_qty_0d010, si_ac_qty_aql_0d010, si_re_qty_aql_0d010, si_sample_qty_0d015, si_ac_qty_aql_0d015, si_re_qty_aql_0d015, si_sample_qty_0d025, si_ac_qty_aql_0d025, si_re_qty_aql_0d025, si_sample_qty_0d040, si_ac_qty_aql_0d040, si_re_qty_aql_0d040, si_sample_qty_0d065, si_ac_qty_aql_0d065, si_re_qty_aql_0d065, si_sample_qty_0d10, si_ac_qty_aql_0d10, si_re_qty_aql_0d10, si_sample_qty_0d15, si_ac_qty_aql_0d15, si_re_qty_aql_0d15, si_sample_qty_0d25, si_ac_qty_aql_0d25, si_re_qty_aql_0d25, si_sample_qty_0d40, si_ac_qty_aql_0d40, si_re_qty_aql_0d40, si_sample_qty_0d65, si_ac_qty_aql_0d65, si_re_qty_aql_0d65, si_sample_qty_1d0, si_ac_qty_aql_1d0, si_re_qty_aql_1d0, si_sample_qty_1d5, si_ac_qty_aql_1d5, si_re_qty_aql_1d5, si_sample_qty_2d5, si_ac_qty_aql_2d5, si_re_qty_aql_2d5, si_sample_qty_4d0, si_ac_qty_aql_4d0, si_re_qty_aql_4d0, si_sample_qty_6d5, si_ac_qty_aql_6d5, si_re_qty_aql_6d5, si_sample_qty_10, si_ac_qty_aql_10, si_re_qty_aql_10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@si_degree, @si_char, @si_sample_qty, @si_sample_qty_0d010, @si_ac_qty_aql_0d010, @si_re_qty_aql_0d010, @si_sample_qty_0d015, @si_ac_qty_aql_0d015, @si_re_qty_aql_0d015, @si_sample_qty_0d025, @si_ac_qty_aql_0d025, @si_re_qty_aql_0d025, @si_sample_qty_0d040, @si_ac_qty_aql_0d040, @si_re_qty_aql_0d040, @si_sample_qty_0d065, @si_ac_qty_aql_0d065, @si_re_qty_aql_0d065, @si_sample_qty_0d10, @si_ac_qty_aql_0d10, @si_re_qty_aql_0d10, @si_sample_qty_0d15, @si_ac_qty_aql_0d15, @si_re_qty_aql_0d15, @si_sample_qty_0d25, @si_ac_qty_aql_0d25, @si_re_qty_aql_0d25, @si_sample_qty_0d40, @si_ac_qty_aql_0d40, @si_re_qty_aql_0d40, @si_sample_qty_0d65, @si_ac_qty_aql_0d65, @si_re_qty_aql_0d65, @si_sample_qty_1d0, @si_ac_qty_aql_1d0, @si_re_qty_aql_1d0, @si_sample_qty_1d5, @si_ac_qty_aql_1d5, @si_re_qty_aql_1d5, @si_sample_qty_2d5, @si_ac_qty_aql_2d5, @si_re_qty_aql_2d5, @si_sample_qty_4d0, @si_ac_qty_aql_4d0, @si_re_qty_aql_4d0, @si_sample_qty_6d5, @si_ac_qty_aql_6d5, @si_re_qty_aql_6d5, @si_sample_qty_10, @si_ac_qty_aql_10, @si_re_qty_aql_10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE qm_si_plan SET 
+			si_degree = @si_degree, si_char = @si_char, si_sample_qty = @si_sample_qty, si_sample_qty_0d010 = @si_sample_qty_0d010, si_ac_qty_aql_0d010 = @si_ac_qty_aql_0d010, si_re_qty_aql_0d010 = @si_re_qty_aql_0d010, si_sample_qty_0d015 = @si_sample_qty_0d015, si_ac_qty_aql_0d015 = @si_ac_qty_aql_0d015, si_re_qty_aql_0d015 = @si_re_qty_aql_0d015, si_sample_qty_0d025 = @si_sample_qty_0d025, si_ac_qty_aql_0d025 = @si_ac_qty_aql_0d025, si_re_qty_aql_0d025 = @si_re_qty_aql_0d025, si_sample_qty_0d040 = @si_sample_qty_0d040, si_ac_qty_aql_0d040 = @si_ac_qty_aql_0d040, si_re_qty_aql_0d040 = @si_re_qty_aql_0d040, si_sample_qty_0d065 = @si_sample_qty_0d065, si_ac_qty_aql_0d065 = @si_ac_qty_aql_0d065, si_re_qty_aql_0d065 = @si_re_qty_aql_0d065, si_sample_qty_0d10 = @si_sample_qty_0d10, si_ac_qty_aql_0d10 = @si_ac_qty_aql_0d10, si_re_qty_aql_0d10 = @si_re_qty_aql_0d10, si_sample_qty_0d15 = @si_sample_qty_0d15, si_ac_qty_aql_0d15 = @si_ac_qty_aql_0d15, si_re_qty_aql_0d15 = @si_re_qty_aql_0d15, si_sample_qty_0d25 = @si_sample_qty_0d25, si_ac_qty_aql_0d25 = @si_ac_qty_aql_0d25, si_re_qty_aql_0d25 = @si_re_qty_aql_0d25, si_sample_qty_0d40 = @si_sample_qty_0d40, si_ac_qty_aql_0d40 = @si_ac_qty_aql_0d40, si_re_qty_aql_0d40 = @si_re_qty_aql_0d40, si_sample_qty_0d65 = @si_sample_qty_0d65, si_ac_qty_aql_0d65 = @si_ac_qty_aql_0d65, si_re_qty_aql_0d65 = @si_re_qty_aql_0d65, si_sample_qty_1d0 = @si_sample_qty_1d0, si_ac_qty_aql_1d0 = @si_ac_qty_aql_1d0, si_re_qty_aql_1d0 = @si_re_qty_aql_1d0, si_sample_qty_1d5 = @si_sample_qty_1d5, si_ac_qty_aql_1d5 = @si_ac_qty_aql_1d5, si_re_qty_aql_1d5 = @si_re_qty_aql_1d5, si_sample_qty_2d5 = @si_sample_qty_2d5, si_ac_qty_aql_2d5 = @si_ac_qty_aql_2d5, si_re_qty_aql_2d5 = @si_re_qty_aql_2d5, si_sample_qty_4d0 = @si_sample_qty_4d0, si_ac_qty_aql_4d0 = @si_ac_qty_aql_4d0, si_re_qty_aql_4d0 = @si_re_qty_aql_4d0, si_sample_qty_6d5 = @si_sample_qty_6d5, si_ac_qty_aql_6d5 = @si_ac_qty_aql_6d5, si_re_qty_aql_6d5 = @si_re_qty_aql_6d5, si_sample_qty_10 = @si_sample_qty_10, si_ac_qty_aql_10 = @si_ac_qty_aql_10, si_re_qty_aql_10 = @si_re_qty_aql_10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE si_plan_id = @si_plan_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM qm_si_plan
+			WHERE si_plan_id = @si_plan_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

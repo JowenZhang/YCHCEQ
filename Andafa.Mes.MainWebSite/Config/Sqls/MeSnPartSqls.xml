@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sn_no, sn_status, sn_status_name, lot_no, part_qty, part_no, part_name, part_spec, part_unit, part_idt, order_type, order_no, invp_no, qa_type, order_flow_name, sn_weight_gross, sn_weight_net, sn_height, sn_length, sn_width, pack_sn_no_10, pack_sn_no_20, pack_sn_no_30, pack_sn_no_40, pack_sn_no_50, pack_sn_no_60, pack_sn_no_70, pack_sn_no_80, pack_sn_no_90, me_sn_part_rmk01, me_sn_part_rmk02, me_sn_part_rmk03, me_sn_part_rmk04, me_sn_part_rmk05, me_sn_part_rmk06, me_sn_part_rmk07, me_sn_part_rmk08, me_sn_part_rmk09, me_sn_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, client_no, client_name, wkn, wkp_no, wkp_name, mrp_region_no, fb_id, part_qty_in, is_used, wka_no, wka_name, serial_no, has_been_examed
+			FROM me_sn_part;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sn_no, sn_status, sn_status_name, lot_no, part_qty, part_no, part_name, part_spec, part_unit, part_idt, order_type, order_no, invp_no, qa_type, order_flow_name, sn_weight_gross, sn_weight_net, sn_height, sn_length, sn_width, pack_sn_no_10, pack_sn_no_20, pack_sn_no_30, pack_sn_no_40, pack_sn_no_50, pack_sn_no_60, pack_sn_no_70, pack_sn_no_80, pack_sn_no_90, me_sn_part_rmk01, me_sn_part_rmk02, me_sn_part_rmk03, me_sn_part_rmk04, me_sn_part_rmk05, me_sn_part_rmk06, me_sn_part_rmk07, me_sn_part_rmk08, me_sn_part_rmk09, me_sn_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, client_no, client_name, wkn, wkp_no, wkp_name, mrp_region_no, fb_id, part_qty_in, is_used, wka_no, wka_name, serial_no, has_been_examed
+			FROM me_sn_part
+			WHERE me_sn_part_id = @me_sn_part_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_sn_part 
+			(sn_no, sn_status, sn_status_name, lot_no, part_qty, part_no, part_name, part_spec, part_unit, part_idt, order_type, order_no, invp_no, qa_type, order_flow_name, sn_weight_gross, sn_weight_net, sn_height, sn_length, sn_width, pack_sn_no_10, pack_sn_no_20, pack_sn_no_30, pack_sn_no_40, pack_sn_no_50, pack_sn_no_60, pack_sn_no_70, pack_sn_no_80, pack_sn_no_90, me_sn_part_rmk01, me_sn_part_rmk02, me_sn_part_rmk03, me_sn_part_rmk04, me_sn_part_rmk05, me_sn_part_rmk06, me_sn_part_rmk07, me_sn_part_rmk08, me_sn_part_rmk09, me_sn_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, client_no, client_name, wkn, wkp_no, wkp_name, mrp_region_no, fb_id, part_qty_in, is_used, wka_no, wka_name, serial_no, has_been_examed)
+			VALUES (@sn_no, @sn_status, @sn_status_name, @lot_no, @part_qty, @part_no, @part_name, @part_spec, @part_unit, @part_idt, @order_type, @order_no, @invp_no, @qa_type, @order_flow_name, @sn_weight_gross, @sn_weight_net, @sn_height, @sn_length, @sn_width, @pack_sn_no_10, @pack_sn_no_20, @pack_sn_no_30, @pack_sn_no_40, @pack_sn_no_50, @pack_sn_no_60, @pack_sn_no_70, @pack_sn_no_80, @pack_sn_no_90, @me_sn_part_rmk01, @me_sn_part_rmk02, @me_sn_part_rmk03, @me_sn_part_rmk04, @me_sn_part_rmk05, @me_sn_part_rmk06, @me_sn_part_rmk07, @me_sn_part_rmk08, @me_sn_part_rmk09, @me_sn_part_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @client_no, @client_name, @wkn, @wkp_no, @wkp_name, @mrp_region_no, @fb_id, @part_qty_in, @is_used, @wka_no, @wka_name, @serial_no, @has_been_examed);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_sn_part SET 
+			sn_no = @sn_no, sn_status = @sn_status, sn_status_name = @sn_status_name, lot_no = @lot_no, part_qty = @part_qty, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_unit = @part_unit, part_idt = @part_idt, order_type = @order_type, order_no = @order_no, invp_no = @invp_no, qa_type = @qa_type, order_flow_name = @order_flow_name, sn_weight_gross = @sn_weight_gross, sn_weight_net = @sn_weight_net, sn_height = @sn_height, sn_length = @sn_length, sn_width = @sn_width, pack_sn_no_10 = @pack_sn_no_10, pack_sn_no_20 = @pack_sn_no_20, pack_sn_no_30 = @pack_sn_no_30, pack_sn_no_40 = @pack_sn_no_40, pack_sn_no_50 = @pack_sn_no_50, pack_sn_no_60 = @pack_sn_no_60, pack_sn_no_70 = @pack_sn_no_70, pack_sn_no_80 = @pack_sn_no_80, pack_sn_no_90 = @pack_sn_no_90, me_sn_part_rmk01 = @me_sn_part_rmk01, me_sn_part_rmk02 = @me_sn_part_rmk02, me_sn_part_rmk03 = @me_sn_part_rmk03, me_sn_part_rmk04 = @me_sn_part_rmk04, me_sn_part_rmk05 = @me_sn_part_rmk05, me_sn_part_rmk06 = @me_sn_part_rmk06, me_sn_part_rmk07 = @me_sn_part_rmk07, me_sn_part_rmk08 = @me_sn_part_rmk08, me_sn_part_rmk09 = @me_sn_part_rmk09, me_sn_part_rmk10 = @me_sn_part_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, client_no = @client_no, client_name = @client_name, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, mrp_region_no = @mrp_region_no, fb_id = @fb_id, part_qty_in = @part_qty_in, is_used = @is_used, wka_no = @wka_no, wka_name = @wka_name, serial_no = @serial_no, has_been_examed = @has_been_examed
+			WHERE me_sn_part_id = @me_sn_part_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_sn_part
+			WHERE me_sn_part_id = @me_sn_part_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

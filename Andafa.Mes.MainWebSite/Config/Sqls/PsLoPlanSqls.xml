@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				lo_plan_status, lo_plan_start_datetime, lo_plan_end_datetime
+			FROM ps_lo_plan;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				lo_plan_status, lo_plan_start_datetime, lo_plan_end_datetime
+			FROM ps_lo_plan
+			WHERE lo_id = @lo_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_lo_plan 
+			(lo_plan_status, lo_plan_start_datetime, lo_plan_end_datetime)
+			VALUES (@lo_plan_status, @lo_plan_start_datetime, @lo_plan_end_datetime);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_lo_plan SET 
+			lo_plan_status = @lo_plan_status, lo_plan_start_datetime = @lo_plan_start_datetime, lo_plan_end_datetime = @lo_plan_end_datetime
+			WHERE lo_id = @lo_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_lo_plan
+			WHERE lo_id = @lo_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

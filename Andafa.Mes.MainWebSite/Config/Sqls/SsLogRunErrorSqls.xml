@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				log_run_error
+			FROM ss_log_run_error;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				log_run_error
+			FROM ss_log_run_error
+			WHERE log_run_id = @log_run_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_log_run_error 
+			(log_run_error)
+			VALUES (@log_run_error);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_log_run_error SET 
+			log_run_error = @log_run_error
+			WHERE log_run_id = @log_run_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_log_run_error
+			WHERE log_run_id = @log_run_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

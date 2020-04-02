@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				mtn_plan_datetime_start, mtn_plan_datetime_end, mtn_plan_content, is_disabled, ps_wkc_mtn_plan_rmk01, ps_wkc_mtn_plan_rmk02, ps_wkc_mtn_plan_rmk03, ps_wkc_mtn_plan_rmk04, ps_wkc_mtn_plan_rmk05, ps_wkc_mtn_plan_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, wkc_id, wkc_no
+			FROM ps_wkc_mtn_plan;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				mtn_plan_datetime_start, mtn_plan_datetime_end, mtn_plan_content, is_disabled, ps_wkc_mtn_plan_rmk01, ps_wkc_mtn_plan_rmk02, ps_wkc_mtn_plan_rmk03, ps_wkc_mtn_plan_rmk04, ps_wkc_mtn_plan_rmk05, ps_wkc_mtn_plan_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, wkc_id, wkc_no
+			FROM ps_wkc_mtn_plan
+			WHERE ps_wkc_mtn_plan_id = @ps_wkc_mtn_plan_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_wkc_mtn_plan 
+			(mtn_plan_datetime_start, mtn_plan_datetime_end, mtn_plan_content, is_disabled, ps_wkc_mtn_plan_rmk01, ps_wkc_mtn_plan_rmk02, ps_wkc_mtn_plan_rmk03, ps_wkc_mtn_plan_rmk04, ps_wkc_mtn_plan_rmk05, ps_wkc_mtn_plan_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, wkc_id, wkc_no)
+			VALUES (@mtn_plan_datetime_start, @mtn_plan_datetime_end, @mtn_plan_content, @is_disabled, @ps_wkc_mtn_plan_rmk01, @ps_wkc_mtn_plan_rmk02, @ps_wkc_mtn_plan_rmk03, @ps_wkc_mtn_plan_rmk04, @ps_wkc_mtn_plan_rmk05, @ps_wkc_mtn_plan_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @wkc_id, @wkc_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_wkc_mtn_plan SET 
+			mtn_plan_datetime_start = @mtn_plan_datetime_start, mtn_plan_datetime_end = @mtn_plan_datetime_end, mtn_plan_content = @mtn_plan_content, is_disabled = @is_disabled, ps_wkc_mtn_plan_rmk01 = @ps_wkc_mtn_plan_rmk01, ps_wkc_mtn_plan_rmk02 = @ps_wkc_mtn_plan_rmk02, ps_wkc_mtn_plan_rmk03 = @ps_wkc_mtn_plan_rmk03, ps_wkc_mtn_plan_rmk04 = @ps_wkc_mtn_plan_rmk04, ps_wkc_mtn_plan_rmk05 = @ps_wkc_mtn_plan_rmk05, ps_wkc_mtn_plan_rmk06 = @ps_wkc_mtn_plan_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, wkc_id = @wkc_id, wkc_no = @wkc_no
+			WHERE ps_wkc_mtn_plan_id = @ps_wkc_mtn_plan_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_wkc_mtn_plan
+			WHERE ps_wkc_mtn_plan_id = @ps_wkc_mtn_plan_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

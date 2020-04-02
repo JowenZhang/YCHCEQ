@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				worker_wkc_status_no, worker_wkc_status_name, worker_no, wkp_no, wkp_name, wkc_no, wkc_name, worker_wkc_rmk01, worker_wkc_rmk02, worker_wkc_rmk03, worker_wkc_rmk04, worker_wkc_rmk05, worker_wkc_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM mes_worker_wkc;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				worker_wkc_status_no, worker_wkc_status_name, worker_no, wkp_no, wkp_name, wkc_no, wkc_name, worker_wkc_rmk01, worker_wkc_rmk02, worker_wkc_rmk03, worker_wkc_rmk04, worker_wkc_rmk05, worker_wkc_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM mes_worker_wkc
+			WHERE worker_wkc_id = @worker_wkc_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mes_worker_wkc 
+			(worker_wkc_status_no, worker_wkc_status_name, worker_no, wkp_no, wkp_name, wkc_no, wkc_name, worker_wkc_rmk01, worker_wkc_rmk02, worker_wkc_rmk03, worker_wkc_rmk04, worker_wkc_rmk05, worker_wkc_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@worker_wkc_status_no, @worker_wkc_status_name, @worker_no, @wkp_no, @wkp_name, @wkc_no, @wkc_name, @worker_wkc_rmk01, @worker_wkc_rmk02, @worker_wkc_rmk03, @worker_wkc_rmk04, @worker_wkc_rmk05, @worker_wkc_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mes_worker_wkc SET 
+			worker_wkc_status_no = @worker_wkc_status_no, worker_wkc_status_name = @worker_wkc_status_name, worker_no = @worker_no, wkp_no = @wkp_no, wkp_name = @wkp_name, wkc_no = @wkc_no, wkc_name = @wkc_name, worker_wkc_rmk01 = @worker_wkc_rmk01, worker_wkc_rmk02 = @worker_wkc_rmk02, worker_wkc_rmk03 = @worker_wkc_rmk03, worker_wkc_rmk04 = @worker_wkc_rmk04, worker_wkc_rmk05 = @worker_wkc_rmk05, worker_wkc_rmk06 = @worker_wkc_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE worker_wkc_id = @worker_wkc_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mes_worker_wkc
+			WHERE worker_wkc_id = @worker_wkc_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

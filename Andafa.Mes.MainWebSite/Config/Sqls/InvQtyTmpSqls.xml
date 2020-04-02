@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				mo_no, order_no, part_no, wkc_no, qty_ok, fb_start_datetime, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM inv_qty_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				mo_no, order_no, part_no, wkc_no, qty_ok, fb_start_datetime, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM inv_qty_tmp
+			WHERE nc_id = @nc_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO inv_qty_tmp 
+			(mo_no, order_no, part_no, wkc_no, qty_ok, fb_start_datetime, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@mo_no, @order_no, @part_no, @wkc_no, @qty_ok, @fb_start_datetime, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE inv_qty_tmp SET 
+			mo_no = @mo_no, order_no = @order_no, part_no = @part_no, wkc_no = @wkc_no, qty_ok = @qty_ok, fb_start_datetime = @fb_start_datetime, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE nc_id = @nc_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM inv_qty_tmp
+			WHERE nc_id = @nc_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

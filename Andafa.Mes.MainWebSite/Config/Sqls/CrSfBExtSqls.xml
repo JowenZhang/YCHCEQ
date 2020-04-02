@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sf_plan_status, sf_plan_start_datetime, sf_plan_end_datetime, sf_dlv_date_earliest, sf_dlv_date_latest, sf_dlv_qty_total, cr_sf_ext_rmk11, cr_sf_ext_rmk12, cr_sf_ext_rmk13, cr_sf_ext_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_sf_b_ext;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sf_plan_status, sf_plan_start_datetime, sf_plan_end_datetime, sf_dlv_date_earliest, sf_dlv_date_latest, sf_dlv_qty_total, cr_sf_ext_rmk11, cr_sf_ext_rmk12, cr_sf_ext_rmk13, cr_sf_ext_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_sf_b_ext
+			WHERE sf_b_id = @sf_b_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_sf_b_ext 
+			(sf_plan_status, sf_plan_start_datetime, sf_plan_end_datetime, sf_dlv_date_earliest, sf_dlv_date_latest, sf_dlv_qty_total, cr_sf_ext_rmk11, cr_sf_ext_rmk12, cr_sf_ext_rmk13, cr_sf_ext_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@sf_plan_status, @sf_plan_start_datetime, @sf_plan_end_datetime, @sf_dlv_date_earliest, @sf_dlv_date_latest, @sf_dlv_qty_total, @cr_sf_ext_rmk11, @cr_sf_ext_rmk12, @cr_sf_ext_rmk13, @cr_sf_ext_rmk14, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_sf_b_ext SET 
+			sf_plan_status = @sf_plan_status, sf_plan_start_datetime = @sf_plan_start_datetime, sf_plan_end_datetime = @sf_plan_end_datetime, sf_dlv_date_earliest = @sf_dlv_date_earliest, sf_dlv_date_latest = @sf_dlv_date_latest, sf_dlv_qty_total = @sf_dlv_qty_total, cr_sf_ext_rmk11 = @cr_sf_ext_rmk11, cr_sf_ext_rmk12 = @cr_sf_ext_rmk12, cr_sf_ext_rmk13 = @cr_sf_ext_rmk13, cr_sf_ext_rmk14 = @cr_sf_ext_rmk14, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE sf_b_id = @sf_b_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_sf_b_ext
+			WHERE sf_b_id = @sf_b_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ea_no, ea_check_lot_date, ea_check_worker_no, ea_check_worker_name, ea_check_lot_h_rmk1, ea_check_lot_h_rmk2, ea_check_lot_h_rmk3, ea_check_lot_h_rmk4, ea_check_lot_h_rmk5, ea_check_lot_h_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_check_plan_id, ea_check_plan_rmk1, ea_check_plan_date
+			FROM ea_check_lot_h;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ea_no, ea_check_lot_date, ea_check_worker_no, ea_check_worker_name, ea_check_lot_h_rmk1, ea_check_lot_h_rmk2, ea_check_lot_h_rmk3, ea_check_lot_h_rmk4, ea_check_lot_h_rmk5, ea_check_lot_h_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_check_plan_id, ea_check_plan_rmk1, ea_check_plan_date
+			FROM ea_check_lot_h
+			WHERE ea_check_lot_h_id = @ea_check_lot_h_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ea_check_lot_h 
+			(ea_no, ea_check_lot_date, ea_check_worker_no, ea_check_worker_name, ea_check_lot_h_rmk1, ea_check_lot_h_rmk2, ea_check_lot_h_rmk3, ea_check_lot_h_rmk4, ea_check_lot_h_rmk5, ea_check_lot_h_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_check_plan_id, ea_check_plan_rmk1, ea_check_plan_date)
+			VALUES (@ea_no, @ea_check_lot_date, @ea_check_worker_no, @ea_check_worker_name, @ea_check_lot_h_rmk1, @ea_check_lot_h_rmk2, @ea_check_lot_h_rmk3, @ea_check_lot_h_rmk4, @ea_check_lot_h_rmk5, @ea_check_lot_h_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @ea_check_plan_id, @ea_check_plan_rmk1, @ea_check_plan_date);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ea_check_lot_h SET 
+			ea_no = @ea_no, ea_check_lot_date = @ea_check_lot_date, ea_check_worker_no = @ea_check_worker_no, ea_check_worker_name = @ea_check_worker_name, ea_check_lot_h_rmk1 = @ea_check_lot_h_rmk1, ea_check_lot_h_rmk2 = @ea_check_lot_h_rmk2, ea_check_lot_h_rmk3 = @ea_check_lot_h_rmk3, ea_check_lot_h_rmk4 = @ea_check_lot_h_rmk4, ea_check_lot_h_rmk5 = @ea_check_lot_h_rmk5, ea_check_lot_h_rmk6 = @ea_check_lot_h_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, ea_check_plan_id = @ea_check_plan_id, ea_check_plan_rmk1 = @ea_check_plan_rmk1, ea_check_plan_date = @ea_check_plan_date
+			WHERE ea_check_lot_h_id = @ea_check_lot_h_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ea_check_lot_h
+			WHERE ea_check_lot_h_id = @ea_check_lot_h_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkc_id, wkc_status, wkc_no, wkc_name, wkc_card_no, wkc_type1, wkc_type2, wkc_type3, wkc_type4, factory_no, workshop_no, line_no, wkc_sort, wkc_color, wkc_height, wkc_worktime_type, wkc_total_qty, wkc_valid_qty, wkc_eff_standard, wkc_effi_now, wkc_capability_max, wkc_capability_step, wkc_wkt_step, wkc_capability_min, wkc_wkt_max_waiting, wkc_wkt_outsource, wkc_worker_num, wkc_spec1_txt, wkc_spec1_min, wkc_spec1_max, wkc_spec2_txt, wkc_spec2_min, wkc_spec2_max, wkc_spec3_txt, wkc_spec3_min, wkc_spec3_max, wkc_spec4_txt, wkc_spec4_min, wkc_spec4_max, wkc_cost_produce_c, wkc_cost_before_c, wkc_cost_after_c, wkc_cost_idle_c, wkc_cost_worker_c, pd_wkc_rmk01, pd_wkc_rmk02, pd_wkc_rmk03, pd_wkc_rmk04, pd_wkc_rmk05, pd_wkc_rmk06, pd_wkc_rmk07, pd_wkc_rmk08, pd_wkc_rmk09, pd_wkc_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, wkc_is_machine, invp_no
+			FROM pd_wkc_import_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkc_id, wkc_status, wkc_no, wkc_name, wkc_card_no, wkc_type1, wkc_type2, wkc_type3, wkc_type4, factory_no, workshop_no, line_no, wkc_sort, wkc_color, wkc_height, wkc_worktime_type, wkc_total_qty, wkc_valid_qty, wkc_eff_standard, wkc_effi_now, wkc_capability_max, wkc_capability_step, wkc_wkt_step, wkc_capability_min, wkc_wkt_max_waiting, wkc_wkt_outsource, wkc_worker_num, wkc_spec1_txt, wkc_spec1_min, wkc_spec1_max, wkc_spec2_txt, wkc_spec2_min, wkc_spec2_max, wkc_spec3_txt, wkc_spec3_min, wkc_spec3_max, wkc_spec4_txt, wkc_spec4_min, wkc_spec4_max, wkc_cost_produce_c, wkc_cost_before_c, wkc_cost_after_c, wkc_cost_idle_c, wkc_cost_worker_c, pd_wkc_rmk01, pd_wkc_rmk02, pd_wkc_rmk03, pd_wkc_rmk04, pd_wkc_rmk05, pd_wkc_rmk06, pd_wkc_rmk07, pd_wkc_rmk08, pd_wkc_rmk09, pd_wkc_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, wkc_is_machine, invp_no
+			FROM pd_wkc_import_tmp;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wkc_import_tmp 
+			(wkc_id, wkc_status, wkc_no, wkc_name, wkc_card_no, wkc_type1, wkc_type2, wkc_type3, wkc_type4, factory_no, workshop_no, line_no, wkc_sort, wkc_color, wkc_height, wkc_worktime_type, wkc_total_qty, wkc_valid_qty, wkc_eff_standard, wkc_effi_now, wkc_capability_max, wkc_capability_step, wkc_wkt_step, wkc_capability_min, wkc_wkt_max_waiting, wkc_wkt_outsource, wkc_worker_num, wkc_spec1_txt, wkc_spec1_min, wkc_spec1_max, wkc_spec2_txt, wkc_spec2_min, wkc_spec2_max, wkc_spec3_txt, wkc_spec3_min, wkc_spec3_max, wkc_spec4_txt, wkc_spec4_min, wkc_spec4_max, wkc_cost_produce_c, wkc_cost_before_c, wkc_cost_after_c, wkc_cost_idle_c, wkc_cost_worker_c, pd_wkc_rmk01, pd_wkc_rmk02, pd_wkc_rmk03, pd_wkc_rmk04, pd_wkc_rmk05, pd_wkc_rmk06, pd_wkc_rmk07, pd_wkc_rmk08, pd_wkc_rmk09, pd_wkc_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, wkc_is_machine, invp_no)
+			VALUES (@wkc_id, @wkc_status, @wkc_no, @wkc_name, @wkc_card_no, @wkc_type1, @wkc_type2, @wkc_type3, @wkc_type4, @factory_no, @workshop_no, @line_no, @wkc_sort, @wkc_color, @wkc_height, @wkc_worktime_type, @wkc_total_qty, @wkc_valid_qty, @wkc_eff_standard, @wkc_effi_now, @wkc_capability_max, @wkc_capability_step, @wkc_wkt_step, @wkc_capability_min, @wkc_wkt_max_waiting, @wkc_wkt_outsource, @wkc_worker_num, @wkc_spec1_txt, @wkc_spec1_min, @wkc_spec1_max, @wkc_spec2_txt, @wkc_spec2_min, @wkc_spec2_max, @wkc_spec3_txt, @wkc_spec3_min, @wkc_spec3_max, @wkc_spec4_txt, @wkc_spec4_min, @wkc_spec4_max, @wkc_cost_produce_c, @wkc_cost_before_c, @wkc_cost_after_c, @wkc_cost_idle_c, @wkc_cost_worker_c, @pd_wkc_rmk01, @pd_wkc_rmk02, @pd_wkc_rmk03, @pd_wkc_rmk04, @pd_wkc_rmk05, @pd_wkc_rmk06, @pd_wkc_rmk07, @pd_wkc_rmk08, @pd_wkc_rmk09, @pd_wkc_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @wkc_is_machine, @invp_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wkc_import_tmp SET 
+			wkc_id = @wkc_id, wkc_status = @wkc_status, wkc_no = @wkc_no, wkc_name = @wkc_name, wkc_card_no = @wkc_card_no, wkc_type1 = @wkc_type1, wkc_type2 = @wkc_type2, wkc_type3 = @wkc_type3, wkc_type4 = @wkc_type4, factory_no = @factory_no, workshop_no = @workshop_no, line_no = @line_no, wkc_sort = @wkc_sort, wkc_color = @wkc_color, wkc_height = @wkc_height, wkc_worktime_type = @wkc_worktime_type, wkc_total_qty = @wkc_total_qty, wkc_valid_qty = @wkc_valid_qty, wkc_eff_standard = @wkc_eff_standard, wkc_effi_now = @wkc_effi_now, wkc_capability_max = @wkc_capability_max, wkc_capability_step = @wkc_capability_step, wkc_wkt_step = @wkc_wkt_step, wkc_capability_min = @wkc_capability_min, wkc_wkt_max_waiting = @wkc_wkt_max_waiting, wkc_wkt_outsource = @wkc_wkt_outsource, wkc_worker_num = @wkc_worker_num, wkc_spec1_txt = @wkc_spec1_txt, wkc_spec1_min = @wkc_spec1_min, wkc_spec1_max = @wkc_spec1_max, wkc_spec2_txt = @wkc_spec2_txt, wkc_spec2_min = @wkc_spec2_min, wkc_spec2_max = @wkc_spec2_max, wkc_spec3_txt = @wkc_spec3_txt, wkc_spec3_min = @wkc_spec3_min, wkc_spec3_max = @wkc_spec3_max, wkc_spec4_txt = @wkc_spec4_txt, wkc_spec4_min = @wkc_spec4_min, wkc_spec4_max = @wkc_spec4_max, wkc_cost_produce_c = @wkc_cost_produce_c, wkc_cost_before_c = @wkc_cost_before_c, wkc_cost_after_c = @wkc_cost_after_c, wkc_cost_idle_c = @wkc_cost_idle_c, wkc_cost_worker_c = @wkc_cost_worker_c, pd_wkc_rmk01 = @pd_wkc_rmk01, pd_wkc_rmk02 = @pd_wkc_rmk02, pd_wkc_rmk03 = @pd_wkc_rmk03, pd_wkc_rmk04 = @pd_wkc_rmk04, pd_wkc_rmk05 = @pd_wkc_rmk05, pd_wkc_rmk06 = @pd_wkc_rmk06, pd_wkc_rmk07 = @pd_wkc_rmk07, pd_wkc_rmk08 = @pd_wkc_rmk08, pd_wkc_rmk09 = @pd_wkc_rmk09, pd_wkc_rmk10 = @pd_wkc_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, wkc_is_machine = @wkc_is_machine, invp_no = @invp_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wkc_import_tmp;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

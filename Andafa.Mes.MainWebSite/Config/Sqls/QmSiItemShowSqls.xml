@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				si_item_seq, si_item_status, si_item_no, si_item_name, wkp_no, si_item_show_rmk01, si_item_show_rmk02, si_item_show_rmk03, si_item_show_rmk04, si_item_show_rmk05, si_item_show_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_si_item_show;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				si_item_seq, si_item_status, si_item_no, si_item_name, wkp_no, si_item_show_rmk01, si_item_show_rmk02, si_item_show_rmk03, si_item_show_rmk04, si_item_show_rmk05, si_item_show_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM qm_si_item_show
+			WHERE si_item_show_id = @si_item_show_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO qm_si_item_show 
+			(si_item_seq, si_item_status, si_item_no, si_item_name, wkp_no, si_item_show_rmk01, si_item_show_rmk02, si_item_show_rmk03, si_item_show_rmk04, si_item_show_rmk05, si_item_show_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@si_item_seq, @si_item_status, @si_item_no, @si_item_name, @wkp_no, @si_item_show_rmk01, @si_item_show_rmk02, @si_item_show_rmk03, @si_item_show_rmk04, @si_item_show_rmk05, @si_item_show_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE qm_si_item_show SET 
+			si_item_seq = @si_item_seq, si_item_status = @si_item_status, si_item_no = @si_item_no, si_item_name = @si_item_name, wkp_no = @wkp_no, si_item_show_rmk01 = @si_item_show_rmk01, si_item_show_rmk02 = @si_item_show_rmk02, si_item_show_rmk03 = @si_item_show_rmk03, si_item_show_rmk04 = @si_item_show_rmk04, si_item_show_rmk05 = @si_item_show_rmk05, si_item_show_rmk06 = @si_item_show_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE si_item_show_id = @si_item_show_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM qm_si_item_show
+			WHERE si_item_show_id = @si_item_show_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

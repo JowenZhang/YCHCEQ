@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				unode, mo_rmb_ea_para_status, ea_id, ea_no, ea_name, ea_para_h_id, ea_para_h_name, mo_rmb_ea_para_rmk01, mo_rmb_ea_para_rmk02, mo_rmb_ea_para_rmk03, mo_rmb_ea_para_rmk04, mo_rmb_ea_para_rmk05, mo_rmb_ea_para_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM mo_rmb_ea_para;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				unode, mo_rmb_ea_para_status, ea_id, ea_no, ea_name, ea_para_h_id, ea_para_h_name, mo_rmb_ea_para_rmk01, mo_rmb_ea_para_rmk02, mo_rmb_ea_para_rmk03, mo_rmb_ea_para_rmk04, mo_rmb_ea_para_rmk05, mo_rmb_ea_para_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM mo_rmb_ea_para
+			WHERE mo_rmb_ea_para_id = @mo_rmb_ea_para_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_rmb_ea_para 
+			(unode, mo_rmb_ea_para_status, ea_id, ea_no, ea_name, ea_para_h_id, ea_para_h_name, mo_rmb_ea_para_rmk01, mo_rmb_ea_para_rmk02, mo_rmb_ea_para_rmk03, mo_rmb_ea_para_rmk04, mo_rmb_ea_para_rmk05, mo_rmb_ea_para_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@unode, @mo_rmb_ea_para_status, @ea_id, @ea_no, @ea_name, @ea_para_h_id, @ea_para_h_name, @mo_rmb_ea_para_rmk01, @mo_rmb_ea_para_rmk02, @mo_rmb_ea_para_rmk03, @mo_rmb_ea_para_rmk04, @mo_rmb_ea_para_rmk05, @mo_rmb_ea_para_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_rmb_ea_para SET 
+			unode = @unode, mo_rmb_ea_para_status = @mo_rmb_ea_para_status, ea_id = @ea_id, ea_no = @ea_no, ea_name = @ea_name, ea_para_h_id = @ea_para_h_id, ea_para_h_name = @ea_para_h_name, mo_rmb_ea_para_rmk01 = @mo_rmb_ea_para_rmk01, mo_rmb_ea_para_rmk02 = @mo_rmb_ea_para_rmk02, mo_rmb_ea_para_rmk03 = @mo_rmb_ea_para_rmk03, mo_rmb_ea_para_rmk04 = @mo_rmb_ea_para_rmk04, mo_rmb_ea_para_rmk05 = @mo_rmb_ea_para_rmk05, mo_rmb_ea_para_rmk06 = @mo_rmb_ea_para_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE mo_rmb_ea_para_id = @mo_rmb_ea_para_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_rmb_ea_para
+			WHERE mo_rmb_ea_para_id = @mo_rmb_ea_para_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

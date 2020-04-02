@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sr_dlv_h_id, part_no, part_name, part_spec, part_idt, part_unit, part_unit_name, mrp_region_no, lot_no, unit_price, dlv_plan_qty, dlv_tmprcv_qty, dlv_tmprcv_datetime, dlv_tmprcv_user_no, dlv_tmprcv_user_name, dlv_iqcrcv_qty_ok, dlv_iqcrcv_qty_sp, dlv_iqcrcv_qty_reject, dlv_iqcrcv_qty_short, dlv_iqcrcv_datetime, dlv_iqcrcv_user_no, dlv_iqcrcv_user_name, si_method, si_conclusion, po_h_no, sr_dlv_b_rmk1, sr_dlv_b_rmk2, sr_dlv_b_rmk3, sr_dlv_b_rmk4, sr_dlv_b_rmk5, sr_dlv_b_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, dlv_tmprcvrtn_qty, po_b_id
+			FROM sr_dlv_b;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sr_dlv_h_id, part_no, part_name, part_spec, part_idt, part_unit, part_unit_name, mrp_region_no, lot_no, unit_price, dlv_plan_qty, dlv_tmprcv_qty, dlv_tmprcv_datetime, dlv_tmprcv_user_no, dlv_tmprcv_user_name, dlv_iqcrcv_qty_ok, dlv_iqcrcv_qty_sp, dlv_iqcrcv_qty_reject, dlv_iqcrcv_qty_short, dlv_iqcrcv_datetime, dlv_iqcrcv_user_no, dlv_iqcrcv_user_name, si_method, si_conclusion, po_h_no, sr_dlv_b_rmk1, sr_dlv_b_rmk2, sr_dlv_b_rmk3, sr_dlv_b_rmk4, sr_dlv_b_rmk5, sr_dlv_b_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, dlv_tmprcvrtn_qty, po_b_id
+			FROM sr_dlv_b
+			WHERE sr_dlv_b_id = @sr_dlv_b_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sr_dlv_b 
+			(sr_dlv_h_id, part_no, part_name, part_spec, part_idt, part_unit, part_unit_name, mrp_region_no, lot_no, unit_price, dlv_plan_qty, dlv_tmprcv_qty, dlv_tmprcv_datetime, dlv_tmprcv_user_no, dlv_tmprcv_user_name, dlv_iqcrcv_qty_ok, dlv_iqcrcv_qty_sp, dlv_iqcrcv_qty_reject, dlv_iqcrcv_qty_short, dlv_iqcrcv_datetime, dlv_iqcrcv_user_no, dlv_iqcrcv_user_name, si_method, si_conclusion, po_h_no, sr_dlv_b_rmk1, sr_dlv_b_rmk2, sr_dlv_b_rmk3, sr_dlv_b_rmk4, sr_dlv_b_rmk5, sr_dlv_b_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, dlv_tmprcvrtn_qty, po_b_id)
+			VALUES (@sr_dlv_h_id, @part_no, @part_name, @part_spec, @part_idt, @part_unit, @part_unit_name, @mrp_region_no, @lot_no, @unit_price, @dlv_plan_qty, @dlv_tmprcv_qty, @dlv_tmprcv_datetime, @dlv_tmprcv_user_no, @dlv_tmprcv_user_name, @dlv_iqcrcv_qty_ok, @dlv_iqcrcv_qty_sp, @dlv_iqcrcv_qty_reject, @dlv_iqcrcv_qty_short, @dlv_iqcrcv_datetime, @dlv_iqcrcv_user_no, @dlv_iqcrcv_user_name, @si_method, @si_conclusion, @po_h_no, @sr_dlv_b_rmk1, @sr_dlv_b_rmk2, @sr_dlv_b_rmk3, @sr_dlv_b_rmk4, @sr_dlv_b_rmk5, @sr_dlv_b_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @dlv_tmprcvrtn_qty, @po_b_id);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sr_dlv_b SET 
+			sr_dlv_h_id = @sr_dlv_h_id, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, part_unit = @part_unit, part_unit_name = @part_unit_name, mrp_region_no = @mrp_region_no, lot_no = @lot_no, unit_price = @unit_price, dlv_plan_qty = @dlv_plan_qty, dlv_tmprcv_qty = @dlv_tmprcv_qty, dlv_tmprcv_datetime = @dlv_tmprcv_datetime, dlv_tmprcv_user_no = @dlv_tmprcv_user_no, dlv_tmprcv_user_name = @dlv_tmprcv_user_name, dlv_iqcrcv_qty_ok = @dlv_iqcrcv_qty_ok, dlv_iqcrcv_qty_sp = @dlv_iqcrcv_qty_sp, dlv_iqcrcv_qty_reject = @dlv_iqcrcv_qty_reject, dlv_iqcrcv_qty_short = @dlv_iqcrcv_qty_short, dlv_iqcrcv_datetime = @dlv_iqcrcv_datetime, dlv_iqcrcv_user_no = @dlv_iqcrcv_user_no, dlv_iqcrcv_user_name = @dlv_iqcrcv_user_name, si_method = @si_method, si_conclusion = @si_conclusion, po_h_no = @po_h_no, sr_dlv_b_rmk1 = @sr_dlv_b_rmk1, sr_dlv_b_rmk2 = @sr_dlv_b_rmk2, sr_dlv_b_rmk3 = @sr_dlv_b_rmk3, sr_dlv_b_rmk4 = @sr_dlv_b_rmk4, sr_dlv_b_rmk5 = @sr_dlv_b_rmk5, sr_dlv_b_rmk6 = @sr_dlv_b_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, dlv_tmprcvrtn_qty = @dlv_tmprcvrtn_qty, po_b_id = @po_b_id
+			WHERE sr_dlv_b_id = @sr_dlv_b_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sr_dlv_b
+			WHERE sr_dlv_b_id = @sr_dlv_b_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

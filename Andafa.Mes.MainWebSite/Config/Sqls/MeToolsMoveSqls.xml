@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				tools_no, tools_action_id, tools_action_name, tools_position, tools_move_rmk01, tools_move_rmk02, tools_move_rmk04, tools_move_rmk03, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name, tools_name
+			FROM me_tools_move;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				tools_no, tools_action_id, tools_action_name, tools_position, tools_move_rmk01, tools_move_rmk02, tools_move_rmk04, tools_move_rmk03, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name, tools_name
+			FROM me_tools_move
+			WHERE me_tools_move_id = @me_tools_move_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_tools_move 
+			(tools_no, tools_action_id, tools_action_name, tools_position, tools_move_rmk01, tools_move_rmk02, tools_move_rmk04, tools_move_rmk03, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name, tools_name)
+			VALUES (@tools_no, @tools_action_id, @tools_action_name, @tools_position, @tools_move_rmk01, @tools_move_rmk02, @tools_move_rmk04, @tools_move_rmk03, @crt_user, @crt_host, @crt_time, @upd_user, @upd_host, @upd_time, @crt_user_no, @crt_user_name, @upd_user_no, @upd_user_name, @tools_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_tools_move SET 
+			tools_no = @tools_no, tools_action_id = @tools_action_id, tools_action_name = @tools_action_name, tools_position = @tools_position, tools_move_rmk01 = @tools_move_rmk01, tools_move_rmk02 = @tools_move_rmk02, tools_move_rmk04 = @tools_move_rmk04, tools_move_rmk03 = @tools_move_rmk03, crt_user = @crt_user, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, tools_name = @tools_name
+			WHERE me_tools_move_id = @me_tools_move_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_tools_move
+			WHERE me_tools_move_id = @me_tools_move_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

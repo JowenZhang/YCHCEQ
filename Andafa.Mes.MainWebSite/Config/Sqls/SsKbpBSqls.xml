@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				kbp_id, column_id, column_sequence, column_is_visible, column_lang_str, column_width, column_font_size, column_font_color, column_align, column_sort_priority, column_sort_order, column_sql_where, column_is_sum, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ss_kbp_b;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				kbp_id, column_id, column_sequence, column_is_visible, column_lang_str, column_width, column_font_size, column_font_color, column_align, column_sort_priority, column_sort_order, column_sql_where, column_is_sum, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time
+			FROM ss_kbp_b
+			WHERE kbp_b_id = @kbp_b_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_kbp_b 
+			(kbp_id, column_id, column_sequence, column_is_visible, column_lang_str, column_width, column_font_size, column_font_color, column_align, column_sort_priority, column_sort_order, column_sql_where, column_is_sum, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time)
+			VALUES (@kbp_id, @column_id, @column_sequence, @column_is_visible, @column_lang_str, @column_width, @column_font_size, @column_font_color, @column_align, @column_sort_priority, @column_sort_order, @column_sql_where, @column_is_sum, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_kbp_b SET 
+			kbp_id = @kbp_id, column_id = @column_id, column_sequence = @column_sequence, column_is_visible = @column_is_visible, column_lang_str = @column_lang_str, column_width = @column_width, column_font_size = @column_font_size, column_font_color = @column_font_color, column_align = @column_align, column_sort_priority = @column_sort_priority, column_sort_order = @column_sort_order, column_sql_where = @column_sql_where, column_is_sum = @column_is_sum, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time
+			WHERE kbp_b_id = @kbp_b_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_kbp_b
+			WHERE kbp_b_id = @kbp_b_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

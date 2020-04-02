@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				shift_date, wkc_no, wkc_name, weekday, work_datetime_start, work_datetime_end, shift_no, shift_name, ps_calendar1_rmk01, ps_calendar1_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ps_calendar2;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				shift_date, wkc_no, wkc_name, weekday, work_datetime_start, work_datetime_end, shift_no, shift_name, ps_calendar1_rmk01, ps_calendar1_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ps_calendar2
+			WHERE wkc_no = @wkc_no OR ps_calendar_id = @ps_calendar_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_calendar2 
+			(shift_date, wkc_no, wkc_name, weekday, work_datetime_start, work_datetime_end, shift_no, shift_name, ps_calendar1_rmk01, ps_calendar1_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@shift_date, @wkc_no, @wkc_name, @weekday, @work_datetime_start, @work_datetime_end, @shift_no, @shift_name, @ps_calendar1_rmk01, @ps_calendar1_rmk02, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_calendar2 SET 
+			shift_date = @shift_date, wkc_name = @wkc_name, weekday = @weekday, work_datetime_start = @work_datetime_start, work_datetime_end = @work_datetime_end, shift_no = @shift_no, shift_name = @shift_name, ps_calendar1_rmk01 = @ps_calendar1_rmk01, ps_calendar1_rmk02 = @ps_calendar1_rmk02, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE wkc_no = @wkc_no OR ps_calendar_id = @ps_calendar_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_calendar2
+			WHERE wkc_no = @wkc_no OR ps_calendar_id = @ps_calendar_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				cr_dlv_h_id, part_no, part_name, part_spec, part_idt, part_unit, cr_dlv_qty_plan, cr_dlv_qty, unit_price, invp_no, cr_dlv_b_rmk1, cr_dlv_b_rmk2, cr_dlv_b_rmk3, cr_dlv_b_rmk4, cr_dlv_b_rmk5, cr_dlv_b_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, so_b_id
+			FROM cr_dlv_b;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				cr_dlv_h_id, part_no, part_name, part_spec, part_idt, part_unit, cr_dlv_qty_plan, cr_dlv_qty, unit_price, invp_no, cr_dlv_b_rmk1, cr_dlv_b_rmk2, cr_dlv_b_rmk3, cr_dlv_b_rmk4, cr_dlv_b_rmk5, cr_dlv_b_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, so_b_id
+			FROM cr_dlv_b
+			WHERE cr_dlv_b_id = @cr_dlv_b_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_dlv_b 
+			(cr_dlv_h_id, part_no, part_name, part_spec, part_idt, part_unit, cr_dlv_qty_plan, cr_dlv_qty, unit_price, invp_no, cr_dlv_b_rmk1, cr_dlv_b_rmk2, cr_dlv_b_rmk3, cr_dlv_b_rmk4, cr_dlv_b_rmk5, cr_dlv_b_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, so_b_id)
+			VALUES (@cr_dlv_h_id, @part_no, @part_name, @part_spec, @part_idt, @part_unit, @cr_dlv_qty_plan, @cr_dlv_qty, @unit_price, @invp_no, @cr_dlv_b_rmk1, @cr_dlv_b_rmk2, @cr_dlv_b_rmk3, @cr_dlv_b_rmk4, @cr_dlv_b_rmk5, @cr_dlv_b_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @so_b_id);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_dlv_b SET 
+			cr_dlv_h_id = @cr_dlv_h_id, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, part_unit = @part_unit, cr_dlv_qty_plan = @cr_dlv_qty_plan, cr_dlv_qty = @cr_dlv_qty, unit_price = @unit_price, invp_no = @invp_no, cr_dlv_b_rmk1 = @cr_dlv_b_rmk1, cr_dlv_b_rmk2 = @cr_dlv_b_rmk2, cr_dlv_b_rmk3 = @cr_dlv_b_rmk3, cr_dlv_b_rmk4 = @cr_dlv_b_rmk4, cr_dlv_b_rmk5 = @cr_dlv_b_rmk5, cr_dlv_b_rmk6 = @cr_dlv_b_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, so_b_id = @so_b_id
+			WHERE cr_dlv_b_id = @cr_dlv_b_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_dlv_b
+			WHERE cr_dlv_b_id = @cr_dlv_b_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

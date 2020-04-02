@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				assess_date, assess_user, is_manual, assess_rule_name, assess_qty_real, assess_score_real, rmk1, rmk2, rmk3, assess_rule_id, assess_qty_standard, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_user, upd_time, upd_user_no, upd_user_name, upd_host
+			FROM ss_user_assess_score;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				assess_date, assess_user, is_manual, assess_rule_name, assess_qty_real, assess_score_real, rmk1, rmk2, rmk3, assess_rule_id, assess_qty_standard, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_user, upd_time, upd_user_no, upd_user_name, upd_host
+			FROM ss_user_assess_score
+			WHERE assess_score_id = @assess_score_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_user_assess_score 
+			(assess_date, assess_user, is_manual, assess_rule_name, assess_qty_real, assess_score_real, rmk1, rmk2, rmk3, assess_rule_id, assess_qty_standard, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_user, upd_time, upd_user_no, upd_user_name, upd_host)
+			VALUES (@assess_date, @assess_user, @is_manual, @assess_rule_name, @assess_qty_real, @assess_score_real, @rmk1, @rmk2, @rmk3, @assess_rule_id, @assess_qty_standard, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_user, @upd_time, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_user_assess_score SET 
+			assess_date = @assess_date, assess_user = @assess_user, is_manual = @is_manual, assess_rule_name = @assess_rule_name, assess_qty_real = @assess_qty_real, assess_score_real = @assess_score_real, rmk1 = @rmk1, rmk2 = @rmk2, rmk3 = @rmk3, assess_rule_id = @assess_rule_id, assess_qty_standard = @assess_qty_standard, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_user = @upd_user, upd_time = @upd_time, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE assess_score_id = @assess_score_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_user_assess_score
+			WHERE assess_score_id = @assess_score_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

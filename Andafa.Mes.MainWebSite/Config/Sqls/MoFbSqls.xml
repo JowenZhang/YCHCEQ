@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				mo_fb_status, mo_real_first_start_datetime, mo_real_last_end_datetime, mo_finished_qty_ok_total, mo_finished_qty_ng_total, mo_finished_qty_scrap_total, mo_finished_qty_other_total, mo_stock_in_qty_total, mo_fb_time_length, mo_fb_ex_time_length, mo_fb_rest_time_length
+			FROM mo_fb;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				mo_fb_status, mo_real_first_start_datetime, mo_real_last_end_datetime, mo_finished_qty_ok_total, mo_finished_qty_ng_total, mo_finished_qty_scrap_total, mo_finished_qty_other_total, mo_stock_in_qty_total, mo_fb_time_length, mo_fb_ex_time_length, mo_fb_rest_time_length
+			FROM mo_fb
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_fb 
+			(mo_fb_status, mo_real_first_start_datetime, mo_real_last_end_datetime, mo_finished_qty_ok_total, mo_finished_qty_ng_total, mo_finished_qty_scrap_total, mo_finished_qty_other_total, mo_stock_in_qty_total, mo_fb_time_length, mo_fb_ex_time_length, mo_fb_rest_time_length)
+			VALUES (@mo_fb_status, @mo_real_first_start_datetime, @mo_real_last_end_datetime, @mo_finished_qty_ok_total, @mo_finished_qty_ng_total, @mo_finished_qty_scrap_total, @mo_finished_qty_other_total, @mo_stock_in_qty_total, @mo_fb_time_length, @mo_fb_ex_time_length, @mo_fb_rest_time_length);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_fb SET 
+			mo_fb_status = @mo_fb_status, mo_real_first_start_datetime = @mo_real_first_start_datetime, mo_real_last_end_datetime = @mo_real_last_end_datetime, mo_finished_qty_ok_total = @mo_finished_qty_ok_total, mo_finished_qty_ng_total = @mo_finished_qty_ng_total, mo_finished_qty_scrap_total = @mo_finished_qty_scrap_total, mo_finished_qty_other_total = @mo_finished_qty_other_total, mo_stock_in_qty_total = @mo_stock_in_qty_total, mo_fb_time_length = @mo_fb_time_length, mo_fb_ex_time_length = @mo_fb_ex_time_length, mo_fb_rest_time_length = @mo_fb_rest_time_length
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_fb
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

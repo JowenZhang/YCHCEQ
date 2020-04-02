@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wks_status, wks_no, wks_name, wks_type1, wks_type2, wks_type3, wks_type4, wks_desc1, wks_desc2, wkt_before, wkt_products, wkt_after, factory_no, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wks;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wks_status, wks_no, wks_name, wks_type1, wks_type2, wks_type3, wks_type4, wks_desc1, wks_desc2, wkt_before, wkt_products, wkt_after, factory_no, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wks
+			WHERE wks_id = @wks_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wks 
+			(wks_status, wks_no, wks_name, wks_type1, wks_type2, wks_type3, wks_type4, wks_desc1, wks_desc2, wkt_before, wkt_products, wkt_after, factory_no, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@wks_status, @wks_no, @wks_name, @wks_type1, @wks_type2, @wks_type3, @wks_type4, @wks_desc1, @wks_desc2, @wkt_before, @wkt_products, @wkt_after, @factory_no, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wks SET 
+			wks_status = @wks_status, wks_no = @wks_no, wks_name = @wks_name, wks_type1 = @wks_type1, wks_type2 = @wks_type2, wks_type3 = @wks_type3, wks_type4 = @wks_type4, wks_desc1 = @wks_desc1, wks_desc2 = @wks_desc2, wkt_before = @wkt_before, wkt_products = @wkt_products, wkt_after = @wkt_after, factory_no = @factory_no, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE wks_id = @wks_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wks
+			WHERE wks_id = @wks_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

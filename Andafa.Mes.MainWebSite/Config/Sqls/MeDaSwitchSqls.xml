@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				da_act_no, da_act_name, da_act_status_desc, dt_no, wkc_no, wkc_name, workshop_no, workshop_name, factory_no, factory_name, work_type_no, work_type_name, worker_card_no, worker_no, worker_name, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, wkn_wkt_produce, wkn_qty_produce, wkn_jiepai_std, tools_no, tools_name, tools_used_qty, tools_eff_n, tools_eff_d, shift_date, shift_no, shift_name, da_datetime_begin, da_datetime_end, da_datetime_length, da_count_datetime_begin, da_count_datetime_last, da_count_begin, da_count_last, da_count_diff, da_qty, da_qty_ok, da_qty_ng, da_switch_rmk01, da_switch_rmk02, da_switch_rmk03, da_switch_rmk04, da_switch_rmk05, da_switch_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_no, wka_no
+			FROM me_da_switch;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				da_act_no, da_act_name, da_act_status_desc, dt_no, wkc_no, wkc_name, workshop_no, workshop_name, factory_no, factory_name, work_type_no, work_type_name, worker_card_no, worker_no, worker_name, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, wkn_wkt_produce, wkn_qty_produce, wkn_jiepai_std, tools_no, tools_name, tools_used_qty, tools_eff_n, tools_eff_d, shift_date, shift_no, shift_name, da_datetime_begin, da_datetime_end, da_datetime_length, da_count_datetime_begin, da_count_datetime_last, da_count_begin, da_count_last, da_count_diff, da_qty, da_qty_ok, da_qty_ng, da_switch_rmk01, da_switch_rmk02, da_switch_rmk03, da_switch_rmk04, da_switch_rmk05, da_switch_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_no, wka_no
+			FROM me_da_switch
+			WHERE da_switch_id = @da_switch_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_da_switch 
+			(da_act_no, da_act_name, da_act_status_desc, dt_no, wkc_no, wkc_name, workshop_no, workshop_name, factory_no, factory_name, work_type_no, work_type_name, worker_card_no, worker_no, worker_name, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, wkn_wkt_produce, wkn_qty_produce, wkn_jiepai_std, tools_no, tools_name, tools_used_qty, tools_eff_n, tools_eff_d, shift_date, shift_no, shift_name, da_datetime_begin, da_datetime_end, da_datetime_length, da_count_datetime_begin, da_count_datetime_last, da_count_begin, da_count_last, da_count_diff, da_qty, da_qty_ok, da_qty_ng, da_switch_rmk01, da_switch_rmk02, da_switch_rmk03, da_switch_rmk04, da_switch_rmk05, da_switch_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_no, wka_no)
+			VALUES (@da_act_no, @da_act_name, @da_act_status_desc, @dt_no, @wkc_no, @wkc_name, @workshop_no, @workshop_name, @factory_no, @factory_name, @work_type_no, @work_type_name, @worker_card_no, @worker_no, @worker_name, @lot_no, @unode, @wkn, @wkp_no, @wkp_name, @part_no, @part_name, @part_spec, @wkn_wkt_produce, @wkn_qty_produce, @wkn_jiepai_std, @tools_no, @tools_name, @tools_used_qty, @tools_eff_n, @tools_eff_d, @shift_date, @shift_no, @shift_name, @da_datetime_begin, @da_datetime_end, @da_datetime_length, @da_count_datetime_begin, @da_count_datetime_last, @da_count_begin, @da_count_last, @da_count_diff, @da_qty, @da_qty_ok, @da_qty_ng, @da_switch_rmk01, @da_switch_rmk02, @da_switch_rmk03, @da_switch_rmk04, @da_switch_rmk05, @da_switch_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @ea_no, @wka_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_da_switch SET 
+			da_act_no = @da_act_no, da_act_name = @da_act_name, da_act_status_desc = @da_act_status_desc, dt_no = @dt_no, wkc_no = @wkc_no, wkc_name = @wkc_name, workshop_no = @workshop_no, workshop_name = @workshop_name, factory_no = @factory_no, factory_name = @factory_name, work_type_no = @work_type_no, work_type_name = @work_type_name, worker_card_no = @worker_card_no, worker_no = @worker_no, worker_name = @worker_name, lot_no = @lot_no, unode = @unode, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, wkn_wkt_produce = @wkn_wkt_produce, wkn_qty_produce = @wkn_qty_produce, wkn_jiepai_std = @wkn_jiepai_std, tools_no = @tools_no, tools_name = @tools_name, tools_used_qty = @tools_used_qty, tools_eff_n = @tools_eff_n, tools_eff_d = @tools_eff_d, shift_date = @shift_date, shift_no = @shift_no, shift_name = @shift_name, da_datetime_begin = @da_datetime_begin, da_datetime_end = @da_datetime_end, da_datetime_length = @da_datetime_length, da_count_datetime_begin = @da_count_datetime_begin, da_count_datetime_last = @da_count_datetime_last, da_count_begin = @da_count_begin, da_count_last = @da_count_last, da_count_diff = @da_count_diff, da_qty = @da_qty, da_qty_ok = @da_qty_ok, da_qty_ng = @da_qty_ng, da_switch_rmk01 = @da_switch_rmk01, da_switch_rmk02 = @da_switch_rmk02, da_switch_rmk03 = @da_switch_rmk03, da_switch_rmk04 = @da_switch_rmk04, da_switch_rmk05 = @da_switch_rmk05, da_switch_rmk06 = @da_switch_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, ea_no = @ea_no, wka_no = @wka_no
+			WHERE da_switch_id = @da_switch_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_da_switch
+			WHERE da_switch_id = @da_switch_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

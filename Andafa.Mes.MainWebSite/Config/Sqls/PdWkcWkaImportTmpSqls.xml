@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				pd_wkc_wka_id, wkc_id, wka_no, wka_name, wka_desc, pd_wkc_wka_rmk1, pd_wkc_wka_rmk2, pd_wkc_wka_rmk3, pd_wkc_wka_rmk4, pd_wkc_wka_rmk5, pd_wkc_wka_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wkc_wka_import_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				pd_wkc_wka_id, wkc_id, wka_no, wka_name, wka_desc, pd_wkc_wka_rmk1, pd_wkc_wka_rmk2, pd_wkc_wka_rmk3, pd_wkc_wka_rmk4, pd_wkc_wka_rmk5, pd_wkc_wka_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wkc_wka_import_tmp;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wkc_wka_import_tmp 
+			(pd_wkc_wka_id, wkc_id, wka_no, wka_name, wka_desc, pd_wkc_wka_rmk1, pd_wkc_wka_rmk2, pd_wkc_wka_rmk3, pd_wkc_wka_rmk4, pd_wkc_wka_rmk5, pd_wkc_wka_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@pd_wkc_wka_id, @wkc_id, @wka_no, @wka_name, @wka_desc, @pd_wkc_wka_rmk1, @pd_wkc_wka_rmk2, @pd_wkc_wka_rmk3, @pd_wkc_wka_rmk4, @pd_wkc_wka_rmk5, @pd_wkc_wka_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wkc_wka_import_tmp SET 
+			pd_wkc_wka_id = @pd_wkc_wka_id, wkc_id = @wkc_id, wka_no = @wka_no, wka_name = @wka_name, wka_desc = @wka_desc, pd_wkc_wka_rmk1 = @pd_wkc_wka_rmk1, pd_wkc_wka_rmk2 = @pd_wkc_wka_rmk2, pd_wkc_wka_rmk3 = @pd_wkc_wka_rmk3, pd_wkc_wka_rmk4 = @pd_wkc_wka_rmk4, pd_wkc_wka_rmk5 = @pd_wkc_wka_rmk5, pd_wkc_wka_rmk6 = @pd_wkc_wka_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wkc_wka_import_tmp;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

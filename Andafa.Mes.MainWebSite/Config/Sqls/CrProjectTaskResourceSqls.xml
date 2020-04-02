@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				task_id, resource_no, resource_qty, cr_project_task_resource_rmk1, cr_project_task_resource_rmk2, cr_project_task_resource_rmk3, cr_project_task_resource_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_project_task_resource;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				task_id, resource_no, resource_qty, cr_project_task_resource_rmk1, cr_project_task_resource_rmk2, cr_project_task_resource_rmk3, cr_project_task_resource_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_project_task_resource
+			WHERE project_task_resource_id = @project_task_resource_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_project_task_resource 
+			(task_id, resource_no, resource_qty, cr_project_task_resource_rmk1, cr_project_task_resource_rmk2, cr_project_task_resource_rmk3, cr_project_task_resource_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@task_id, @resource_no, @resource_qty, @cr_project_task_resource_rmk1, @cr_project_task_resource_rmk2, @cr_project_task_resource_rmk3, @cr_project_task_resource_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_project_task_resource SET 
+			task_id = @task_id, resource_no = @resource_no, resource_qty = @resource_qty, cr_project_task_resource_rmk1 = @cr_project_task_resource_rmk1, cr_project_task_resource_rmk2 = @cr_project_task_resource_rmk2, cr_project_task_resource_rmk3 = @cr_project_task_resource_rmk3, cr_project_task_resource_rmk4 = @cr_project_task_resource_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE project_task_resource_id = @project_task_resource_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_project_task_resource
+			WHERE project_task_resource_id = @project_task_resource_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				rmh_status, rmh_no, part_no, part_idt, rmh_version, rmh_revision, is_default, rmh_desc, factory_no, rmh_type1, rmh_type2, pd_rmh_rmk1, pd_rmh_rmk2, pd_rmh_rmk3, pd_rmh_rmk4, pd_rmh_rmk5, pd_rmh_rmk6, rmh_wkn_num, rmh_wkt_produce, rmh_unit_cost, rmh_mtr_weight, print_times, is_plan, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_rmh;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				rmh_status, rmh_no, part_no, part_idt, rmh_version, rmh_revision, is_default, rmh_desc, factory_no, rmh_type1, rmh_type2, pd_rmh_rmk1, pd_rmh_rmk2, pd_rmh_rmk3, pd_rmh_rmk4, pd_rmh_rmk5, pd_rmh_rmk6, rmh_wkn_num, rmh_wkt_produce, rmh_unit_cost, rmh_mtr_weight, print_times, is_plan, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_rmh
+			WHERE rmh_id = @rmh_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_rmh 
+			(rmh_status, rmh_no, part_no, part_idt, rmh_version, rmh_revision, is_default, rmh_desc, factory_no, rmh_type1, rmh_type2, pd_rmh_rmk1, pd_rmh_rmk2, pd_rmh_rmk3, pd_rmh_rmk4, pd_rmh_rmk5, pd_rmh_rmk6, rmh_wkn_num, rmh_wkt_produce, rmh_unit_cost, rmh_mtr_weight, print_times, is_plan, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@rmh_status, @rmh_no, @part_no, @part_idt, @rmh_version, @rmh_revision, @is_default, @rmh_desc, @factory_no, @rmh_type1, @rmh_type2, @pd_rmh_rmk1, @pd_rmh_rmk2, @pd_rmh_rmk3, @pd_rmh_rmk4, @pd_rmh_rmk5, @pd_rmh_rmk6, @rmh_wkn_num, @rmh_wkt_produce, @rmh_unit_cost, @rmh_mtr_weight, @print_times, @is_plan, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_rmh SET 
+			rmh_status = @rmh_status, rmh_no = @rmh_no, part_no = @part_no, part_idt = @part_idt, rmh_version = @rmh_version, rmh_revision = @rmh_revision, is_default = @is_default, rmh_desc = @rmh_desc, factory_no = @factory_no, rmh_type1 = @rmh_type1, rmh_type2 = @rmh_type2, pd_rmh_rmk1 = @pd_rmh_rmk1, pd_rmh_rmk2 = @pd_rmh_rmk2, pd_rmh_rmk3 = @pd_rmh_rmk3, pd_rmh_rmk4 = @pd_rmh_rmk4, pd_rmh_rmk5 = @pd_rmh_rmk5, pd_rmh_rmk6 = @pd_rmh_rmk6, rmh_wkn_num = @rmh_wkn_num, rmh_wkt_produce = @rmh_wkt_produce, rmh_unit_cost = @rmh_unit_cost, rmh_mtr_weight = @rmh_mtr_weight, print_times = @print_times, is_plan = @is_plan, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE rmh_id = @rmh_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_rmh
+			WHERE rmh_id = @rmh_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

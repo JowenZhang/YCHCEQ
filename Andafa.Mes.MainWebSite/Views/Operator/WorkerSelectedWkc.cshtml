@@ -1,0 +1,74 @@
+﻿@model bool
+
+@{
+    ViewBag.Title = "操作员区域编辑";
+    ViewBag.PartTitle = "操作员区域编辑";
+    Layout = "~/Views/Shared/_basicLayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+    @{
+        if (Model)
+        {
+            <div class="row">
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="sr-only">Error:</span><span>区域设定有误</span>
+                    <br />
+                    <a class="btn btn-danger btn-lg btn-block" href="/">返回登录</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="btn-group btn-group-lg btn-group-justified">
+                    <a class="btn btn-primary" onclick="SelectWkc()">确认编辑</a>
+                    <a class="btn btn-primary" href="/Operator/BasicPage">返回主页</a>
+                </div>
+                <br />
+                <div id="infoTip" hidden="hidden"></div>
+                <br />
+                <table class="table table-striped table-sm table-condensed table-auto-hide"></table>
+            </div>
+        }
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+        //1.初始化Table
+        var oTable = new TableInit();
+        oTable.url = '/Operator/GetWorkerSelectedWkcData';
+        oTable.columnSettings = [
+            { field: 'is_selected', title: '已选择', columnStyle: false, checkbox: true },
+            { field: 'wkc_name', title: '区域名称', columnStyle: false, checkbox: false },
+            { field: 'wkc_no', title: '区域编号', columnStyle: false, checkbox: false },
+            { field: 'wkp_name', title: '工艺名称', columnStyle: true, checkbox: false },
+            { field: 'wkp_no', title: '工艺编号', columnStyle: true, checkbox: false }];
+        oTable.Init();
+    });
+    function SelectWkc() {
+        var selectedWkc = [];
+        var rows = $('.table-auto-hide').bootstrapTable('getSelections');
+        if (rows.length < 1) {
+            TipShow('请至少选中一个区域');
+        } else {
+            for (var i = 0; i < rows.length; i++) {
+                selectedWkc.push(rows[i].wkc_no);
+            }
+            $.ajax({
+                url: '/Operator/PostWorkerSelectedWkcData',
+                data: { 'wkcNos': selectedWkc },
+                dataType: 'json',
+                type: 'post',
+                traditional: true,
+                success: function (data) {
+                    if (data.res) {
+                        window.location.href = "/Operator/BasicPage"
+                    } else {
+                        TipShow(data.msg);
+                    }
+                }
+            });
+        }
+    };
+</script>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				no_element_str, no_element_sn_next, crt_time, upd_time
+			FROM ss_no_next;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				no_element_str, no_element_sn_next, crt_time, upd_time
+			FROM ss_no_next
+			WHERE no_rule_h_no = @no_rule_h_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_no_next 
+			(no_element_str, no_element_sn_next, crt_time, upd_time)
+			VALUES (@no_element_str, @no_element_sn_next, @crt_time, @upd_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_no_next SET 
+			no_element_str = @no_element_str, no_element_sn_next = @no_element_sn_next, crt_time = @crt_time, upd_time = @upd_time
+			WHERE no_rule_h_no = @no_rule_h_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_no_next
+			WHERE no_rule_h_no = @no_rule_h_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

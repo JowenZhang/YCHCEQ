@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				cr_dlv_b_rmk3, cr_dlv_h_no, part_no, part_name, cr_dlv_qty_plan, cr_dlv_qty, cr_dlv_b_rmk1, cr_dlv_b_rmk2
+			FROM cr_dlv_b_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				cr_dlv_b_rmk3, cr_dlv_h_no, part_no, part_name, cr_dlv_qty_plan, cr_dlv_qty, cr_dlv_b_rmk1, cr_dlv_b_rmk2
+			FROM cr_dlv_b_tmp
+			WHERE cr_dlv_bid = @cr_dlv_bid;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_dlv_b_tmp 
+			(cr_dlv_b_rmk3, cr_dlv_h_no, part_no, part_name, cr_dlv_qty_plan, cr_dlv_qty, cr_dlv_b_rmk1, cr_dlv_b_rmk2)
+			VALUES (@cr_dlv_b_rmk3, @cr_dlv_h_no, @part_no, @part_name, @cr_dlv_qty_plan, @cr_dlv_qty, @cr_dlv_b_rmk1, @cr_dlv_b_rmk2);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_dlv_b_tmp SET 
+			cr_dlv_b_rmk3 = @cr_dlv_b_rmk3, cr_dlv_h_no = @cr_dlv_h_no, part_no = @part_no, part_name = @part_name, cr_dlv_qty_plan = @cr_dlv_qty_plan, cr_dlv_qty = @cr_dlv_qty, cr_dlv_b_rmk1 = @cr_dlv_b_rmk1, cr_dlv_b_rmk2 = @cr_dlv_b_rmk2
+			WHERE cr_dlv_bid = @cr_dlv_bid;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_dlv_b_tmp
+			WHERE cr_dlv_bid = @cr_dlv_bid;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

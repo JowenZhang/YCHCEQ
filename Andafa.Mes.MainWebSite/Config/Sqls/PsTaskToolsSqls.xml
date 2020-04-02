@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				tools_id, tools_used_qty, cost_run, cost_work
+			FROM ps_task_tools;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				tools_id, tools_used_qty, cost_run, cost_work
+			FROM ps_task_tools
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_task_tools 
+			(tools_id, tools_used_qty, cost_run, cost_work)
+			VALUES (@tools_id, @tools_used_qty, @cost_run, @cost_work);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_task_tools SET 
+			tools_id = @tools_id, tools_used_qty = @tools_used_qty, cost_run = @cost_run, cost_work = @cost_work
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_task_tools
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

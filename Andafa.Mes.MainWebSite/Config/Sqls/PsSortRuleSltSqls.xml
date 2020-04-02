@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sort_rule_slt_status, sort_rule_slt_name, sort_rule_slt_desc, is_sys, is_default, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM ps_sort_rule_slt;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sort_rule_slt_status, sort_rule_slt_name, sort_rule_slt_desc, is_sys, is_default, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM ps_sort_rule_slt
+			WHERE sort_rule_slt_id = @sort_rule_slt_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_sort_rule_slt 
+			(sort_rule_slt_status, sort_rule_slt_name, sort_rule_slt_desc, is_sys, is_default, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name)
+			VALUES (@sort_rule_slt_status, @sort_rule_slt_name, @sort_rule_slt_desc, @is_sys, @is_default, @crt_user, @crt_host, @crt_time, @upd_user, @upd_host, @upd_time, @crt_user_no, @crt_user_name, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_sort_rule_slt SET 
+			sort_rule_slt_status = @sort_rule_slt_status, sort_rule_slt_name = @sort_rule_slt_name, sort_rule_slt_desc = @sort_rule_slt_desc, is_sys = @is_sys, is_default = @is_default, crt_user = @crt_user, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE sort_rule_slt_id = @sort_rule_slt_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_sort_rule_slt
+			WHERE sort_rule_slt_id = @sort_rule_slt_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

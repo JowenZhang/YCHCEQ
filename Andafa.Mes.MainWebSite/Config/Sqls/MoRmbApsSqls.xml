@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				mo_id, wkn_aps_locked, wkn_aps_start_datetime, wkn_aps_end_datetime, wkn_aps_qty, aps_batch_no, wkn_aps_start_datetime1, wkn_aps_end_datetime1, wkn_aps_start_datetime2, wkn_aps_end_datetime2, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM mo_rmb_aps;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				mo_id, wkn_aps_locked, wkn_aps_start_datetime, wkn_aps_end_datetime, wkn_aps_qty, aps_batch_no, wkn_aps_start_datetime1, wkn_aps_end_datetime1, wkn_aps_start_datetime2, wkn_aps_end_datetime2, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM mo_rmb_aps
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_rmb_aps 
+			(mo_id, wkn_aps_locked, wkn_aps_start_datetime, wkn_aps_end_datetime, wkn_aps_qty, aps_batch_no, wkn_aps_start_datetime1, wkn_aps_end_datetime1, wkn_aps_start_datetime2, wkn_aps_end_datetime2, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name)
+			VALUES (@mo_id, @wkn_aps_locked, @wkn_aps_start_datetime, @wkn_aps_end_datetime, @wkn_aps_qty, @aps_batch_no, @wkn_aps_start_datetime1, @wkn_aps_end_datetime1, @wkn_aps_start_datetime2, @wkn_aps_end_datetime2, @crt_user, @crt_host, @crt_time, @upd_user, @upd_host, @upd_time, @crt_user_no, @crt_user_name, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_rmb_aps SET 
+			mo_id = @mo_id, wkn_aps_locked = @wkn_aps_locked, wkn_aps_start_datetime = @wkn_aps_start_datetime, wkn_aps_end_datetime = @wkn_aps_end_datetime, wkn_aps_qty = @wkn_aps_qty, aps_batch_no = @aps_batch_no, wkn_aps_start_datetime1 = @wkn_aps_start_datetime1, wkn_aps_end_datetime1 = @wkn_aps_end_datetime1, wkn_aps_start_datetime2 = @wkn_aps_start_datetime2, wkn_aps_end_datetime2 = @wkn_aps_end_datetime2, crt_user = @crt_user, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_rmb_aps
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

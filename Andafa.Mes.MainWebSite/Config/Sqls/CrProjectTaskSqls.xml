@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				project_id, task_no, task_status, task_subject, task_desc, task_content, task_type1, task_type2, task_type3, task_type4, task_plan_start_date, task_plan_finish_date, task_real_start_date, task_real_finish_date, seq, is_summary, parent_task_id, percent_complete, constraint_type, constraint_date, cr_project_task_rmk1, cr_project_task_rmk2, cr_project_task_rmk3, cr_project_task_rmk4, cr_project_task_rmk5, cr_project_task_rmk6, cr_project_task_rmk7, cr_project_task_rmk8, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_project_task;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				project_id, task_no, task_status, task_subject, task_desc, task_content, task_type1, task_type2, task_type3, task_type4, task_plan_start_date, task_plan_finish_date, task_real_start_date, task_real_finish_date, seq, is_summary, parent_task_id, percent_complete, constraint_type, constraint_date, cr_project_task_rmk1, cr_project_task_rmk2, cr_project_task_rmk3, cr_project_task_rmk4, cr_project_task_rmk5, cr_project_task_rmk6, cr_project_task_rmk7, cr_project_task_rmk8, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_project_task
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_project_task 
+			(project_id, task_no, task_status, task_subject, task_desc, task_content, task_type1, task_type2, task_type3, task_type4, task_plan_start_date, task_plan_finish_date, task_real_start_date, task_real_finish_date, seq, is_summary, parent_task_id, percent_complete, constraint_type, constraint_date, cr_project_task_rmk1, cr_project_task_rmk2, cr_project_task_rmk3, cr_project_task_rmk4, cr_project_task_rmk5, cr_project_task_rmk6, cr_project_task_rmk7, cr_project_task_rmk8, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@project_id, @task_no, @task_status, @task_subject, @task_desc, @task_content, @task_type1, @task_type2, @task_type3, @task_type4, @task_plan_start_date, @task_plan_finish_date, @task_real_start_date, @task_real_finish_date, @seq, @is_summary, @parent_task_id, @percent_complete, @constraint_type, @constraint_date, @cr_project_task_rmk1, @cr_project_task_rmk2, @cr_project_task_rmk3, @cr_project_task_rmk4, @cr_project_task_rmk5, @cr_project_task_rmk6, @cr_project_task_rmk7, @cr_project_task_rmk8, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_project_task SET 
+			project_id = @project_id, task_no = @task_no, task_status = @task_status, task_subject = @task_subject, task_desc = @task_desc, task_content = @task_content, task_type1 = @task_type1, task_type2 = @task_type2, task_type3 = @task_type3, task_type4 = @task_type4, task_plan_start_date = @task_plan_start_date, task_plan_finish_date = @task_plan_finish_date, task_real_start_date = @task_real_start_date, task_real_finish_date = @task_real_finish_date, seq = @seq, is_summary = @is_summary, parent_task_id = @parent_task_id, percent_complete = @percent_complete, constraint_type = @constraint_type, constraint_date = @constraint_date, cr_project_task_rmk1 = @cr_project_task_rmk1, cr_project_task_rmk2 = @cr_project_task_rmk2, cr_project_task_rmk3 = @cr_project_task_rmk3, cr_project_task_rmk4 = @cr_project_task_rmk4, cr_project_task_rmk5 = @cr_project_task_rmk5, cr_project_task_rmk6 = @cr_project_task_rmk6, cr_project_task_rmk7 = @cr_project_task_rmk7, cr_project_task_rmk8 = @cr_project_task_rmk8, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_project_task
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

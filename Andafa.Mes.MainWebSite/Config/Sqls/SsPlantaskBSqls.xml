@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				task_id, frequency_type, erery_range, start_time, donot_run_before, donot_run_onthisday, remark, plan_status, current_run_status, last_run_status, last_run_time, next_run_time, upd_user, upd_host, upd_time, upd_user_no, upd_user_name
+			FROM ss_plantask_b;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				task_id, frequency_type, erery_range, start_time, donot_run_before, donot_run_onthisday, remark, plan_status, current_run_status, last_run_status, last_run_time, next_run_time, upd_user, upd_host, upd_time, upd_user_no, upd_user_name
+			FROM ss_plantask_b
+			WHERE plan_id = @plan_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_plantask_b 
+			(task_id, frequency_type, erery_range, start_time, donot_run_before, donot_run_onthisday, remark, plan_status, current_run_status, last_run_status, last_run_time, next_run_time, upd_user, upd_host, upd_time, upd_user_no, upd_user_name)
+			VALUES (@task_id, @frequency_type, @erery_range, @start_time, @donot_run_before, @donot_run_onthisday, @remark, @plan_status, @current_run_status, @last_run_status, @last_run_time, @next_run_time, @upd_user, @upd_host, @upd_time, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_plantask_b SET 
+			task_id = @task_id, frequency_type = @frequency_type, erery_range = @erery_range, start_time = @start_time, donot_run_before = @donot_run_before, donot_run_onthisday = @donot_run_onthisday, remark = @remark, plan_status = @plan_status, current_run_status = @current_run_status, last_run_status = @last_run_status, last_run_time = @last_run_time, next_run_time = @next_run_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE plan_id = @plan_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_plantask_b
+			WHERE plan_id = @plan_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

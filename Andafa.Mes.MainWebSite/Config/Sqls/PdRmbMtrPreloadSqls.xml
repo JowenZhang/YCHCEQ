@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkp_no, pro_part_no, part_no, rmk_01, rmk_02, rmk_03, rmk_04, rmk_05, rmk_06, rmk_07, rmk_08, rmk_09, rmk_10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_rmb_mtr_preload;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkp_no, pro_part_no, part_no, rmk_01, rmk_02, rmk_03, rmk_04, rmk_05, rmk_06, rmk_07, rmk_08, rmk_09, rmk_10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_rmb_mtr_preload
+			WHERE pd_rmb_mtr_preload_id = @pd_rmb_mtr_preload_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_rmb_mtr_preload 
+			(wkp_no, pro_part_no, part_no, rmk_01, rmk_02, rmk_03, rmk_04, rmk_05, rmk_06, rmk_07, rmk_08, rmk_09, rmk_10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@wkp_no, @pro_part_no, @part_no, @rmk_01, @rmk_02, @rmk_03, @rmk_04, @rmk_05, @rmk_06, @rmk_07, @rmk_08, @rmk_09, @rmk_10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_rmb_mtr_preload SET 
+			wkp_no = @wkp_no, pro_part_no = @pro_part_no, part_no = @part_no, rmk_01 = @rmk_01, rmk_02 = @rmk_02, rmk_03 = @rmk_03, rmk_04 = @rmk_04, rmk_05 = @rmk_05, rmk_06 = @rmk_06, rmk_07 = @rmk_07, rmk_08 = @rmk_08, rmk_09 = @rmk_09, rmk_10 = @rmk_10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE pd_rmb_mtr_preload_id = @pd_rmb_mtr_preload_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_rmb_mtr_preload
+			WHERE pd_rmb_mtr_preload_id = @pd_rmb_mtr_preload_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

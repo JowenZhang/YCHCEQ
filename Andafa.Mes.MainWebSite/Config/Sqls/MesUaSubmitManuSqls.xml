@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ws_no, steel_batch_no, powder_batch_no, m_id1, m_id2, p_id, p_weight, sub_state, bg_date, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, fingerprint, self_exam_items
+			FROM mes_ua_submit_manu;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ws_no, steel_batch_no, powder_batch_no, m_id1, m_id2, p_id, p_weight, sub_state, bg_date, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, fingerprint, self_exam_items
+			FROM mes_ua_submit_manu
+			WHERE id = @id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mes_ua_submit_manu 
+			(ws_no, steel_batch_no, powder_batch_no, m_id1, m_id2, p_id, p_weight, sub_state, bg_date, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, fingerprint, self_exam_items)
+			VALUES (@ws_no, @steel_batch_no, @powder_batch_no, @m_id1, @m_id2, @p_id, @p_weight, @sub_state, @bg_date, @data1, @data2, @data3, @data4, @data5, @data6, @data7, @data8, @data9, @data10, @fingerprint, @self_exam_items);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mes_ua_submit_manu SET 
+			ws_no = @ws_no, steel_batch_no = @steel_batch_no, powder_batch_no = @powder_batch_no, m_id1 = @m_id1, m_id2 = @m_id2, p_id = @p_id, p_weight = @p_weight, sub_state = @sub_state, bg_date = @bg_date, data1 = @data1, data2 = @data2, data3 = @data3, data4 = @data4, data5 = @data5, data6 = @data6, data7 = @data7, data8 = @data8, data9 = @data9, data10 = @data10, fingerprint = @fingerprint, self_exam_items = @self_exam_items
+			WHERE id = @id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mes_ua_submit_manu
+			WHERE id = @id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

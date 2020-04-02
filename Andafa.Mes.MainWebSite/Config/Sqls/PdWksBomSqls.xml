@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				pd_wks_h_id, mtr_part_no, mtr_part_idt, mtr_part_qty, pd_wks_bom_rmk1, pd_wks_bom_rmk2, pd_wks_bom_rmk3, pd_wks_bom_rmk4, pd_wks_bom_rmk5, pd_wks_bom_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wks_bom;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				pd_wks_h_id, mtr_part_no, mtr_part_idt, mtr_part_qty, pd_wks_bom_rmk1, pd_wks_bom_rmk2, pd_wks_bom_rmk3, pd_wks_bom_rmk4, pd_wks_bom_rmk5, pd_wks_bom_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wks_bom
+			WHERE pd_wks_h_id = @pd_wks_h_id OR pd_wks_bom_id = @pd_wks_bom_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wks_bom 
+			(pd_wks_h_id, mtr_part_no, mtr_part_idt, mtr_part_qty, pd_wks_bom_rmk1, pd_wks_bom_rmk2, pd_wks_bom_rmk3, pd_wks_bom_rmk4, pd_wks_bom_rmk5, pd_wks_bom_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@pd_wks_h_id, @mtr_part_no, @mtr_part_idt, @mtr_part_qty, @pd_wks_bom_rmk1, @pd_wks_bom_rmk2, @pd_wks_bom_rmk3, @pd_wks_bom_rmk4, @pd_wks_bom_rmk5, @pd_wks_bom_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wks_bom SET 
+			mtr_part_no = @mtr_part_no, mtr_part_idt = @mtr_part_idt, mtr_part_qty = @mtr_part_qty, pd_wks_bom_rmk1 = @pd_wks_bom_rmk1, pd_wks_bom_rmk2 = @pd_wks_bom_rmk2, pd_wks_bom_rmk3 = @pd_wks_bom_rmk3, pd_wks_bom_rmk4 = @pd_wks_bom_rmk4, pd_wks_bom_rmk5 = @pd_wks_bom_rmk5, pd_wks_bom_rmk6 = @pd_wks_bom_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE pd_wks_h_id = @pd_wks_h_id OR pd_wks_bom_id = @pd_wks_bom_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wks_bom
+			WHERE pd_wks_h_id = @pd_wks_h_id OR pd_wks_bom_id = @pd_wks_bom_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				subs_priority, tools_no_subs, tools_subs_rmk01, tools_subs_rmk02, tools_subs_rmk03, tools_subs_rmk04, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_tools_subs;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				subs_priority, tools_no_subs, tools_subs_rmk01, tools_subs_rmk02, tools_subs_rmk03, tools_subs_rmk04, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_tools_subs
+			WHERE tools_no = @tools_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_tools_subs 
+			(subs_priority, tools_no_subs, tools_subs_rmk01, tools_subs_rmk02, tools_subs_rmk03, tools_subs_rmk04, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@subs_priority, @tools_no_subs, @tools_subs_rmk01, @tools_subs_rmk02, @tools_subs_rmk03, @tools_subs_rmk04, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_tools_subs SET 
+			subs_priority = @subs_priority, tools_no_subs = @tools_no_subs, tools_subs_rmk01 = @tools_subs_rmk01, tools_subs_rmk02 = @tools_subs_rmk02, tools_subs_rmk03 = @tools_subs_rmk03, tools_subs_rmk04 = @tools_subs_rmk04, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE tools_no = @tools_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_tools_subs
+			WHERE tools_no = @tools_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkc_cost_produce, wkc_cost_before, wkc_cost_after, wkc_cost_worker, wkc_cost_idle, tools_cost_produce, tools_cost_before, tools_cost_after, tools_cost_idle
+			FROM ps_cost;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkc_cost_produce, wkc_cost_before, wkc_cost_after, wkc_cost_worker, wkc_cost_idle, tools_cost_produce, tools_cost_before, tools_cost_after, tools_cost_idle
+			FROM ps_cost
+			WHERE cost_date = @cost_date;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_cost 
+			(wkc_cost_produce, wkc_cost_before, wkc_cost_after, wkc_cost_worker, wkc_cost_idle, tools_cost_produce, tools_cost_before, tools_cost_after, tools_cost_idle)
+			VALUES (@wkc_cost_produce, @wkc_cost_before, @wkc_cost_after, @wkc_cost_worker, @wkc_cost_idle, @tools_cost_produce, @tools_cost_before, @tools_cost_after, @tools_cost_idle);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_cost SET 
+			wkc_cost_produce = @wkc_cost_produce, wkc_cost_before = @wkc_cost_before, wkc_cost_after = @wkc_cost_after, wkc_cost_worker = @wkc_cost_worker, wkc_cost_idle = @wkc_cost_idle, tools_cost_produce = @tools_cost_produce, tools_cost_before = @tools_cost_before, tools_cost_after = @tools_cost_after, tools_cost_idle = @tools_cost_idle
+			WHERE cost_date = @cost_date;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_cost
+			WHERE cost_date = @cost_date;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sub_grid_id, sub_grid_sequence, sub_grid_is_visible, sub_grid_lang_str, sub_group_lang_str, sub_grid_type, sub_grid_is_delete_cascade, sub_grid_field, grid_field, grid_bs_rmk01, grid_bs_rmk02, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, grid_bs_id
+			FROM ss_grid_bs;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sub_grid_id, sub_grid_sequence, sub_grid_is_visible, sub_grid_lang_str, sub_group_lang_str, sub_grid_type, sub_grid_is_delete_cascade, sub_grid_field, grid_field, grid_bs_rmk01, grid_bs_rmk02, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, grid_bs_id
+			FROM ss_grid_bs
+			WHERE grid_id = @grid_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_grid_bs 
+			(sub_grid_id, sub_grid_sequence, sub_grid_is_visible, sub_grid_lang_str, sub_group_lang_str, sub_grid_type, sub_grid_is_delete_cascade, sub_grid_field, grid_field, grid_bs_rmk01, grid_bs_rmk02, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, grid_bs_id)
+			VALUES (@sub_grid_id, @sub_grid_sequence, @sub_grid_is_visible, @sub_grid_lang_str, @sub_group_lang_str, @sub_grid_type, @sub_grid_is_delete_cascade, @sub_grid_field, @grid_field, @grid_bs_rmk01, @grid_bs_rmk02, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time, @grid_bs_id);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_grid_bs SET 
+			sub_grid_id = @sub_grid_id, sub_grid_sequence = @sub_grid_sequence, sub_grid_is_visible = @sub_grid_is_visible, sub_grid_lang_str = @sub_grid_lang_str, sub_group_lang_str = @sub_group_lang_str, sub_grid_type = @sub_grid_type, sub_grid_is_delete_cascade = @sub_grid_is_delete_cascade, sub_grid_field = @sub_grid_field, grid_field = @grid_field, grid_bs_rmk01 = @grid_bs_rmk01, grid_bs_rmk02 = @grid_bs_rmk02, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time, grid_bs_id = @grid_bs_id
+			WHERE grid_id = @grid_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_grid_bs
+			WHERE grid_id = @grid_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

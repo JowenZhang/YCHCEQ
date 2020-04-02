@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				part_status, part_no, part_name, part_spec, part_type_product, part_unit, part_type02
+			FROM pd_part_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				part_status, part_no, part_name, part_spec, part_type_product, part_unit, part_type02
+			FROM pd_part_tmp
+			WHERE part_id = @part_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_part_tmp 
+			(part_status, part_no, part_name, part_spec, part_type_product, part_unit, part_type02)
+			VALUES (@part_status, @part_no, @part_name, @part_spec, @part_type_product, @part_unit, @part_type02);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_part_tmp SET 
+			part_status = @part_status, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_type_product = @part_type_product, part_unit = @part_unit, part_type02 = @part_type02
+			WHERE part_id = @part_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_part_tmp
+			WHERE part_id = @part_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

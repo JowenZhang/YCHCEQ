@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				rmh_id, wkn, wkp_id, wkn_ok_rate, wkn_ok_rate_total, wkt_before, wkc_id, wkt_produce_c, qty_produce_c, wkc_unitcost, wkn_amount_manual, remark1, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM cq_rmb;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				rmh_id, wkn, wkp_id, wkn_ok_rate, wkn_ok_rate_total, wkt_before, wkc_id, wkt_produce_c, qty_produce_c, wkc_unitcost, wkn_amount_manual, remark1, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name
+			FROM cq_rmb;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cq_rmb 
+			(rmh_id, wkn, wkp_id, wkn_ok_rate, wkn_ok_rate_total, wkt_before, wkc_id, wkt_produce_c, qty_produce_c, wkc_unitcost, wkn_amount_manual, remark1, crt_user, crt_host, crt_time, upd_user, upd_host, upd_time, crt_user_no, crt_user_name, upd_user_no, upd_user_name)
+			VALUES (@rmh_id, @wkn, @wkp_id, @wkn_ok_rate, @wkn_ok_rate_total, @wkt_before, @wkc_id, @wkt_produce_c, @qty_produce_c, @wkc_unitcost, @wkn_amount_manual, @remark1, @crt_user, @crt_host, @crt_time, @upd_user, @upd_host, @upd_time, @crt_user_no, @crt_user_name, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cq_rmb SET 
+			rmh_id = @rmh_id, wkn = @wkn, wkp_id = @wkp_id, wkn_ok_rate = @wkn_ok_rate, wkn_ok_rate_total = @wkn_ok_rate_total, wkt_before = @wkt_before, wkc_id = @wkc_id, wkt_produce_c = @wkt_produce_c, qty_produce_c = @qty_produce_c, wkc_unitcost = @wkc_unitcost, wkn_amount_manual = @wkn_amount_manual, remark1 = @remark1, crt_user = @crt_user, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cq_rmb;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

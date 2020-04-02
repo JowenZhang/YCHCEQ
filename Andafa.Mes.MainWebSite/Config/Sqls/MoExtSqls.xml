@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				routing_print_times, routing_last_print_datetime, routing_last_print_user
+			FROM mo_ext;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				routing_print_times, routing_last_print_datetime, routing_last_print_user
+			FROM mo_ext
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_ext 
+			(routing_print_times, routing_last_print_datetime, routing_last_print_user)
+			VALUES (@routing_print_times, @routing_last_print_datetime, @routing_last_print_user);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_ext SET 
+			routing_print_times = @routing_print_times, routing_last_print_datetime = @routing_last_print_datetime, routing_last_print_user = @routing_last_print_user
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_ext
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

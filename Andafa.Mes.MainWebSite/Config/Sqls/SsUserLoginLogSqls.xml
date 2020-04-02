@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				crt_time, user_id, user_no, user_name, crt_host, error_code, error_desc
+			FROM ss_user_login_log;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				crt_time, user_id, user_no, user_name, crt_host, error_code, error_desc
+			FROM ss_user_login_log
+			WHERE user_login_log_id = @user_login_log_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_user_login_log 
+			(crt_time, user_id, user_no, user_name, crt_host, error_code, error_desc)
+			VALUES (@crt_time, @user_id, @user_no, @user_name, @crt_host, @error_code, @error_desc);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_user_login_log SET 
+			crt_time = @crt_time, user_id = @user_id, user_no = @user_no, user_name = @user_name, crt_host = @crt_host, error_code = @error_code, error_desc = @error_desc
+			WHERE user_login_log_id = @user_login_log_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_user_login_log
+			WHERE user_login_log_id = @user_login_log_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

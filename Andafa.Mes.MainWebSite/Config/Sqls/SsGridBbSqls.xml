@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				grid_id, column_id, column_sequence, column_is_visible, column_head_lang_str, column_head_tip_lang_str, column_width, column_color_front, column_color_background, column_auth, column_para, grid_bb_rmk01, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, column_sort_priority, column_sort_order, column_is_tree_list, column_is_frozen, column_tree_list_sequence, column_is_load, column_is_sum
+			FROM ss_grid_bb;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				grid_id, column_id, column_sequence, column_is_visible, column_head_lang_str, column_head_tip_lang_str, column_width, column_color_front, column_color_background, column_auth, column_para, grid_bb_rmk01, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, column_sort_priority, column_sort_order, column_is_tree_list, column_is_frozen, column_tree_list_sequence, column_is_load, column_is_sum
+			FROM ss_grid_bb
+			WHERE grid_bb_id = @grid_bb_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_grid_bb 
+			(grid_id, column_id, column_sequence, column_is_visible, column_head_lang_str, column_head_tip_lang_str, column_width, column_color_front, column_color_background, column_auth, column_para, grid_bb_rmk01, crt_user, crt_user_no, crt_user_name, crt_host, crt_time, upd_user, upd_user_no, upd_user_name, upd_host, upd_time, column_sort_priority, column_sort_order, column_is_tree_list, column_is_frozen, column_tree_list_sequence, column_is_load, column_is_sum)
+			VALUES (@grid_id, @column_id, @column_sequence, @column_is_visible, @column_head_lang_str, @column_head_tip_lang_str, @column_width, @column_color_front, @column_color_background, @column_auth, @column_para, @grid_bb_rmk01, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @crt_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @upd_time, @column_sort_priority, @column_sort_order, @column_is_tree_list, @column_is_frozen, @column_tree_list_sequence, @column_is_load, @column_is_sum);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_grid_bb SET 
+			grid_id = @grid_id, column_id = @column_id, column_sequence = @column_sequence, column_is_visible = @column_is_visible, column_head_lang_str = @column_head_lang_str, column_head_tip_lang_str = @column_head_tip_lang_str, column_width = @column_width, column_color_front = @column_color_front, column_color_background = @column_color_background, column_auth = @column_auth, column_para = @column_para, grid_bb_rmk01 = @grid_bb_rmk01, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, crt_time = @crt_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, upd_time = @upd_time, column_sort_priority = @column_sort_priority, column_sort_order = @column_sort_order, column_is_tree_list = @column_is_tree_list, column_is_frozen = @column_is_frozen, column_tree_list_sequence = @column_tree_list_sequence, column_is_load = @column_is_load, column_is_sum = @column_is_sum
+			WHERE grid_bb_id = @grid_bb_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_grid_bb
+			WHERE grid_bb_id = @grid_bb_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

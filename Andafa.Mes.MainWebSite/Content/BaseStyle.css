@@ -1,0 +1,61 @@
+﻿html{
+    position:relative;
+    min-height:100%;
+}
+
+body {
+  background-color: lightblue;
+  font-family:'Microsoft YaHei UI';
+}
+
+.footer {
+    color: #337AB7;
+}
+
+.header {
+    color: #337AB7;
+}
+
+.mes-title {
+    font-size:xx-large;
+    color: #337AB7;
+}
+
+.info-msg {
+    font-family:'Microsoft YaHei UI';
+    font-size:48px;
+    font-weight:800;
+    text-align:center;
+    color:#EAFF00;
+}
+
+.page-title {
+    text-align: center;
+    font-weight: 600; 
+    font-family: 'Microsoft YaHei UI';
+}
+
+.in-warning {
+    font-family:'Microsoft YaHei UI';
+    font-size:large;
+    color:#9c8202;
+}
+
+.refine-grid {
+    margin-left:0!important;
+    margin-right:0!important;
+    padding-left:0!important;
+    padding-right:0!important;
+}
+
+.refine-row {
+    margin:0!important;
+}
+
+.refine-col{
+    padding:0!important;
+}
+
+.link-btn {
+    background-color: #00ffff;
+}

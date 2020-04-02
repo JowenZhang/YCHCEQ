@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				row_num, mtr_part_no, mtr_part_idt, mtr_qty, mtr_qty_d, mtr_qty_unit, mtr_waste_rate, mtr_waste_qty_min, mtr_use_qty_min, mtr_priority, mtr_constrain_aps, mtr_origin_type, mtr_kind_rule, mtr_pri_rule, mtr_pr_rule, pd_rmb_mtr_rmk01, pd_rmb_mtr_rmk02, pd_rmb_mtr_rmk03, pd_rmb_mtr_rmk04, pd_rmb_mtr_rmk05, pd_rmb_mtr_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user_no, upd_user, upd_user_name, upd_host
+			FROM mo_rmb_mtr;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				row_num, mtr_part_no, mtr_part_idt, mtr_qty, mtr_qty_d, mtr_qty_unit, mtr_waste_rate, mtr_waste_qty_min, mtr_use_qty_min, mtr_priority, mtr_constrain_aps, mtr_origin_type, mtr_kind_rule, mtr_pri_rule, mtr_pr_rule, pd_rmb_mtr_rmk01, pd_rmb_mtr_rmk02, pd_rmb_mtr_rmk03, pd_rmb_mtr_rmk04, pd_rmb_mtr_rmk05, pd_rmb_mtr_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user_no, upd_user, upd_user_name, upd_host
+			FROM mo_rmb_mtr
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_rmb_mtr 
+			(row_num, mtr_part_no, mtr_part_idt, mtr_qty, mtr_qty_d, mtr_qty_unit, mtr_waste_rate, mtr_waste_qty_min, mtr_use_qty_min, mtr_priority, mtr_constrain_aps, mtr_origin_type, mtr_kind_rule, mtr_pri_rule, mtr_pr_rule, pd_rmb_mtr_rmk01, pd_rmb_mtr_rmk02, pd_rmb_mtr_rmk03, pd_rmb_mtr_rmk04, pd_rmb_mtr_rmk05, pd_rmb_mtr_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user_no, upd_user, upd_user_name, upd_host)
+			VALUES (@row_num, @mtr_part_no, @mtr_part_idt, @mtr_qty, @mtr_qty_d, @mtr_qty_unit, @mtr_waste_rate, @mtr_waste_qty_min, @mtr_use_qty_min, @mtr_priority, @mtr_constrain_aps, @mtr_origin_type, @mtr_kind_rule, @mtr_pri_rule, @mtr_pr_rule, @pd_rmb_mtr_rmk01, @pd_rmb_mtr_rmk02, @pd_rmb_mtr_rmk03, @pd_rmb_mtr_rmk04, @pd_rmb_mtr_rmk05, @pd_rmb_mtr_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user_no, @upd_user, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_rmb_mtr SET 
+			row_num = @row_num, mtr_part_no = @mtr_part_no, mtr_part_idt = @mtr_part_idt, mtr_qty = @mtr_qty, mtr_qty_d = @mtr_qty_d, mtr_qty_unit = @mtr_qty_unit, mtr_waste_rate = @mtr_waste_rate, mtr_waste_qty_min = @mtr_waste_qty_min, mtr_use_qty_min = @mtr_use_qty_min, mtr_priority = @mtr_priority, mtr_constrain_aps = @mtr_constrain_aps, mtr_origin_type = @mtr_origin_type, mtr_kind_rule = @mtr_kind_rule, mtr_pri_rule = @mtr_pri_rule, mtr_pr_rule = @mtr_pr_rule, pd_rmb_mtr_rmk01 = @pd_rmb_mtr_rmk01, pd_rmb_mtr_rmk02 = @pd_rmb_mtr_rmk02, pd_rmb_mtr_rmk03 = @pd_rmb_mtr_rmk03, pd_rmb_mtr_rmk04 = @pd_rmb_mtr_rmk04, pd_rmb_mtr_rmk05 = @pd_rmb_mtr_rmk05, pd_rmb_mtr_rmk06 = @pd_rmb_mtr_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user_no = @upd_user_no, upd_user = @upd_user, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_rmb_mtr
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

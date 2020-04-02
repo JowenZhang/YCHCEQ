@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				unit_price_standard, unit_price_average, unit_price_manual, unit_material_price, unit_sale_price, unit_manpower_cost, wkc_unitcost_machine, manpower_cost, wkc_unitcost_manpower, mo_real_cost, mo_mtr_real_cost, mo_worker_real_cost, mo_wkc_real_cost, mo_tools_real_cost
+			FROM mo_cost;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				unit_price_standard, unit_price_average, unit_price_manual, unit_material_price, unit_sale_price, unit_manpower_cost, wkc_unitcost_machine, manpower_cost, wkc_unitcost_manpower, mo_real_cost, mo_mtr_real_cost, mo_worker_real_cost, mo_wkc_real_cost, mo_tools_real_cost
+			FROM mo_cost
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_cost 
+			(unit_price_standard, unit_price_average, unit_price_manual, unit_material_price, unit_sale_price, unit_manpower_cost, wkc_unitcost_machine, manpower_cost, wkc_unitcost_manpower, mo_real_cost, mo_mtr_real_cost, mo_worker_real_cost, mo_wkc_real_cost, mo_tools_real_cost)
+			VALUES (@unit_price_standard, @unit_price_average, @unit_price_manual, @unit_material_price, @unit_sale_price, @unit_manpower_cost, @wkc_unitcost_machine, @manpower_cost, @wkc_unitcost_manpower, @mo_real_cost, @mo_mtr_real_cost, @mo_worker_real_cost, @mo_wkc_real_cost, @mo_tools_real_cost);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_cost SET 
+			unit_price_standard = @unit_price_standard, unit_price_average = @unit_price_average, unit_price_manual = @unit_price_manual, unit_material_price = @unit_material_price, unit_sale_price = @unit_sale_price, unit_manpower_cost = @unit_manpower_cost, wkc_unitcost_machine = @wkc_unitcost_machine, manpower_cost = @manpower_cost, wkc_unitcost_manpower = @wkc_unitcost_manpower, mo_real_cost = @mo_real_cost, mo_mtr_real_cost = @mo_mtr_real_cost, mo_worker_real_cost = @mo_worker_real_cost, mo_wkc_real_cost = @mo_wkc_real_cost, mo_tools_real_cost = @mo_tools_real_cost
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_cost
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				prog_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, sort_no
+			FROM ss_fold_prog;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				prog_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, sort_no
+			FROM ss_fold_prog
+			WHERE fold_id = @fold_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_fold_prog 
+			(prog_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, sort_no)
+			VALUES (@prog_id, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @sort_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_fold_prog SET 
+			prog_id = @prog_id, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, sort_no = @sort_no
+			WHERE fold_id = @fold_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_fold_prog
+			WHERE fold_id = @fold_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

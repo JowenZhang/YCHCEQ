@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkn_status, wkn_status_name, wkn_start_worker_id, wkn_start_worker_no, wkn_start_worker_name, wkn_real_cost, wkn_mtr_real_cost, wkn_worker_real_cost, wkn_wkc_real_cost, wkn_tools_real_cost
+			FROM mo_rmb_cost;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkn_status, wkn_status_name, wkn_start_worker_id, wkn_start_worker_no, wkn_start_worker_name, wkn_real_cost, wkn_mtr_real_cost, wkn_worker_real_cost, wkn_wkc_real_cost, wkn_tools_real_cost
+			FROM mo_rmb_cost
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_rmb_cost 
+			(wkn_status, wkn_status_name, wkn_start_worker_id, wkn_start_worker_no, wkn_start_worker_name, wkn_real_cost, wkn_mtr_real_cost, wkn_worker_real_cost, wkn_wkc_real_cost, wkn_tools_real_cost)
+			VALUES (@wkn_status, @wkn_status_name, @wkn_start_worker_id, @wkn_start_worker_no, @wkn_start_worker_name, @wkn_real_cost, @wkn_mtr_real_cost, @wkn_worker_real_cost, @wkn_wkc_real_cost, @wkn_tools_real_cost);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_rmb_cost SET 
+			wkn_status = @wkn_status, wkn_status_name = @wkn_status_name, wkn_start_worker_id = @wkn_start_worker_id, wkn_start_worker_no = @wkn_start_worker_no, wkn_start_worker_name = @wkn_start_worker_name, wkn_real_cost = @wkn_real_cost, wkn_mtr_real_cost = @wkn_mtr_real_cost, wkn_worker_real_cost = @wkn_worker_real_cost, wkn_wkc_real_cost = @wkn_wkc_real_cost, wkn_tools_real_cost = @wkn_tools_real_cost
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_rmb_cost
+			WHERE unode = @unode;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

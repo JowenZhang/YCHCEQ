@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DbConfig>
+	<DbStyle>postgres</DbStyle>
+	<DbTrusted></DbTrusted>
+	<DbInstance></DbInstance>
+	<DbHost>192.168.0.201</DbHost>
+	<DbUser>postgres</DbUser>
+	<DbPassword>root</DbPassword>
+	<DbName>YCDB</DbName>
+	<DbPort>5432</DbPort>
+	<DbEmbed></DbEmbed>
+	<DbPosition></DbPosition>
+</DbConfig>

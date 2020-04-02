@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkcerp_no, wkcerp_name, wkcerp_rmk01, wkcerp_rmk02, wkcerp_rmk03, wkcerp_rmk04, wkcerp_rmk05, wkcerp_rmk06, wkcerp_rmk07, wkcerp_rmk08, wkcerp_rmk09, wkcerp_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wkcerp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkcerp_no, wkcerp_name, wkcerp_rmk01, wkcerp_rmk02, wkcerp_rmk03, wkcerp_rmk04, wkcerp_rmk05, wkcerp_rmk06, wkcerp_rmk07, wkcerp_rmk08, wkcerp_rmk09, wkcerp_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wkcerp
+			WHERE wkcerp_no = @wkcerp_no OR wkcerp_id = @wkcerp_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wkcerp 
+			(wkcerp_no, wkcerp_name, wkcerp_rmk01, wkcerp_rmk02, wkcerp_rmk03, wkcerp_rmk04, wkcerp_rmk05, wkcerp_rmk06, wkcerp_rmk07, wkcerp_rmk08, wkcerp_rmk09, wkcerp_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@wkcerp_no, @wkcerp_name, @wkcerp_rmk01, @wkcerp_rmk02, @wkcerp_rmk03, @wkcerp_rmk04, @wkcerp_rmk05, @wkcerp_rmk06, @wkcerp_rmk07, @wkcerp_rmk08, @wkcerp_rmk09, @wkcerp_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wkcerp SET 
+			wkcerp_name = @wkcerp_name, wkcerp_rmk01 = @wkcerp_rmk01, wkcerp_rmk02 = @wkcerp_rmk02, wkcerp_rmk03 = @wkcerp_rmk03, wkcerp_rmk04 = @wkcerp_rmk04, wkcerp_rmk05 = @wkcerp_rmk05, wkcerp_rmk06 = @wkcerp_rmk06, wkcerp_rmk07 = @wkcerp_rmk07, wkcerp_rmk08 = @wkcerp_rmk08, wkcerp_rmk09 = @wkcerp_rmk09, wkcerp_rmk10 = @wkcerp_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE wkcerp_no = @wkcerp_no OR wkcerp_id = @wkcerp_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wkcerp
+			WHERE wkcerp_no = @wkcerp_no OR wkcerp_id = @wkcerp_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

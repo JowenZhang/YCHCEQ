@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				dept_status, dept_no, dept_name, dept_name_py, factory_id, dept_type1, dept_type2, dept_type3, dept_type4, dept_rmk1, dept_rmk2, dept_rmk3, dept_rmk4, dept_rmk5, dept_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_dept;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				dept_status, dept_no, dept_name, dept_name_py, factory_id, dept_type1, dept_type2, dept_type3, dept_type4, dept_rmk1, dept_rmk2, dept_rmk3, dept_rmk4, dept_rmk5, dept_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_dept
+			WHERE dept_no = @dept_no OR dept_id = @dept_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_dept 
+			(dept_status, dept_no, dept_name, dept_name_py, factory_id, dept_type1, dept_type2, dept_type3, dept_type4, dept_rmk1, dept_rmk2, dept_rmk3, dept_rmk4, dept_rmk5, dept_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@dept_status, @dept_no, @dept_name, @dept_name_py, @factory_id, @dept_type1, @dept_type2, @dept_type3, @dept_type4, @dept_rmk1, @dept_rmk2, @dept_rmk3, @dept_rmk4, @dept_rmk5, @dept_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_dept SET 
+			dept_status = @dept_status, dept_name = @dept_name, dept_name_py = @dept_name_py, factory_id = @factory_id, dept_type1 = @dept_type1, dept_type2 = @dept_type2, dept_type3 = @dept_type3, dept_type4 = @dept_type4, dept_rmk1 = @dept_rmk1, dept_rmk2 = @dept_rmk2, dept_rmk3 = @dept_rmk3, dept_rmk4 = @dept_rmk4, dept_rmk5 = @dept_rmk5, dept_rmk6 = @dept_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE dept_no = @dept_no OR dept_id = @dept_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_dept
+			WHERE dept_no = @dept_no OR dept_id = @dept_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

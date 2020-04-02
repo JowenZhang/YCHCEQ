@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				dt_no, dt_data, is_already_execute, is_execute_successful, execute_log, is_renewed_execute, opc_write_rmk01, opc_write_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM me_da_opc_write;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				dt_no, dt_data, is_already_execute, is_execute_successful, execute_log, is_renewed_execute, opc_write_rmk01, opc_write_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host
+			FROM me_da_opc_write
+			WHERE da_opc_write_id = @da_opc_write_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_da_opc_write 
+			(dt_no, dt_data, is_already_execute, is_execute_successful, execute_log, is_renewed_execute, opc_write_rmk01, opc_write_rmk02, crt_time, crt_user, crt_user_no, crt_user_name, crt_host)
+			VALUES (@dt_no, @dt_data, @is_already_execute, @is_execute_successful, @execute_log, @is_renewed_execute, @opc_write_rmk01, @opc_write_rmk02, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_da_opc_write SET 
+			dt_no = @dt_no, dt_data = @dt_data, is_already_execute = @is_already_execute, is_execute_successful = @is_execute_successful, execute_log = @execute_log, is_renewed_execute = @is_renewed_execute, opc_write_rmk01 = @opc_write_rmk01, opc_write_rmk02 = @opc_write_rmk02, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host
+			WHERE da_opc_write_id = @da_opc_write_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_da_opc_write
+			WHERE da_opc_write_id = @da_opc_write_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				me_finish_io_no, finish_io_status, finish_io_datetime, factory_no, mo_no, part_no, part_name, part_spec, part_unit, part_idt, lot_no, finish_io_qty_ok, invp_no_ok, finish_io_qty_ng, invp_no_ng, finish_io_qty_scrap, invp_no_scrap, finish_io_qty_other, invp_no_other, me_finish_io_rmk1, me_finish_io_rmk2, me_finish_io_rmk3, me_finish_io_rmk4, fb_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, io_is_sucessed, io_times, io_last_time
+			FROM me_finish_io;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				me_finish_io_no, finish_io_status, finish_io_datetime, factory_no, mo_no, part_no, part_name, part_spec, part_unit, part_idt, lot_no, finish_io_qty_ok, invp_no_ok, finish_io_qty_ng, invp_no_ng, finish_io_qty_scrap, invp_no_scrap, finish_io_qty_other, invp_no_other, me_finish_io_rmk1, me_finish_io_rmk2, me_finish_io_rmk3, me_finish_io_rmk4, fb_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, io_is_sucessed, io_times, io_last_time
+			FROM me_finish_io
+			WHERE me_finish_io_id = @me_finish_io_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_finish_io 
+			(me_finish_io_no, finish_io_status, finish_io_datetime, factory_no, mo_no, part_no, part_name, part_spec, part_unit, part_idt, lot_no, finish_io_qty_ok, invp_no_ok, finish_io_qty_ng, invp_no_ng, finish_io_qty_scrap, invp_no_scrap, finish_io_qty_other, invp_no_other, me_finish_io_rmk1, me_finish_io_rmk2, me_finish_io_rmk3, me_finish_io_rmk4, fb_id, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, io_is_sucessed, io_times, io_last_time)
+			VALUES (@me_finish_io_no, @finish_io_status, @finish_io_datetime, @factory_no, @mo_no, @part_no, @part_name, @part_spec, @part_unit, @part_idt, @lot_no, @finish_io_qty_ok, @invp_no_ok, @finish_io_qty_ng, @invp_no_ng, @finish_io_qty_scrap, @invp_no_scrap, @finish_io_qty_other, @invp_no_other, @me_finish_io_rmk1, @me_finish_io_rmk2, @me_finish_io_rmk3, @me_finish_io_rmk4, @fb_id, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @io_is_sucessed, @io_times, @io_last_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_finish_io SET 
+			me_finish_io_no = @me_finish_io_no, finish_io_status = @finish_io_status, finish_io_datetime = @finish_io_datetime, factory_no = @factory_no, mo_no = @mo_no, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_unit = @part_unit, part_idt = @part_idt, lot_no = @lot_no, finish_io_qty_ok = @finish_io_qty_ok, invp_no_ok = @invp_no_ok, finish_io_qty_ng = @finish_io_qty_ng, invp_no_ng = @invp_no_ng, finish_io_qty_scrap = @finish_io_qty_scrap, invp_no_scrap = @invp_no_scrap, finish_io_qty_other = @finish_io_qty_other, invp_no_other = @invp_no_other, me_finish_io_rmk1 = @me_finish_io_rmk1, me_finish_io_rmk2 = @me_finish_io_rmk2, me_finish_io_rmk3 = @me_finish_io_rmk3, me_finish_io_rmk4 = @me_finish_io_rmk4, fb_id = @fb_id, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, io_is_sucessed = @io_is_sucessed, io_times = @io_times, io_last_time = @io_last_time
+			WHERE me_finish_io_id = @me_finish_io_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_finish_io
+			WHERE me_finish_io_id = @me_finish_io_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

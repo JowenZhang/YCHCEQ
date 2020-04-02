@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				factory_no, mo_qty, mo_id, client_name, mo_hope_start_datetime, mo_type, part_no, part_spec, mo_hope_end_datetime, mo_rmk01, mo_rmk02, mo_rmk03, mo_no, mo_status, mo_desc, mo_mtr_seq, mo_rmk06, mo_rmk07, mo_rmk08, mo_rmk09, mo_rmk10, mo_rmk11, mo_seq, mtr_part_no, mtr_part_qty, order_no2, mo_rmk04, mo_priority, mo_rmk12
+			FROM mo_tmp2;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				factory_no, mo_qty, mo_id, client_name, mo_hope_start_datetime, mo_type, part_no, part_spec, mo_hope_end_datetime, mo_rmk01, mo_rmk02, mo_rmk03, mo_no, mo_status, mo_desc, mo_mtr_seq, mo_rmk06, mo_rmk07, mo_rmk08, mo_rmk09, mo_rmk10, mo_rmk11, mo_seq, mtr_part_no, mtr_part_qty, order_no2, mo_rmk04, mo_priority, mo_rmk12
+			FROM mo_tmp2
+			WHERE mo_mtr_id = @mo_mtr_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_tmp2 
+			(factory_no, mo_qty, mo_id, client_name, mo_hope_start_datetime, mo_type, part_no, part_spec, mo_hope_end_datetime, mo_rmk01, mo_rmk02, mo_rmk03, mo_no, mo_status, mo_desc, mo_mtr_seq, mo_rmk06, mo_rmk07, mo_rmk08, mo_rmk09, mo_rmk10, mo_rmk11, mo_seq, mtr_part_no, mtr_part_qty, order_no2, mo_rmk04, mo_priority, mo_rmk12)
+			VALUES (@factory_no, @mo_qty, @mo_id, @client_name, @mo_hope_start_datetime, @mo_type, @part_no, @part_spec, @mo_hope_end_datetime, @mo_rmk01, @mo_rmk02, @mo_rmk03, @mo_no, @mo_status, @mo_desc, @mo_mtr_seq, @mo_rmk06, @mo_rmk07, @mo_rmk08, @mo_rmk09, @mo_rmk10, @mo_rmk11, @mo_seq, @mtr_part_no, @mtr_part_qty, @order_no2, @mo_rmk04, @mo_priority, @mo_rmk12);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_tmp2 SET 
+			factory_no = @factory_no, mo_qty = @mo_qty, mo_id = @mo_id, client_name = @client_name, mo_hope_start_datetime = @mo_hope_start_datetime, mo_type = @mo_type, part_no = @part_no, part_spec = @part_spec, mo_hope_end_datetime = @mo_hope_end_datetime, mo_rmk01 = @mo_rmk01, mo_rmk02 = @mo_rmk02, mo_rmk03 = @mo_rmk03, mo_no = @mo_no, mo_status = @mo_status, mo_desc = @mo_desc, mo_mtr_seq = @mo_mtr_seq, mo_rmk06 = @mo_rmk06, mo_rmk07 = @mo_rmk07, mo_rmk08 = @mo_rmk08, mo_rmk09 = @mo_rmk09, mo_rmk10 = @mo_rmk10, mo_rmk11 = @mo_rmk11, mo_seq = @mo_seq, mtr_part_no = @mtr_part_no, mtr_part_qty = @mtr_part_qty, order_no2 = @order_no2, mo_rmk04 = @mo_rmk04, mo_priority = @mo_priority, mo_rmk12 = @mo_rmk12
+			WHERE mo_mtr_id = @mo_mtr_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_tmp2
+			WHERE mo_mtr_id = @mo_mtr_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

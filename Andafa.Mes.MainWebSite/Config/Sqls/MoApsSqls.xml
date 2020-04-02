@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				aps_batch_id, mo_plan_status, mo_plan_start_datetime, mo_plan_end_datetime, mo_aps_qty, mo_aps_confirm_status, mo_aps_confirm_datetime, mo_aps_locked, mo_aps_locked_user, mo_aps_locked_host, mo_aps_locked_time, aps_batch_id1, mo_plan_start_datetime1, mo_plan_end_datetime1, aps_batch_id2, mo_plan_start_datetime2, mo_plan_end_datetime2, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM mo_aps;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				aps_batch_id, mo_plan_status, mo_plan_start_datetime, mo_plan_end_datetime, mo_aps_qty, mo_aps_confirm_status, mo_aps_confirm_datetime, mo_aps_locked, mo_aps_locked_user, mo_aps_locked_host, mo_aps_locked_time, aps_batch_id1, mo_plan_start_datetime1, mo_plan_end_datetime1, aps_batch_id2, mo_plan_start_datetime2, mo_plan_end_datetime2, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM mo_aps
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_aps 
+			(aps_batch_id, mo_plan_status, mo_plan_start_datetime, mo_plan_end_datetime, mo_aps_qty, mo_aps_confirm_status, mo_aps_confirm_datetime, mo_aps_locked, mo_aps_locked_user, mo_aps_locked_host, mo_aps_locked_time, aps_batch_id1, mo_plan_start_datetime1, mo_plan_end_datetime1, aps_batch_id2, mo_plan_start_datetime2, mo_plan_end_datetime2, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@aps_batch_id, @mo_plan_status, @mo_plan_start_datetime, @mo_plan_end_datetime, @mo_aps_qty, @mo_aps_confirm_status, @mo_aps_confirm_datetime, @mo_aps_locked, @mo_aps_locked_user, @mo_aps_locked_host, @mo_aps_locked_time, @aps_batch_id1, @mo_plan_start_datetime1, @mo_plan_end_datetime1, @aps_batch_id2, @mo_plan_start_datetime2, @mo_plan_end_datetime2, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_aps SET 
+			aps_batch_id = @aps_batch_id, mo_plan_status = @mo_plan_status, mo_plan_start_datetime = @mo_plan_start_datetime, mo_plan_end_datetime = @mo_plan_end_datetime, mo_aps_qty = @mo_aps_qty, mo_aps_confirm_status = @mo_aps_confirm_status, mo_aps_confirm_datetime = @mo_aps_confirm_datetime, mo_aps_locked = @mo_aps_locked, mo_aps_locked_user = @mo_aps_locked_user, mo_aps_locked_host = @mo_aps_locked_host, mo_aps_locked_time = @mo_aps_locked_time, aps_batch_id1 = @aps_batch_id1, mo_plan_start_datetime1 = @mo_plan_start_datetime1, mo_plan_end_datetime1 = @mo_plan_end_datetime1, aps_batch_id2 = @aps_batch_id2, mo_plan_start_datetime2 = @mo_plan_start_datetime2, mo_plan_end_datetime2 = @mo_plan_end_datetime2, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_aps
+			WHERE mo_no = @mo_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

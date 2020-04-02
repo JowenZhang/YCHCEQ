@@ -1,0 +1,14 @@
+﻿@{
+    Tuple<string, string, string> headerData = Andafa.Mes.MainWebSite.Tools.ControllerTool.GetCookie<Tuple<string, string, string>>("UserInfo");
+}
+<div class="header">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <p class="text-left">@headerData.Item3</p>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <p class="text-center">@headerData.Item2</p>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <p class="text-right"><a href="/Home/Index">注销</a></p>
+    </div>
+</div>

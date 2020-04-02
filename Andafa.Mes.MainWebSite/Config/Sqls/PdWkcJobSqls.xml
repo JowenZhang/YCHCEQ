@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wkc_id, job_require_qty, pd_wkc_job_rmk1, pd_wkc_job_rmk2, pd_wkc_job_rmk3, pd_wkc_job_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wkc_job;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wkc_id, job_require_qty, pd_wkc_job_rmk1, pd_wkc_job_rmk2, pd_wkc_job_rmk3, pd_wkc_job_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM pd_wkc_job
+			WHERE pd_wkc_job_id = @pd_wkc_job_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO pd_wkc_job 
+			(wkc_id, job_require_qty, pd_wkc_job_rmk1, pd_wkc_job_rmk2, pd_wkc_job_rmk3, pd_wkc_job_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@wkc_id, @job_require_qty, @pd_wkc_job_rmk1, @pd_wkc_job_rmk2, @pd_wkc_job_rmk3, @pd_wkc_job_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE pd_wkc_job SET 
+			wkc_id = @wkc_id, job_require_qty = @job_require_qty, pd_wkc_job_rmk1 = @pd_wkc_job_rmk1, pd_wkc_job_rmk2 = @pd_wkc_job_rmk2, pd_wkc_job_rmk3 = @pd_wkc_job_rmk3, pd_wkc_job_rmk4 = @pd_wkc_job_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE pd_wkc_job_id = @pd_wkc_job_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM pd_wkc_job
+			WHERE pd_wkc_job_id = @pd_wkc_job_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

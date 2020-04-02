@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- 引入 图标 -->
+    <link rel="icon" href="~/Resource/icon/ico32.ico">
+    <!-- 引入 Bootstrap basic -->
+    <link href="~/Content/BaseStyle.css" rel="stylesheet" />
+    <!-- 引入 Bootstrap theme -->
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <!-- 引入 Bootstrap CSS -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <!-- 引入 自定义 CSS -->
+    <link href="~/Content/BaseStyle.css" rel="stylesheet" />
+    <link href="~/Content/SignIn.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-table.css" rel="stylesheet" />
+    <!-- 引入 jQuery -->
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/MesScript/Jquery-min-334.js"></script>
+    <!-- 引入 自定义脚本 -->
+    <script src="~/Scripts/MesScript/Tools.js"></script>
+    <script src="~/Scripts/MesScript/AutoHideTable.js"></script>
+    <!-- 引入 Bootstrap JavaScript -->
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap-table.js"></script>
+    <script src="~/Scripts/bootstrap-table-locale-all.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <h1 class="text-center text-primary">
+                    <strong>安达发MES APP 2.0</strong>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            @{Html.RenderPartial("Header");}
+        </div>
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    @ViewBag.PartTitle
+                </div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">@{Html.RenderPartial("Footer");}</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

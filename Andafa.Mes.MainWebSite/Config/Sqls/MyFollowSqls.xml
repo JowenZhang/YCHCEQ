@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				follow_datetime, follow_user_no, follow_user_name, task_id, client_no, client_name, project_no, project_name, contacts_name, contacts_tel, follow_content, follow_date_next, follow_content_next, my_follow_rmk1, my_follow_rmk2, my_follow_rmk3, my_follow_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM my_follow;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				follow_datetime, follow_user_no, follow_user_name, task_id, client_no, client_name, project_no, project_name, contacts_name, contacts_tel, follow_content, follow_date_next, follow_content_next, my_follow_rmk1, my_follow_rmk2, my_follow_rmk3, my_follow_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM my_follow
+			WHERE follow_id = @follow_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO my_follow 
+			(follow_datetime, follow_user_no, follow_user_name, task_id, client_no, client_name, project_no, project_name, contacts_name, contacts_tel, follow_content, follow_date_next, follow_content_next, my_follow_rmk1, my_follow_rmk2, my_follow_rmk3, my_follow_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@follow_datetime, @follow_user_no, @follow_user_name, @task_id, @client_no, @client_name, @project_no, @project_name, @contacts_name, @contacts_tel, @follow_content, @follow_date_next, @follow_content_next, @my_follow_rmk1, @my_follow_rmk2, @my_follow_rmk3, @my_follow_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE my_follow SET 
+			follow_datetime = @follow_datetime, follow_user_no = @follow_user_no, follow_user_name = @follow_user_name, task_id = @task_id, client_no = @client_no, client_name = @client_name, project_no = @project_no, project_name = @project_name, contacts_name = @contacts_name, contacts_tel = @contacts_tel, follow_content = @follow_content, follow_date_next = @follow_date_next, follow_content_next = @follow_content_next, my_follow_rmk1 = @my_follow_rmk1, my_follow_rmk2 = @my_follow_rmk2, my_follow_rmk3 = @my_follow_rmk3, my_follow_rmk4 = @my_follow_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE follow_id = @follow_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM my_follow
+			WHERE follow_id = @follow_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

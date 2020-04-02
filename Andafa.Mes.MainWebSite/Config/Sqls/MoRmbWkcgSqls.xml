@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				unode, wkcg_priority, wkcg_no, wkcg_is_enabled, wkt_before_c, wkt_after_c, wkt_produce_c, qty_produce_c, wkt_worker_c, wkcg_worker_num_c, wkt_before_b, wkt_after_b, wkt_produce_b, qty_produce_b, wkt_worker_b, wkcg_worker_num_b, wkt_before_a, wkt_after_a, wkt_produce_a, qty_produce_a, wkt_worker_a, wkcg_worker_num_a, mo_rmb_wkcg_rmk01, mo_rmb_wkcg_rmk02, mo_rmb_wkcg_rmk03, mo_rmb_wkcg_rmk04, mo_rmb_wkcg_rmk05, mo_rmb_wkcg_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, umo_time, umo_user_no, umo_user, umo_user_name, umo_host
+			FROM mo_rmb_wkcg;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				unode, wkcg_priority, wkcg_no, wkcg_is_enabled, wkt_before_c, wkt_after_c, wkt_produce_c, qty_produce_c, wkt_worker_c, wkcg_worker_num_c, wkt_before_b, wkt_after_b, wkt_produce_b, qty_produce_b, wkt_worker_b, wkcg_worker_num_b, wkt_before_a, wkt_after_a, wkt_produce_a, qty_produce_a, wkt_worker_a, wkcg_worker_num_a, mo_rmb_wkcg_rmk01, mo_rmb_wkcg_rmk02, mo_rmb_wkcg_rmk03, mo_rmb_wkcg_rmk04, mo_rmb_wkcg_rmk05, mo_rmb_wkcg_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, umo_time, umo_user_no, umo_user, umo_user_name, umo_host
+			FROM mo_rmb_wkcg
+			WHERE rmb_wkcg_id = @rmb_wkcg_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mo_rmb_wkcg 
+			(unode, wkcg_priority, wkcg_no, wkcg_is_enabled, wkt_before_c, wkt_after_c, wkt_produce_c, qty_produce_c, wkt_worker_c, wkcg_worker_num_c, wkt_before_b, wkt_after_b, wkt_produce_b, qty_produce_b, wkt_worker_b, wkcg_worker_num_b, wkt_before_a, wkt_after_a, wkt_produce_a, qty_produce_a, wkt_worker_a, wkcg_worker_num_a, mo_rmb_wkcg_rmk01, mo_rmb_wkcg_rmk02, mo_rmb_wkcg_rmk03, mo_rmb_wkcg_rmk04, mo_rmb_wkcg_rmk05, mo_rmb_wkcg_rmk06, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, umo_time, umo_user_no, umo_user, umo_user_name, umo_host)
+			VALUES (@unode, @wkcg_priority, @wkcg_no, @wkcg_is_enabled, @wkt_before_c, @wkt_after_c, @wkt_produce_c, @qty_produce_c, @wkt_worker_c, @wkcg_worker_num_c, @wkt_before_b, @wkt_after_b, @wkt_produce_b, @qty_produce_b, @wkt_worker_b, @wkcg_worker_num_b, @wkt_before_a, @wkt_after_a, @wkt_produce_a, @qty_produce_a, @wkt_worker_a, @wkcg_worker_num_a, @mo_rmb_wkcg_rmk01, @mo_rmb_wkcg_rmk02, @mo_rmb_wkcg_rmk03, @mo_rmb_wkcg_rmk04, @mo_rmb_wkcg_rmk05, @mo_rmb_wkcg_rmk06, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @umo_time, @umo_user_no, @umo_user, @umo_user_name, @umo_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mo_rmb_wkcg SET 
+			unode = @unode, wkcg_priority = @wkcg_priority, wkcg_no = @wkcg_no, wkcg_is_enabled = @wkcg_is_enabled, wkt_before_c = @wkt_before_c, wkt_after_c = @wkt_after_c, wkt_produce_c = @wkt_produce_c, qty_produce_c = @qty_produce_c, wkt_worker_c = @wkt_worker_c, wkcg_worker_num_c = @wkcg_worker_num_c, wkt_before_b = @wkt_before_b, wkt_after_b = @wkt_after_b, wkt_produce_b = @wkt_produce_b, qty_produce_b = @qty_produce_b, wkt_worker_b = @wkt_worker_b, wkcg_worker_num_b = @wkcg_worker_num_b, wkt_before_a = @wkt_before_a, wkt_after_a = @wkt_after_a, wkt_produce_a = @wkt_produce_a, qty_produce_a = @qty_produce_a, wkt_worker_a = @wkt_worker_a, wkcg_worker_num_a = @wkcg_worker_num_a, mo_rmb_wkcg_rmk01 = @mo_rmb_wkcg_rmk01, mo_rmb_wkcg_rmk02 = @mo_rmb_wkcg_rmk02, mo_rmb_wkcg_rmk03 = @mo_rmb_wkcg_rmk03, mo_rmb_wkcg_rmk04 = @mo_rmb_wkcg_rmk04, mo_rmb_wkcg_rmk05 = @mo_rmb_wkcg_rmk05, mo_rmb_wkcg_rmk06 = @mo_rmb_wkcg_rmk06, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, umo_time = @umo_time, umo_user_no = @umo_user_no, umo_user = @umo_user, umo_user_name = @umo_user_name, umo_host = @umo_host
+			WHERE rmb_wkcg_id = @rmb_wkcg_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mo_rmb_wkcg
+			WHERE rmb_wkcg_id = @rmb_wkcg_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				cr_do_status, cr_do_status_name, client_no, client_name, part_no, part_name, part_spec, part_idt, part_unit, part_unit_name, rmh_no, rmh_version, cr_do_dlv_datetime, cr_do_trs_datetime, cr_do_qty, order_type, order_type_name, order_id, order_no, cr_do_is_independent, mrp_region_no, cr_do_rmk1, cr_do_rmk2, cr_do_rmk3, cr_do_rmk4, cr_do_rmk5, cr_do_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_do;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				cr_do_status, cr_do_status_name, client_no, client_name, part_no, part_name, part_spec, part_idt, part_unit, part_unit_name, rmh_no, rmh_version, cr_do_dlv_datetime, cr_do_trs_datetime, cr_do_qty, order_type, order_type_name, order_id, order_no, cr_do_is_independent, mrp_region_no, cr_do_rmk1, cr_do_rmk2, cr_do_rmk3, cr_do_rmk4, cr_do_rmk5, cr_do_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_do
+			WHERE cr_do_id = @cr_do_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_do 
+			(cr_do_status, cr_do_status_name, client_no, client_name, part_no, part_name, part_spec, part_idt, part_unit, part_unit_name, rmh_no, rmh_version, cr_do_dlv_datetime, cr_do_trs_datetime, cr_do_qty, order_type, order_type_name, order_id, order_no, cr_do_is_independent, mrp_region_no, cr_do_rmk1, cr_do_rmk2, cr_do_rmk3, cr_do_rmk4, cr_do_rmk5, cr_do_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@cr_do_status, @cr_do_status_name, @client_no, @client_name, @part_no, @part_name, @part_spec, @part_idt, @part_unit, @part_unit_name, @rmh_no, @rmh_version, @cr_do_dlv_datetime, @cr_do_trs_datetime, @cr_do_qty, @order_type, @order_type_name, @order_id, @order_no, @cr_do_is_independent, @mrp_region_no, @cr_do_rmk1, @cr_do_rmk2, @cr_do_rmk3, @cr_do_rmk4, @cr_do_rmk5, @cr_do_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_do SET 
+			cr_do_status = @cr_do_status, cr_do_status_name = @cr_do_status_name, client_no = @client_no, client_name = @client_name, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, part_unit = @part_unit, part_unit_name = @part_unit_name, rmh_no = @rmh_no, rmh_version = @rmh_version, cr_do_dlv_datetime = @cr_do_dlv_datetime, cr_do_trs_datetime = @cr_do_trs_datetime, cr_do_qty = @cr_do_qty, order_type = @order_type, order_type_name = @order_type_name, order_id = @order_id, order_no = @order_no, cr_do_is_independent = @cr_do_is_independent, mrp_region_no = @mrp_region_no, cr_do_rmk1 = @cr_do_rmk1, cr_do_rmk2 = @cr_do_rmk2, cr_do_rmk3 = @cr_do_rmk3, cr_do_rmk4 = @cr_do_rmk4, cr_do_rmk5 = @cr_do_rmk5, cr_do_rmk6 = @cr_do_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE cr_do_id = @cr_do_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_do
+			WHERE cr_do_id = @cr_do_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

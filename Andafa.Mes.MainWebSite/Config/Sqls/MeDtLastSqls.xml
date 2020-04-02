@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				dt_no, wkc_no, wkc_name, workshop_no, workshop_name, factory_no, factory_name, work_type_no, work_type_name, worker_card_no, worker_no, worker_name, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, wkn_wkt_produce, wkn_qty_produce, wkn_jiepai_std, shift_date, shift_no, shift_name, tools_no, tools_name, tools_used_qty, tools_eff_n, tools_eff_d, da_act_stack, da_act_last, da_qty, wkc_wkp_start_time, wkc_wkt_produce, wkc_stand_qty, wkc_act_qty, wkc_ng_qty, wkn_jiepai_real, act_count_last, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_no, wka_no
+			FROM me_dt_last;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				dt_no, wkc_no, wkc_name, workshop_no, workshop_name, factory_no, factory_name, work_type_no, work_type_name, worker_card_no, worker_no, worker_name, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, wkn_wkt_produce, wkn_qty_produce, wkn_jiepai_std, shift_date, shift_no, shift_name, tools_no, tools_name, tools_used_qty, tools_eff_n, tools_eff_d, da_act_stack, da_act_last, da_qty, wkc_wkp_start_time, wkc_wkt_produce, wkc_stand_qty, wkc_act_qty, wkc_ng_qty, wkn_jiepai_real, act_count_last, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_no, wka_no
+			FROM me_dt_last
+			WHERE dt_id = @dt_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_dt_last 
+			(dt_no, wkc_no, wkc_name, workshop_no, workshop_name, factory_no, factory_name, work_type_no, work_type_name, worker_card_no, worker_no, worker_name, lot_no, unode, wkn, wkp_no, wkp_name, part_no, part_name, part_spec, wkn_wkt_produce, wkn_qty_produce, wkn_jiepai_std, shift_date, shift_no, shift_name, tools_no, tools_name, tools_used_qty, tools_eff_n, tools_eff_d, da_act_stack, da_act_last, da_qty, wkc_wkp_start_time, wkc_wkt_produce, wkc_stand_qty, wkc_act_qty, wkc_ng_qty, wkn_jiepai_real, act_count_last, upd_time, upd_user, upd_user_no, upd_user_name, upd_host, ea_no, wka_no)
+			VALUES (@dt_no, @wkc_no, @wkc_name, @workshop_no, @workshop_name, @factory_no, @factory_name, @work_type_no, @work_type_name, @worker_card_no, @worker_no, @worker_name, @lot_no, @unode, @wkn, @wkp_no, @wkp_name, @part_no, @part_name, @part_spec, @wkn_wkt_produce, @wkn_qty_produce, @wkn_jiepai_std, @shift_date, @shift_no, @shift_name, @tools_no, @tools_name, @tools_used_qty, @tools_eff_n, @tools_eff_d, @da_act_stack, @da_act_last, @da_qty, @wkc_wkp_start_time, @wkc_wkt_produce, @wkc_stand_qty, @wkc_act_qty, @wkc_ng_qty, @wkn_jiepai_real, @act_count_last, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host, @ea_no, @wka_no);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_dt_last SET 
+			dt_no = @dt_no, wkc_no = @wkc_no, wkc_name = @wkc_name, workshop_no = @workshop_no, workshop_name = @workshop_name, factory_no = @factory_no, factory_name = @factory_name, work_type_no = @work_type_no, work_type_name = @work_type_name, worker_card_no = @worker_card_no, worker_no = @worker_no, worker_name = @worker_name, lot_no = @lot_no, unode = @unode, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, wkn_wkt_produce = @wkn_wkt_produce, wkn_qty_produce = @wkn_qty_produce, wkn_jiepai_std = @wkn_jiepai_std, shift_date = @shift_date, shift_no = @shift_no, shift_name = @shift_name, tools_no = @tools_no, tools_name = @tools_name, tools_used_qty = @tools_used_qty, tools_eff_n = @tools_eff_n, tools_eff_d = @tools_eff_d, da_act_stack = @da_act_stack, da_act_last = @da_act_last, da_qty = @da_qty, wkc_wkp_start_time = @wkc_wkp_start_time, wkc_wkt_produce = @wkc_wkt_produce, wkc_stand_qty = @wkc_stand_qty, wkc_act_qty = @wkc_act_qty, wkc_ng_qty = @wkc_ng_qty, wkn_jiepai_real = @wkn_jiepai_real, act_count_last = @act_count_last, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host, ea_no = @ea_no, wka_no = @wka_no
+			WHERE dt_id = @dt_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_dt_last
+			WHERE dt_id = @dt_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

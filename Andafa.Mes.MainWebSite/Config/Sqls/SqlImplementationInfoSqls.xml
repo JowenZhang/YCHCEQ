@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				implementation_info_id, implementation_info_name, integer_value, character_value, comments
+			FROM sql_implementation_info;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				implementation_info_id, implementation_info_name, integer_value, character_value, comments
+			FROM sql_implementation_info;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sql_implementation_info 
+			(implementation_info_id, implementation_info_name, integer_value, character_value, comments)
+			VALUES (@implementation_info_id, @implementation_info_name, @integer_value, @character_value, @comments);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sql_implementation_info SET 
+			implementation_info_id = @implementation_info_id, implementation_info_name = @implementation_info_name, integer_value = @integer_value, character_value = @character_value, comments = @comments;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sql_implementation_info;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

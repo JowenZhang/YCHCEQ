@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+  <sql id="GetWorkerSelectedWkc">
+    <![CDATA[
+		select
+	    distinct c.wkp_no,
+	    d.wkp_name,
+	    a.wkc_no,
+	    a.wkc_name,
+	    case
+		    when b.worker_wkc_id is null
+		    or b.worker_wkc_id = '' then false
+		    else true
+	    end as is_selected
+    from
+	    pd_wkc a
+    left join mes_worker_wkc b on
+	    a.wkc_no = b.wkc_no
+    left join pd_wkp_wkc c on
+	    a.wkc_no = c.wkc_no
+    left join pd_wkp d on
+	    c.wkp_no = d.wkp_no
+    where
+	    a.wkc_status = '110'
+	    and b.worker_wkc_id is null
+	    or b.worker_no like @worker_no
+    order by
+	    is_selected,
+	    c.wkp_no,
+	    a.wkc_no;
+		]]>
+  </sql>
+  <sql id="PostWorkerSelectedWkc">
+    <![CDATA[
+		delete
+    from
+	    mes_worker_wkc
+    where
+	    worker_no = @worker_no;
+    insert
+	    into
+	    mes_worker_wkc (worker_wkc_status_no,
+	    worker_wkc_status_name,
+	    worker_no,
+	    wkp_no,
+	    wkp_name,
+	    wkc_no,
+	    wkc_name,
+	    crt_time,
+	    crt_user,
+	    crt_user_no,
+	    crt_user_name,
+	    crt_host,
+	    upd_time,
+	    upd_user,
+	    upd_user_no,
+	    upd_user_name,
+	    upd_host)
+    select
+	    '310',
+	    '已确认',
+	    d.worker_no,
+	    c.wkp_no,
+	    c.wkp_name,
+	    a.wkc_no,
+	    a.wkc_name,
+	    now(),
+	    d.worker_id,
+	    d.worker_no,
+	    d.worker_name,
+	    'Server',
+	    now(),
+	    d.worker_id,
+	    d.worker_no,
+	    d.worker_name,
+	    'Server'
+    from
+	    pd_wkc a
+    left join pd_wkp_wkc b on
+	    a.wkc_no = b.wkc_no
+    left join pd_wkp c on
+	    b.wkp_no = c.wkp_no
+    left join me_worker d on
+	    d.worker_no = @worker_no
+    where
+	    a.wkc_no =any (@wkc_no);
+		]]>
+  </sql>
+  <sql id="GetWorkerSelectedWka">
+    <![CDATA[
+		select
+	    distinct a.wkp_no,
+	    a.wkp_name,
+	    a.wkc_no,
+	    a.wkc_name,
+	    b.wka_no,
+	    b.wka_name,
+	    case
+		    when c.worker_partake_tmp_id is null
+		    or c.worker_partake_tmp_id = '' then false
+		    else true
+	    end as is_selected
+    from
+	    mes_worker_wkc a
+    left join pd_wkc_wka b on
+	    a.wkc_no = b.wkc_id
+    left join me_worker_partake_tmp c on
+	    b.wka_no = c.wka_no
+	    and c.worker_no = a.worker_no
+    where
+	    a.worker_no = @worker_no
+    order by
+	    a.wkp_no,
+	    a.wkc_no,
+	    b.wka_no;
+		]]>
+  </sql>
+  <sql id="PostWorkerSelectedWka">
+    <![CDATA[
+		delete
+        from
+	        me_worker_partake_tmp
+        where
+	        worker_no = @worker_no;
+        insert
+	        into
+	        me_worker_partake_tmp (worker_no,
+	        worker_name,
+	        wkp_no,
+	        wkp_name,
+	        wkc_no,
+	        wkc_name,
+	        wka_no,
+	        wka_name,
+	        crt_time,
+	        crt_user,
+	        crt_user_no,
+	        crt_user_name,
+	        crt_host,
+	        upd_time,
+	        upd_user,
+	        upd_user_no,
+	        upd_user_name,
+	        upd_host)
+        select
+	        d.worker_no,
+	        d.worker_name,
+	        c.wkp_no,
+	        c.wkp_name,
+	        c.wkc_no,
+	        c.wkc_name,
+	        a.wka_no,
+	        a.wka_name,
+	        now(),
+	        d.worker_id,
+	        d.worker_no,
+	        d.worker_name,
+	        'Server',
+	        now(),
+	        d.worker_id,
+	        d.worker_no,
+	        d.worker_name,
+	        'Server'
+        from
+	        pd_wkc_wka a
+        inner join pd_wkc b on
+	        a.wkc_id = b.wkc_no
+        inner join mes_worker_wkc c on
+	        b.wkc_no = c.wkc_no
+	        and c.worker_no = @worker_no
+        inner join me_worker d on
+	        c.worker_no = d.worker_no
+        where
+	        d.worker_status = '110'
+	        and c.worker_wkc_status_no = '310'
+	        and b.wkc_status = '110'
+	        and c.worker_no = @worker_no
+	        and a.wka_no=any(@wka_no);
+		    ]]>
+      </sql>
+  <sql id="GetWorkerSelectedOrderData">
+        <![CDATA[
+		    select
+	        distinct d.wka_no,
+	        d.wka_name,
+	        case
+		        when e.wkn_aps_qty is null
+		        or e.wkn_aps_qty <= 0 then 0
+		        else e.wkn_aps_qty
+	        end as has_finished,
+	        a.mo_qty- (
+	        case
+		        when e.wkn_aps_qty is null then 0
+		        else e.wkn_aps_qty
+	        end) as not_finished,
+	        a.mo_no,
+	        a.part_no,
+	        a.part_name,
+	        a.part_spec,
+	        a.mo_qty,
+	        a.mo_hope_start_datetime,
+	        a.mo_hope_end_datetime,
+	        a.mo_desc,
+	        a.factory_no,
+	        a.client_name,
+	        a.mo_rmk01,
+	        a.mo_rmk02,
+	        a.mo_rmk03,
+	        a.mo_rmk04,
+	        a.mo_rmk05,
+	        a.mo_rmk06,
+	        a.mo_rmk07,
+	        a.mo_rmk08,
+	        a.mo_rmk09,
+	        a.mo_rmk10,
+	        a.mo_rmk11,
+	        a.mo_rmk12,
+	        a.mo_rmk13,
+	        a.mo_rmk14,
+	        a.mo_rmk15,
+	        a.mo_rmk16,
+	        a.mo_rmk17,
+	        a.mo_rmk18,
+	        a.mo_rmk19,
+	        a.mo_rmk20,
+	        case
+		        when f.mo_no is null
+		        or f.mo_no = '' then false
+		        else true
+	        end as is_selected
+        from
+	        mo a
+        inner join mo_rmb b on
+	        a.mo_no = b.mo_no
+        inner join mo_rmb_wkc c on
+	        b.unode = c.unode
+        inner join me_worker_partake_tmp d on
+	        d.wkc_no = c.wkc_no
+        inner join mo_rmb_aps e on
+	        c.unode = e.unode
+        left join mes_wka_mo f on
+	        f.wka_no = d.wka_no
+	        and f.mo_no = a.mo_no
+        where
+	        a.mo_status = '310'
+	        and (a.order_no1 is null
+	        or a.order_no1 = '')
+	        and d.worker_no = @worker_no
+        order by
+	        d.wka_no,
+	        a.mo_no;
+		]]>
+  </sql>
+  <sql id="PostWorkerSelectedOrderData">
+    <![CDATA[
+      select af_mes_choose_order(@wka_no,@mo_no,@worker_no);
+		]]>
+  </sql>
+</sqls>

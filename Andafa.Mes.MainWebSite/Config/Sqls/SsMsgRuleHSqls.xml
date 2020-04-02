@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				msg_rule_status, msg_name, msg_condation_sql, msg_time_length, msg_time_unit, msg_body, msg_send_type, msg_type, msg_send_interval_time_length, msg_send_interval_time_unit, msg_uid, msg_rule_last_handle_time, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_msg_rule_h;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				msg_rule_status, msg_name, msg_condation_sql, msg_time_length, msg_time_unit, msg_body, msg_send_type, msg_type, msg_send_interval_time_length, msg_send_interval_time_unit, msg_uid, msg_rule_last_handle_time, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_msg_rule_h
+			WHERE msg_rule_h_id = @msg_rule_h_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_msg_rule_h 
+			(msg_rule_status, msg_name, msg_condation_sql, msg_time_length, msg_time_unit, msg_body, msg_send_type, msg_type, msg_send_interval_time_length, msg_send_interval_time_unit, msg_uid, msg_rule_last_handle_time, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@msg_rule_status, @msg_name, @msg_condation_sql, @msg_time_length, @msg_time_unit, @msg_body, @msg_send_type, @msg_type, @msg_send_interval_time_length, @msg_send_interval_time_unit, @msg_uid, @msg_rule_last_handle_time, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_msg_rule_h SET 
+			msg_rule_status = @msg_rule_status, msg_name = @msg_name, msg_condation_sql = @msg_condation_sql, msg_time_length = @msg_time_length, msg_time_unit = @msg_time_unit, msg_body = @msg_body, msg_send_type = @msg_send_type, msg_type = @msg_type, msg_send_interval_time_length = @msg_send_interval_time_length, msg_send_interval_time_unit = @msg_send_interval_time_unit, msg_uid = @msg_uid, msg_rule_last_handle_time = @msg_rule_last_handle_time, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE msg_rule_h_id = @msg_rule_h_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_msg_rule_h
+			WHERE msg_rule_h_id = @msg_rule_h_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

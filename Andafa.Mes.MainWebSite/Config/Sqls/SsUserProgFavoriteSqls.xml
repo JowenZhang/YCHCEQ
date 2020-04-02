@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				prog_id, crt_host, crt_time
+			FROM ss_user_prog_favorite;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				prog_id, crt_host, crt_time
+			FROM ss_user_prog_favorite
+			WHERE user_id = @user_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_user_prog_favorite 
+			(prog_id, crt_host, crt_time)
+			VALUES (@prog_id, @crt_host, @crt_time);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_user_prog_favorite SET 
+			prog_id = @prog_id, crt_host = @crt_host, crt_time = @crt_time
+			WHERE user_id = @user_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_user_prog_favorite
+			WHERE user_id = @user_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

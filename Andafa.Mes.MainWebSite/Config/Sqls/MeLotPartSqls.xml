@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				lot_no, orgin_lot_no, parent_lot_no, part_no, part_name, part_spec, part_idt, mo_no, unode, wkn, wkp_no, wkp_name, part_qty, me_lot_part_rmk01, me_lot_part_rmk02, me_lot_part_rmk03, me_lot_part_rmk04, me_lot_part_rmk05, me_lot_part_rmk06, me_lot_part_rmk07, me_lot_part_rmk08, me_lot_part_rmk09, me_lot_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_lot_part;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				lot_no, orgin_lot_no, parent_lot_no, part_no, part_name, part_spec, part_idt, mo_no, unode, wkn, wkp_no, wkp_name, part_qty, me_lot_part_rmk01, me_lot_part_rmk02, me_lot_part_rmk03, me_lot_part_rmk04, me_lot_part_rmk05, me_lot_part_rmk06, me_lot_part_rmk07, me_lot_part_rmk08, me_lot_part_rmk09, me_lot_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_lot_part
+			WHERE me_lot_part_id = @me_lot_part_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_lot_part 
+			(lot_no, orgin_lot_no, parent_lot_no, part_no, part_name, part_spec, part_idt, mo_no, unode, wkn, wkp_no, wkp_name, part_qty, me_lot_part_rmk01, me_lot_part_rmk02, me_lot_part_rmk03, me_lot_part_rmk04, me_lot_part_rmk05, me_lot_part_rmk06, me_lot_part_rmk07, me_lot_part_rmk08, me_lot_part_rmk09, me_lot_part_rmk10, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@lot_no, @orgin_lot_no, @parent_lot_no, @part_no, @part_name, @part_spec, @part_idt, @mo_no, @unode, @wkn, @wkp_no, @wkp_name, @part_qty, @me_lot_part_rmk01, @me_lot_part_rmk02, @me_lot_part_rmk03, @me_lot_part_rmk04, @me_lot_part_rmk05, @me_lot_part_rmk06, @me_lot_part_rmk07, @me_lot_part_rmk08, @me_lot_part_rmk09, @me_lot_part_rmk10, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_lot_part SET 
+			lot_no = @lot_no, orgin_lot_no = @orgin_lot_no, parent_lot_no = @parent_lot_no, part_no = @part_no, part_name = @part_name, part_spec = @part_spec, part_idt = @part_idt, mo_no = @mo_no, unode = @unode, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, part_qty = @part_qty, me_lot_part_rmk01 = @me_lot_part_rmk01, me_lot_part_rmk02 = @me_lot_part_rmk02, me_lot_part_rmk03 = @me_lot_part_rmk03, me_lot_part_rmk04 = @me_lot_part_rmk04, me_lot_part_rmk05 = @me_lot_part_rmk05, me_lot_part_rmk06 = @me_lot_part_rmk06, me_lot_part_rmk07 = @me_lot_part_rmk07, me_lot_part_rmk08 = @me_lot_part_rmk08, me_lot_part_rmk09 = @me_lot_part_rmk09, me_lot_part_rmk10 = @me_lot_part_rmk10, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE me_lot_part_id = @me_lot_part_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_lot_part
+			WHERE me_lot_part_id = @me_lot_part_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

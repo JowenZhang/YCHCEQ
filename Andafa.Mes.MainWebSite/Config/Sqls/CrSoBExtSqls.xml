@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				so_plan_status, so_plan_start_datetime, so_plan_end_datetime, so_dlv_qty_real, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_so_b_ext;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				so_plan_status, so_plan_start_datetime, so_plan_end_datetime, so_dlv_qty_real, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_so_b_ext
+			WHERE so_b_id = @so_b_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_so_b_ext 
+			(so_plan_status, so_plan_start_datetime, so_plan_end_datetime, so_dlv_qty_real, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@so_plan_status, @so_plan_start_datetime, @so_plan_end_datetime, @so_dlv_qty_real, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_so_b_ext SET 
+			so_plan_status = @so_plan_status, so_plan_start_datetime = @so_plan_start_datetime, so_plan_end_datetime = @so_plan_end_datetime, so_dlv_qty_real = @so_dlv_qty_real, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE so_b_id = @so_b_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_so_b_ext
+			WHERE so_b_id = @so_b_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

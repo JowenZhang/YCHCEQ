@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+  <sql id="RemoveOldDataFromMesUaSubmit">
+    <![CDATA[
+		delete
+	    from
+      mes_ua_submit
+    where
+	    id=@Id;
+		]]>
+  </sql>
+  <sql id="AddNewDataIntoMesUaSubmit">
+    <![CDATA[
+		insert
+      into
+      mes_ua_submit(id,ws_no,sub_time,m_id,p_id,
+      prod_id,prod_weight,fingerprint)
+    values(@id,@ws_no,@sub_time,@m_id,@p_id,
+      @prod_id,@prod_weight,@fingerprint);
+		]]>
+  </sql>
+  <sql id="AddNewDataIntoMesUaSubmitAuto">
+    <![CDATA[
+		truncate table mes_ua_submit_auto;
+    insert
+      into
+      mes_ua_submit_auto(id,ws_no,sub_time,m_id,p_id,
+      prod_id,prod_weight,fingerprint)
+    values(@id,@ws_no,@sub_time,@m_id,@p_id,
+      @prod_id,@prod_weight,@fingerprint);
+		]]>
+  </sql>
+  <sql id="???">
+    <![CDATA[
+		    ]]>
+      </sql>
+  <sql id="??">
+        <![CDATA[
+		]]>
+  </sql>
+  <sql id="?">
+    <![CDATA[
+		]]>
+  </sql>
+</sqls>

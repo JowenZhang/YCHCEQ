@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ws_no, sub_time, m_id, p_id, prod_id, prod_weight, fingerprint
+			FROM mes_ua_submit;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ws_no, sub_time, m_id, p_id, prod_id, prod_weight, fingerprint
+			FROM mes_ua_submit
+			WHERE id = @id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO mes_ua_submit 
+			(ws_no, sub_time, m_id, p_id, prod_id, prod_weight, fingerprint)
+			VALUES (@ws_no, @sub_time, @m_id, @p_id, @prod_id, @prod_weight, @fingerprint);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE mes_ua_submit SET 
+			ws_no = @ws_no, sub_time = @sub_time, m_id = @m_id, p_id = @p_id, prod_id = @prod_id, prod_weight = @prod_weight, fingerprint = @fingerprint
+			WHERE id = @id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM mes_ua_submit
+			WHERE id = @id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

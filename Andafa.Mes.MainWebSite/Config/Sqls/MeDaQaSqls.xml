@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				da_switch_id, qa_cause_no, qa_cause_name, da_qty, da_qa_rmk01, da_qa_rmk02, da_qa_rmk03, da_qa_rmk04, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_da_qa;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				da_switch_id, qa_cause_no, qa_cause_name, da_qty, da_qa_rmk01, da_qa_rmk02, da_qa_rmk03, da_qa_rmk04, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_da_qa
+			WHERE da_qa_id = @da_qa_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_da_qa 
+			(da_switch_id, qa_cause_no, qa_cause_name, da_qty, da_qa_rmk01, da_qa_rmk02, da_qa_rmk03, da_qa_rmk04, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@da_switch_id, @qa_cause_no, @qa_cause_name, @da_qty, @da_qa_rmk01, @da_qa_rmk02, @da_qa_rmk03, @da_qa_rmk04, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_da_qa SET 
+			da_switch_id = @da_switch_id, qa_cause_no = @qa_cause_no, qa_cause_name = @qa_cause_name, da_qty = @da_qty, da_qa_rmk01 = @da_qa_rmk01, da_qa_rmk02 = @da_qa_rmk02, da_qa_rmk03 = @da_qa_rmk03, da_qa_rmk04 = @da_qa_rmk04, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE da_qa_id = @da_qa_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_da_qa
+			WHERE da_qa_id = @da_qa_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

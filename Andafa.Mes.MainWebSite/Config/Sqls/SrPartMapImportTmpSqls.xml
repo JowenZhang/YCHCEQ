@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				sr_part_map_id, part_no, supplier_no, supplier_part_no, supplier_part_name, supplier_part_spec, supplier_part_brand, assign_proportion, purchase_qty_min, purchase_qty_add, purchase_lead_time, unit_price, price_currency, si_type, si_degree, sr_part_map_rmk01, sr_part_map_rmk02, sr_part_map_rmk03, sr_part_map_rmk04, sr_part_map_rmk05, sr_part_map_rmk06, sr_part_map_rmk07, sr_part_map_rmk08, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM sr_part_map_import_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				sr_part_map_id, part_no, supplier_no, supplier_part_no, supplier_part_name, supplier_part_spec, supplier_part_brand, assign_proportion, purchase_qty_min, purchase_qty_add, purchase_lead_time, unit_price, price_currency, si_type, si_degree, sr_part_map_rmk01, sr_part_map_rmk02, sr_part_map_rmk03, sr_part_map_rmk04, sr_part_map_rmk05, sr_part_map_rmk06, sr_part_map_rmk07, sr_part_map_rmk08, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM sr_part_map_import_tmp;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sr_part_map_import_tmp 
+			(sr_part_map_id, part_no, supplier_no, supplier_part_no, supplier_part_name, supplier_part_spec, supplier_part_brand, assign_proportion, purchase_qty_min, purchase_qty_add, purchase_lead_time, unit_price, price_currency, si_type, si_degree, sr_part_map_rmk01, sr_part_map_rmk02, sr_part_map_rmk03, sr_part_map_rmk04, sr_part_map_rmk05, sr_part_map_rmk06, sr_part_map_rmk07, sr_part_map_rmk08, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@sr_part_map_id, @part_no, @supplier_no, @supplier_part_no, @supplier_part_name, @supplier_part_spec, @supplier_part_brand, @assign_proportion, @purchase_qty_min, @purchase_qty_add, @purchase_lead_time, @unit_price, @price_currency, @si_type, @si_degree, @sr_part_map_rmk01, @sr_part_map_rmk02, @sr_part_map_rmk03, @sr_part_map_rmk04, @sr_part_map_rmk05, @sr_part_map_rmk06, @sr_part_map_rmk07, @sr_part_map_rmk08, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sr_part_map_import_tmp SET 
+			sr_part_map_id = @sr_part_map_id, part_no = @part_no, supplier_no = @supplier_no, supplier_part_no = @supplier_part_no, supplier_part_name = @supplier_part_name, supplier_part_spec = @supplier_part_spec, supplier_part_brand = @supplier_part_brand, assign_proportion = @assign_proportion, purchase_qty_min = @purchase_qty_min, purchase_qty_add = @purchase_qty_add, purchase_lead_time = @purchase_lead_time, unit_price = @unit_price, price_currency = @price_currency, si_type = @si_type, si_degree = @si_degree, sr_part_map_rmk01 = @sr_part_map_rmk01, sr_part_map_rmk02 = @sr_part_map_rmk02, sr_part_map_rmk03 = @sr_part_map_rmk03, sr_part_map_rmk04 = @sr_part_map_rmk04, sr_part_map_rmk05 = @sr_part_map_rmk05, sr_part_map_rmk06 = @sr_part_map_rmk06, sr_part_map_rmk07 = @sr_part_map_rmk07, sr_part_map_rmk08 = @sr_part_map_rmk08, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sr_part_map_import_tmp;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

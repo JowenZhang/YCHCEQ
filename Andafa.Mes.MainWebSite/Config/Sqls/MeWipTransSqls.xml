@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				wip_trans_no, wip_trans_datetime, wip_trans_worker_card_no, wip_trans_worker_no, wip_trans_worker_name, lo_no, wip_trans_from_worker_card_no, wip_trans_from_worker_no, wip_trans_from_worker_name, wip_trans_from_wkp_no, wip_trans_from_wkp_name, wip_trans_qty, wip_trans_to_worker_card_no, wip_trans_to_worker_no, wip_trans_to_worker_name, wip_trans_to_wkp_no, wip_trans_to_wkp_name, wip_trans_rmk1, wip_trans_rmk2, wip_trans_rmk3, wip_trans_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_wip_trans;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				wip_trans_no, wip_trans_datetime, wip_trans_worker_card_no, wip_trans_worker_no, wip_trans_worker_name, lo_no, wip_trans_from_worker_card_no, wip_trans_from_worker_no, wip_trans_from_worker_name, wip_trans_from_wkp_no, wip_trans_from_wkp_name, wip_trans_qty, wip_trans_to_worker_card_no, wip_trans_to_worker_no, wip_trans_to_worker_name, wip_trans_to_wkp_no, wip_trans_to_wkp_name, wip_trans_rmk1, wip_trans_rmk2, wip_trans_rmk3, wip_trans_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_wip_trans
+			WHERE me_wip_trans_id = @me_wip_trans_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_wip_trans 
+			(wip_trans_no, wip_trans_datetime, wip_trans_worker_card_no, wip_trans_worker_no, wip_trans_worker_name, lo_no, wip_trans_from_worker_card_no, wip_trans_from_worker_no, wip_trans_from_worker_name, wip_trans_from_wkp_no, wip_trans_from_wkp_name, wip_trans_qty, wip_trans_to_worker_card_no, wip_trans_to_worker_no, wip_trans_to_worker_name, wip_trans_to_wkp_no, wip_trans_to_wkp_name, wip_trans_rmk1, wip_trans_rmk2, wip_trans_rmk3, wip_trans_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@wip_trans_no, @wip_trans_datetime, @wip_trans_worker_card_no, @wip_trans_worker_no, @wip_trans_worker_name, @lo_no, @wip_trans_from_worker_card_no, @wip_trans_from_worker_no, @wip_trans_from_worker_name, @wip_trans_from_wkp_no, @wip_trans_from_wkp_name, @wip_trans_qty, @wip_trans_to_worker_card_no, @wip_trans_to_worker_no, @wip_trans_to_worker_name, @wip_trans_to_wkp_no, @wip_trans_to_wkp_name, @wip_trans_rmk1, @wip_trans_rmk2, @wip_trans_rmk3, @wip_trans_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_wip_trans SET 
+			wip_trans_no = @wip_trans_no, wip_trans_datetime = @wip_trans_datetime, wip_trans_worker_card_no = @wip_trans_worker_card_no, wip_trans_worker_no = @wip_trans_worker_no, wip_trans_worker_name = @wip_trans_worker_name, lo_no = @lo_no, wip_trans_from_worker_card_no = @wip_trans_from_worker_card_no, wip_trans_from_worker_no = @wip_trans_from_worker_no, wip_trans_from_worker_name = @wip_trans_from_worker_name, wip_trans_from_wkp_no = @wip_trans_from_wkp_no, wip_trans_from_wkp_name = @wip_trans_from_wkp_name, wip_trans_qty = @wip_trans_qty, wip_trans_to_worker_card_no = @wip_trans_to_worker_card_no, wip_trans_to_worker_no = @wip_trans_to_worker_no, wip_trans_to_worker_name = @wip_trans_to_worker_name, wip_trans_to_wkp_no = @wip_trans_to_wkp_no, wip_trans_to_wkp_name = @wip_trans_to_wkp_name, wip_trans_rmk1 = @wip_trans_rmk1, wip_trans_rmk2 = @wip_trans_rmk2, wip_trans_rmk3 = @wip_trans_rmk3, wip_trans_rmk4 = @wip_trans_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE me_wip_trans_id = @me_wip_trans_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_wip_trans
+			WHERE me_wip_trans_id = @me_wip_trans_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

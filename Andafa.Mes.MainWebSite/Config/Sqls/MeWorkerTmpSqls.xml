@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				worker_card_no, worker_no, worker_name, factory_no, dept_no, job_no, worker_rmk01
+			FROM me_worker_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				worker_card_no, worker_no, worker_name, factory_no, dept_no, job_no, worker_rmk01
+			FROM me_worker_tmp
+			WHERE worker_id = @worker_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_worker_tmp 
+			(worker_card_no, worker_no, worker_name, factory_no, dept_no, job_no, worker_rmk01)
+			VALUES (@worker_card_no, @worker_no, @worker_name, @factory_no, @dept_no, @job_no, @worker_rmk01);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_worker_tmp SET 
+			worker_card_no = @worker_card_no, worker_no = @worker_no, worker_name = @worker_name, factory_no = @factory_no, dept_no = @dept_no, job_no = @job_no, worker_rmk01 = @worker_rmk01
+			WHERE worker_id = @worker_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_worker_tmp
+			WHERE worker_id = @worker_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

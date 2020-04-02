@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				para_value, para_desc, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_para_run;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				para_value, para_desc, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ss_para_run
+			WHERE para_id = @para_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_para_run 
+			(para_value, para_desc, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@para_value, @para_desc, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_para_run SET 
+			para_value = @para_value, para_desc = @para_desc, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE para_id = @para_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_para_run
+			WHERE para_id = @para_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				cdvl_id, cdvl_desc, zstatus, zsort, is_default, short_code, lang_str_id, zcolor, cdvl_rmk1, cdvl_rmk2, upd_user, upd_host, upd_time, upd_user_no, upd_user_name
+			FROM ss_cdvl;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				cdvl_id, cdvl_desc, zstatus, zsort, is_default, short_code, lang_str_id, zcolor, cdvl_rmk1, cdvl_rmk2, upd_user, upd_host, upd_time, upd_user_no, upd_user_name
+			FROM ss_cdvl
+			WHERE cdtp_id = @cdtp_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ss_cdvl 
+			(cdvl_id, cdvl_desc, zstatus, zsort, is_default, short_code, lang_str_id, zcolor, cdvl_rmk1, cdvl_rmk2, upd_user, upd_host, upd_time, upd_user_no, upd_user_name)
+			VALUES (@cdvl_id, @cdvl_desc, @zstatus, @zsort, @is_default, @short_code, @lang_str_id, @zcolor, @cdvl_rmk1, @cdvl_rmk2, @upd_user, @upd_host, @upd_time, @upd_user_no, @upd_user_name);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ss_cdvl SET 
+			cdvl_id = @cdvl_id, cdvl_desc = @cdvl_desc, zstatus = @zstatus, zsort = @zsort, is_default = @is_default, short_code = @short_code, lang_str_id = @lang_str_id, zcolor = @zcolor, cdvl_rmk1 = @cdvl_rmk1, cdvl_rmk2 = @cdvl_rmk2, upd_user = @upd_user, upd_host = @upd_host, upd_time = @upd_time, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name
+			WHERE cdtp_id = @cdtp_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ss_cdvl
+			WHERE cdtp_id = @cdtp_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

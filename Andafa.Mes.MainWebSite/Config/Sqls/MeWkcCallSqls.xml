@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				me_wkc_call_status, wkc_no, wkc_name, lot_no, unode, wkn, wkp_no, wkp_name, wkc_call_datetime, wkc_call_worker_no, wkc_call_worker_name, wkc_call_type, call_handle_datetime_start, call_handle_worker_no, call_handle_worker_name, call_respond_minute, call_handle_datetime_end, call_ex_reason_no, call_ex_reason_name, call_ex_handle_method_no, call_ex_handle_method_name, call_handle_minute, wkc_call_end_confirm_datetime, call_end_confirm_worker_no, call_end_confirm_worker_name, call_end_confirm_minute, call_minute, me_wkc_call_rmk11, me_wkc_call_rmk12, me_wkc_call_rmk13, me_wkc_call_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_wkc_call;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				me_wkc_call_status, wkc_no, wkc_name, lot_no, unode, wkn, wkp_no, wkp_name, wkc_call_datetime, wkc_call_worker_no, wkc_call_worker_name, wkc_call_type, call_handle_datetime_start, call_handle_worker_no, call_handle_worker_name, call_respond_minute, call_handle_datetime_end, call_ex_reason_no, call_ex_reason_name, call_ex_handle_method_no, call_ex_handle_method_name, call_handle_minute, wkc_call_end_confirm_datetime, call_end_confirm_worker_no, call_end_confirm_worker_name, call_end_confirm_minute, call_minute, me_wkc_call_rmk11, me_wkc_call_rmk12, me_wkc_call_rmk13, me_wkc_call_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_wkc_call
+			WHERE me_wkc_call_id = @me_wkc_call_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_wkc_call 
+			(me_wkc_call_status, wkc_no, wkc_name, lot_no, unode, wkn, wkp_no, wkp_name, wkc_call_datetime, wkc_call_worker_no, wkc_call_worker_name, wkc_call_type, call_handle_datetime_start, call_handle_worker_no, call_handle_worker_name, call_respond_minute, call_handle_datetime_end, call_ex_reason_no, call_ex_reason_name, call_ex_handle_method_no, call_ex_handle_method_name, call_handle_minute, wkc_call_end_confirm_datetime, call_end_confirm_worker_no, call_end_confirm_worker_name, call_end_confirm_minute, call_minute, me_wkc_call_rmk11, me_wkc_call_rmk12, me_wkc_call_rmk13, me_wkc_call_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@me_wkc_call_status, @wkc_no, @wkc_name, @lot_no, @unode, @wkn, @wkp_no, @wkp_name, @wkc_call_datetime, @wkc_call_worker_no, @wkc_call_worker_name, @wkc_call_type, @call_handle_datetime_start, @call_handle_worker_no, @call_handle_worker_name, @call_respond_minute, @call_handle_datetime_end, @call_ex_reason_no, @call_ex_reason_name, @call_ex_handle_method_no, @call_ex_handle_method_name, @call_handle_minute, @wkc_call_end_confirm_datetime, @call_end_confirm_worker_no, @call_end_confirm_worker_name, @call_end_confirm_minute, @call_minute, @me_wkc_call_rmk11, @me_wkc_call_rmk12, @me_wkc_call_rmk13, @me_wkc_call_rmk14, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_wkc_call SET 
+			me_wkc_call_status = @me_wkc_call_status, wkc_no = @wkc_no, wkc_name = @wkc_name, lot_no = @lot_no, unode = @unode, wkn = @wkn, wkp_no = @wkp_no, wkp_name = @wkp_name, wkc_call_datetime = @wkc_call_datetime, wkc_call_worker_no = @wkc_call_worker_no, wkc_call_worker_name = @wkc_call_worker_name, wkc_call_type = @wkc_call_type, call_handle_datetime_start = @call_handle_datetime_start, call_handle_worker_no = @call_handle_worker_no, call_handle_worker_name = @call_handle_worker_name, call_respond_minute = @call_respond_minute, call_handle_datetime_end = @call_handle_datetime_end, call_ex_reason_no = @call_ex_reason_no, call_ex_reason_name = @call_ex_reason_name, call_ex_handle_method_no = @call_ex_handle_method_no, call_ex_handle_method_name = @call_ex_handle_method_name, call_handle_minute = @call_handle_minute, wkc_call_end_confirm_datetime = @wkc_call_end_confirm_datetime, call_end_confirm_worker_no = @call_end_confirm_worker_no, call_end_confirm_worker_name = @call_end_confirm_worker_name, call_end_confirm_minute = @call_end_confirm_minute, call_minute = @call_minute, me_wkc_call_rmk11 = @me_wkc_call_rmk11, me_wkc_call_rmk12 = @me_wkc_call_rmk12, me_wkc_call_rmk13 = @me_wkc_call_rmk13, me_wkc_call_rmk14 = @me_wkc_call_rmk14, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE me_wkc_call_id = @me_wkc_call_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_wkc_call
+			WHERE me_wkc_call_id = @me_wkc_call_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

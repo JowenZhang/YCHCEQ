@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				worker_status, worker_no, worker_name, worker_password, worker_card_no, factory_no, dept_no, line_no, job_no, shift_no, worker_mobile, worker_email, worker_bonus_ratio, manpower_cost, invp_no, leader_worker_no, worker_rmk01, worker_rmk02, worker_rmk03, worker_rmk04, worker_rmk05, worker_rmk06, worker_rmk07, worker_rmk08, worker_rmk09, worker_rmk10, worker_rmk11, worker_rmk12, worker_rmk13, worker_rmk14, worker_rmk15, worker_rmk16, worker_rmk17, worker_rmk18, worker_rmk19, worker_rmk20, worker_rmk21, worker_rmk22, worker_rmk23, worker_rmk24, worker_rmk25, worker_rmk26, worker_rmk27, worker_rmk28, worker_rmk29, worker_rmk30, unit_price, post_subsidy, craft_subsidy, other_subsidy, post_type, in_date, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_worker;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				worker_status, worker_no, worker_name, worker_password, worker_card_no, factory_no, dept_no, line_no, job_no, shift_no, worker_mobile, worker_email, worker_bonus_ratio, manpower_cost, invp_no, leader_worker_no, worker_rmk01, worker_rmk02, worker_rmk03, worker_rmk04, worker_rmk05, worker_rmk06, worker_rmk07, worker_rmk08, worker_rmk09, worker_rmk10, worker_rmk11, worker_rmk12, worker_rmk13, worker_rmk14, worker_rmk15, worker_rmk16, worker_rmk17, worker_rmk18, worker_rmk19, worker_rmk20, worker_rmk21, worker_rmk22, worker_rmk23, worker_rmk24, worker_rmk25, worker_rmk26, worker_rmk27, worker_rmk28, worker_rmk29, worker_rmk30, unit_price, post_subsidy, craft_subsidy, other_subsidy, post_type, in_date, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM me_worker
+			WHERE worker_no = @worker_no;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO me_worker 
+			(worker_status, worker_no, worker_name, worker_password, worker_card_no, factory_no, dept_no, line_no, job_no, shift_no, worker_mobile, worker_email, worker_bonus_ratio, manpower_cost, invp_no, leader_worker_no, worker_rmk01, worker_rmk02, worker_rmk03, worker_rmk04, worker_rmk05, worker_rmk06, worker_rmk07, worker_rmk08, worker_rmk09, worker_rmk10, worker_rmk11, worker_rmk12, worker_rmk13, worker_rmk14, worker_rmk15, worker_rmk16, worker_rmk17, worker_rmk18, worker_rmk19, worker_rmk20, worker_rmk21, worker_rmk22, worker_rmk23, worker_rmk24, worker_rmk25, worker_rmk26, worker_rmk27, worker_rmk28, worker_rmk29, worker_rmk30, unit_price, post_subsidy, craft_subsidy, other_subsidy, post_type, in_date, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@worker_status, @worker_no, @worker_name, @worker_password, @worker_card_no, @factory_no, @dept_no, @line_no, @job_no, @shift_no, @worker_mobile, @worker_email, @worker_bonus_ratio, @manpower_cost, @invp_no, @leader_worker_no, @worker_rmk01, @worker_rmk02, @worker_rmk03, @worker_rmk04, @worker_rmk05, @worker_rmk06, @worker_rmk07, @worker_rmk08, @worker_rmk09, @worker_rmk10, @worker_rmk11, @worker_rmk12, @worker_rmk13, @worker_rmk14, @worker_rmk15, @worker_rmk16, @worker_rmk17, @worker_rmk18, @worker_rmk19, @worker_rmk20, @worker_rmk21, @worker_rmk22, @worker_rmk23, @worker_rmk24, @worker_rmk25, @worker_rmk26, @worker_rmk27, @worker_rmk28, @worker_rmk29, @worker_rmk30, @unit_price, @post_subsidy, @craft_subsidy, @other_subsidy, @post_type, @in_date, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE me_worker SET 
+			worker_status = @worker_status, worker_no = @worker_no, worker_name = @worker_name, worker_password = @worker_password, worker_card_no = @worker_card_no, factory_no = @factory_no, dept_no = @dept_no, line_no = @line_no, job_no = @job_no, shift_no = @shift_no, worker_mobile = @worker_mobile, worker_email = @worker_email, worker_bonus_ratio = @worker_bonus_ratio, manpower_cost = @manpower_cost, invp_no = @invp_no, leader_worker_no = @leader_worker_no, worker_rmk01 = @worker_rmk01, worker_rmk02 = @worker_rmk02, worker_rmk03 = @worker_rmk03, worker_rmk04 = @worker_rmk04, worker_rmk05 = @worker_rmk05, worker_rmk06 = @worker_rmk06, worker_rmk07 = @worker_rmk07, worker_rmk08 = @worker_rmk08, worker_rmk09 = @worker_rmk09, worker_rmk10 = @worker_rmk10, worker_rmk11 = @worker_rmk11, worker_rmk12 = @worker_rmk12, worker_rmk13 = @worker_rmk13, worker_rmk14 = @worker_rmk14, worker_rmk15 = @worker_rmk15, worker_rmk16 = @worker_rmk16, worker_rmk17 = @worker_rmk17, worker_rmk18 = @worker_rmk18, worker_rmk19 = @worker_rmk19, worker_rmk20 = @worker_rmk20, worker_rmk21 = @worker_rmk21, worker_rmk22 = @worker_rmk22, worker_rmk23 = @worker_rmk23, worker_rmk24 = @worker_rmk24, worker_rmk25 = @worker_rmk25, worker_rmk26 = @worker_rmk26, worker_rmk27 = @worker_rmk27, worker_rmk28 = @worker_rmk28, worker_rmk29 = @worker_rmk29, worker_rmk30 = @worker_rmk30, unit_price = @unit_price, post_subsidy = @post_subsidy, craft_subsidy = @craft_subsidy, other_subsidy = @other_subsidy, post_type = @post_type, in_date = @in_date, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE worker_no = @worker_no;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM me_worker
+			WHERE worker_no = @worker_no;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

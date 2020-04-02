@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				supplier_id, supplier_status, supplier_no, supplier_name, supplier_name_abbr, supplier_name_py, supplier_tel, supplier_im, supplier_fax, supplier_addr, supplier_postcode, doc_keyword, supplier_payment, supplier_settle, supplier_trad_currency, supplier_discount, supplier_type0, supplier_type1, supplier_type2, supplier_type3, supplier_type4, supplier_type5, supplier_type6, supplier_type7, supplier_type8, supplier_type9, supplier_rmk10, supplier_rmk11, supplier_rmk12, supplier_rmk13, supplier_rmk14, supplier_rmk15, supplier_rmk16, supplier_rmk17, supplier_rmk18, supplier_rmk19, supplier_rmk20, supplier_rmk21, supplier_rmk22, supplier_rmk23, supplier_rmk24, supplier_rmk25, supplier_rmk26, supplier_rmk27, supplier_rmk28, supplier_rmk29, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM sr_supplier_import_tmp;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				supplier_id, supplier_status, supplier_no, supplier_name, supplier_name_abbr, supplier_name_py, supplier_tel, supplier_im, supplier_fax, supplier_addr, supplier_postcode, doc_keyword, supplier_payment, supplier_settle, supplier_trad_currency, supplier_discount, supplier_type0, supplier_type1, supplier_type2, supplier_type3, supplier_type4, supplier_type5, supplier_type6, supplier_type7, supplier_type8, supplier_type9, supplier_rmk10, supplier_rmk11, supplier_rmk12, supplier_rmk13, supplier_rmk14, supplier_rmk15, supplier_rmk16, supplier_rmk17, supplier_rmk18, supplier_rmk19, supplier_rmk20, supplier_rmk21, supplier_rmk22, supplier_rmk23, supplier_rmk24, supplier_rmk25, supplier_rmk26, supplier_rmk27, supplier_rmk28, supplier_rmk29, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM sr_supplier_import_tmp;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO sr_supplier_import_tmp 
+			(supplier_id, supplier_status, supplier_no, supplier_name, supplier_name_abbr, supplier_name_py, supplier_tel, supplier_im, supplier_fax, supplier_addr, supplier_postcode, doc_keyword, supplier_payment, supplier_settle, supplier_trad_currency, supplier_discount, supplier_type0, supplier_type1, supplier_type2, supplier_type3, supplier_type4, supplier_type5, supplier_type6, supplier_type7, supplier_type8, supplier_type9, supplier_rmk10, supplier_rmk11, supplier_rmk12, supplier_rmk13, supplier_rmk14, supplier_rmk15, supplier_rmk16, supplier_rmk17, supplier_rmk18, supplier_rmk19, supplier_rmk20, supplier_rmk21, supplier_rmk22, supplier_rmk23, supplier_rmk24, supplier_rmk25, supplier_rmk26, supplier_rmk27, supplier_rmk28, supplier_rmk29, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@supplier_id, @supplier_status, @supplier_no, @supplier_name, @supplier_name_abbr, @supplier_name_py, @supplier_tel, @supplier_im, @supplier_fax, @supplier_addr, @supplier_postcode, @doc_keyword, @supplier_payment, @supplier_settle, @supplier_trad_currency, @supplier_discount, @supplier_type0, @supplier_type1, @supplier_type2, @supplier_type3, @supplier_type4, @supplier_type5, @supplier_type6, @supplier_type7, @supplier_type8, @supplier_type9, @supplier_rmk10, @supplier_rmk11, @supplier_rmk12, @supplier_rmk13, @supplier_rmk14, @supplier_rmk15, @supplier_rmk16, @supplier_rmk17, @supplier_rmk18, @supplier_rmk19, @supplier_rmk20, @supplier_rmk21, @supplier_rmk22, @supplier_rmk23, @supplier_rmk24, @supplier_rmk25, @supplier_rmk26, @supplier_rmk27, @supplier_rmk28, @supplier_rmk29, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE sr_supplier_import_tmp SET 
+			supplier_id = @supplier_id, supplier_status = @supplier_status, supplier_no = @supplier_no, supplier_name = @supplier_name, supplier_name_abbr = @supplier_name_abbr, supplier_name_py = @supplier_name_py, supplier_tel = @supplier_tel, supplier_im = @supplier_im, supplier_fax = @supplier_fax, supplier_addr = @supplier_addr, supplier_postcode = @supplier_postcode, doc_keyword = @doc_keyword, supplier_payment = @supplier_payment, supplier_settle = @supplier_settle, supplier_trad_currency = @supplier_trad_currency, supplier_discount = @supplier_discount, supplier_type0 = @supplier_type0, supplier_type1 = @supplier_type1, supplier_type2 = @supplier_type2, supplier_type3 = @supplier_type3, supplier_type4 = @supplier_type4, supplier_type5 = @supplier_type5, supplier_type6 = @supplier_type6, supplier_type7 = @supplier_type7, supplier_type8 = @supplier_type8, supplier_type9 = @supplier_type9, supplier_rmk10 = @supplier_rmk10, supplier_rmk11 = @supplier_rmk11, supplier_rmk12 = @supplier_rmk12, supplier_rmk13 = @supplier_rmk13, supplier_rmk14 = @supplier_rmk14, supplier_rmk15 = @supplier_rmk15, supplier_rmk16 = @supplier_rmk16, supplier_rmk17 = @supplier_rmk17, supplier_rmk18 = @supplier_rmk18, supplier_rmk19 = @supplier_rmk19, supplier_rmk20 = @supplier_rmk20, supplier_rmk21 = @supplier_rmk21, supplier_rmk22 = @supplier_rmk22, supplier_rmk23 = @supplier_rmk23, supplier_rmk24 = @supplier_rmk24, supplier_rmk25 = @supplier_rmk25, supplier_rmk26 = @supplier_rmk26, supplier_rmk27 = @supplier_rmk27, supplier_rmk28 = @supplier_rmk28, supplier_rmk29 = @supplier_rmk29, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM sr_supplier_import_tmp;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

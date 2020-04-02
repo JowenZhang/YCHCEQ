@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				client_no, contacts_status, contacts_name, contacts_name_py, contacts_name2, contacts_name2_py, contacts_title, contacts_dept, contacts_sex, contacts_tel1, contacts_tel2, contacts_mobile1, contacts_mobile2, contacts_email1, contacts_email2, contacts_address, cr_contacts_rmk1, cr_contacts_rmk2, cr_contacts_rmk3, cr_contacts_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_contacts;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				client_no, contacts_status, contacts_name, contacts_name_py, contacts_name2, contacts_name2_py, contacts_title, contacts_dept, contacts_sex, contacts_tel1, contacts_tel2, contacts_mobile1, contacts_mobile2, contacts_email1, contacts_email2, contacts_address, cr_contacts_rmk1, cr_contacts_rmk2, cr_contacts_rmk3, cr_contacts_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM cr_contacts
+			WHERE contacts_id = @contacts_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO cr_contacts 
+			(client_no, contacts_status, contacts_name, contacts_name_py, contacts_name2, contacts_name2_py, contacts_title, contacts_dept, contacts_sex, contacts_tel1, contacts_tel2, contacts_mobile1, contacts_mobile2, contacts_email1, contacts_email2, contacts_address, cr_contacts_rmk1, cr_contacts_rmk2, cr_contacts_rmk3, cr_contacts_rmk4, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@client_no, @contacts_status, @contacts_name, @contacts_name_py, @contacts_name2, @contacts_name2_py, @contacts_title, @contacts_dept, @contacts_sex, @contacts_tel1, @contacts_tel2, @contacts_mobile1, @contacts_mobile2, @contacts_email1, @contacts_email2, @contacts_address, @cr_contacts_rmk1, @cr_contacts_rmk2, @cr_contacts_rmk3, @cr_contacts_rmk4, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE cr_contacts SET 
+			client_no = @client_no, contacts_status = @contacts_status, contacts_name = @contacts_name, contacts_name_py = @contacts_name_py, contacts_name2 = @contacts_name2, contacts_name2_py = @contacts_name2_py, contacts_title = @contacts_title, contacts_dept = @contacts_dept, contacts_sex = @contacts_sex, contacts_tel1 = @contacts_tel1, contacts_tel2 = @contacts_tel2, contacts_mobile1 = @contacts_mobile1, contacts_mobile2 = @contacts_mobile2, contacts_email1 = @contacts_email1, contacts_email2 = @contacts_email2, contacts_address = @contacts_address, cr_contacts_rmk1 = @cr_contacts_rmk1, cr_contacts_rmk2 = @cr_contacts_rmk2, cr_contacts_rmk3 = @cr_contacts_rmk3, cr_contacts_rmk4 = @cr_contacts_rmk4, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE contacts_id = @contacts_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM cr_contacts
+			WHERE contacts_id = @contacts_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

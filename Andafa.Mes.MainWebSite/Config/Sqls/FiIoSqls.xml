@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				fi_io_no, fi_io_status, fi_io_datetime, fi_target_no, fi_target_name, fi_io_amount, fi_io_currency, fi_io_currency_name, fi_io_desc, fi_io_rmk1, fi_io_rmk2, fi_io_rmk3, fi_io_rmk4, fi_io_rmk5, fi_io_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM fi_io;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				fi_io_no, fi_io_status, fi_io_datetime, fi_target_no, fi_target_name, fi_io_amount, fi_io_currency, fi_io_currency_name, fi_io_desc, fi_io_rmk1, fi_io_rmk2, fi_io_rmk3, fi_io_rmk4, fi_io_rmk5, fi_io_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM fi_io
+			WHERE fi_io_id = @fi_io_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO fi_io 
+			(fi_io_no, fi_io_status, fi_io_datetime, fi_target_no, fi_target_name, fi_io_amount, fi_io_currency, fi_io_currency_name, fi_io_desc, fi_io_rmk1, fi_io_rmk2, fi_io_rmk3, fi_io_rmk4, fi_io_rmk5, fi_io_rmk6, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@fi_io_no, @fi_io_status, @fi_io_datetime, @fi_target_no, @fi_target_name, @fi_io_amount, @fi_io_currency, @fi_io_currency_name, @fi_io_desc, @fi_io_rmk1, @fi_io_rmk2, @fi_io_rmk3, @fi_io_rmk4, @fi_io_rmk5, @fi_io_rmk6, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE fi_io SET 
+			fi_io_no = @fi_io_no, fi_io_status = @fi_io_status, fi_io_datetime = @fi_io_datetime, fi_target_no = @fi_target_no, fi_target_name = @fi_target_name, fi_io_amount = @fi_io_amount, fi_io_currency = @fi_io_currency, fi_io_currency_name = @fi_io_currency_name, fi_io_desc = @fi_io_desc, fi_io_rmk1 = @fi_io_rmk1, fi_io_rmk2 = @fi_io_rmk2, fi_io_rmk3 = @fi_io_rmk3, fi_io_rmk4 = @fi_io_rmk4, fi_io_rmk5 = @fi_io_rmk5, fi_io_rmk6 = @fi_io_rmk6, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE fi_io_id = @fi_io_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM fi_io
+			WHERE fi_io_id = @fi_io_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>

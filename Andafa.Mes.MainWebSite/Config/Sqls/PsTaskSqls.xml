@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sqls>
+	<sql id="Index">
+		<![CDATA[
+			SELECT 
+				ps_batch_id, task_no, task_shift_date, task_shift_no, task_shift_name, task_datetime_start, task_datetime_end, task_datetime_type, task_datetime_type_name, factory_no, factory_name, dept_no, dept_name, line_no, line_name, wkc_no, wkc_name, order_type, order_type_name, order_no, order_qty, order_rmh_no, order_hope_start_datetime, order_hope_end_datetime, order_plan_start_datetime, order_plan_end_datetime, order_part_no, order_part_name, order_part_spec, order_part_unit_name, order_part_type1, order_part_type1_name, order_part_type2_name, order_part_type3_name, order_part_type4_name, order_part_type5_name, order_part_type6_name, unode, unode_next, unode_wkn, unode_wkn_desc, unode_wkp_no, unode_wkp_name, unode_qty_assigned, unode_capability_assigned, task_datetime_length, task_resttime_length, task_is_twin, task_is_manual, task_is_fixed, task_is_closed, order_type1, order_no1, order_delivery_datetime, task_version, plan_type, p_id, ps_task_rmk11, ps_task_rmk12, ps_task_rmk13, ps_task_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ps_task;
+		]]>
+	</sql>
+	<sql id="Read">
+		<![CDATA[
+			SELECT
+				ps_batch_id, task_no, task_shift_date, task_shift_no, task_shift_name, task_datetime_start, task_datetime_end, task_datetime_type, task_datetime_type_name, factory_no, factory_name, dept_no, dept_name, line_no, line_name, wkc_no, wkc_name, order_type, order_type_name, order_no, order_qty, order_rmh_no, order_hope_start_datetime, order_hope_end_datetime, order_plan_start_datetime, order_plan_end_datetime, order_part_no, order_part_name, order_part_spec, order_part_unit_name, order_part_type1, order_part_type1_name, order_part_type2_name, order_part_type3_name, order_part_type4_name, order_part_type5_name, order_part_type6_name, unode, unode_next, unode_wkn, unode_wkn_desc, unode_wkp_no, unode_wkp_name, unode_qty_assigned, unode_capability_assigned, task_datetime_length, task_resttime_length, task_is_twin, task_is_manual, task_is_fixed, task_is_closed, order_type1, order_no1, order_delivery_datetime, task_version, plan_type, p_id, ps_task_rmk11, ps_task_rmk12, ps_task_rmk13, ps_task_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host
+			FROM ps_task
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<sql id="Create">
+		<![CDATA[
+			INSERT INTO ps_task 
+			(ps_batch_id, task_no, task_shift_date, task_shift_no, task_shift_name, task_datetime_start, task_datetime_end, task_datetime_type, task_datetime_type_name, factory_no, factory_name, dept_no, dept_name, line_no, line_name, wkc_no, wkc_name, order_type, order_type_name, order_no, order_qty, order_rmh_no, order_hope_start_datetime, order_hope_end_datetime, order_plan_start_datetime, order_plan_end_datetime, order_part_no, order_part_name, order_part_spec, order_part_unit_name, order_part_type1, order_part_type1_name, order_part_type2_name, order_part_type3_name, order_part_type4_name, order_part_type5_name, order_part_type6_name, unode, unode_next, unode_wkn, unode_wkn_desc, unode_wkp_no, unode_wkp_name, unode_qty_assigned, unode_capability_assigned, task_datetime_length, task_resttime_length, task_is_twin, task_is_manual, task_is_fixed, task_is_closed, order_type1, order_no1, order_delivery_datetime, task_version, plan_type, p_id, ps_task_rmk11, ps_task_rmk12, ps_task_rmk13, ps_task_rmk14, crt_time, crt_user, crt_user_no, crt_user_name, crt_host, upd_time, upd_user, upd_user_no, upd_user_name, upd_host)
+			VALUES (@ps_batch_id, @task_no, @task_shift_date, @task_shift_no, @task_shift_name, @task_datetime_start, @task_datetime_end, @task_datetime_type, @task_datetime_type_name, @factory_no, @factory_name, @dept_no, @dept_name, @line_no, @line_name, @wkc_no, @wkc_name, @order_type, @order_type_name, @order_no, @order_qty, @order_rmh_no, @order_hope_start_datetime, @order_hope_end_datetime, @order_plan_start_datetime, @order_plan_end_datetime, @order_part_no, @order_part_name, @order_part_spec, @order_part_unit_name, @order_part_type1, @order_part_type1_name, @order_part_type2_name, @order_part_type3_name, @order_part_type4_name, @order_part_type5_name, @order_part_type6_name, @unode, @unode_next, @unode_wkn, @unode_wkn_desc, @unode_wkp_no, @unode_wkp_name, @unode_qty_assigned, @unode_capability_assigned, @task_datetime_length, @task_resttime_length, @task_is_twin, @task_is_manual, @task_is_fixed, @task_is_closed, @order_type1, @order_no1, @order_delivery_datetime, @task_version, @plan_type, @p_id, @ps_task_rmk11, @ps_task_rmk12, @ps_task_rmk13, @ps_task_rmk14, @crt_time, @crt_user, @crt_user_no, @crt_user_name, @crt_host, @upd_time, @upd_user, @upd_user_no, @upd_user_name, @upd_host);
+		]]>
+	</sql>
+	<sql id="Update">
+		<![CDATA[
+			UPDATE ps_task SET 
+			ps_batch_id = @ps_batch_id, task_no = @task_no, task_shift_date = @task_shift_date, task_shift_no = @task_shift_no, task_shift_name = @task_shift_name, task_datetime_start = @task_datetime_start, task_datetime_end = @task_datetime_end, task_datetime_type = @task_datetime_type, task_datetime_type_name = @task_datetime_type_name, factory_no = @factory_no, factory_name = @factory_name, dept_no = @dept_no, dept_name = @dept_name, line_no = @line_no, line_name = @line_name, wkc_no = @wkc_no, wkc_name = @wkc_name, order_type = @order_type, order_type_name = @order_type_name, order_no = @order_no, order_qty = @order_qty, order_rmh_no = @order_rmh_no, order_hope_start_datetime = @order_hope_start_datetime, order_hope_end_datetime = @order_hope_end_datetime, order_plan_start_datetime = @order_plan_start_datetime, order_plan_end_datetime = @order_plan_end_datetime, order_part_no = @order_part_no, order_part_name = @order_part_name, order_part_spec = @order_part_spec, order_part_unit_name = @order_part_unit_name, order_part_type1 = @order_part_type1, order_part_type1_name = @order_part_type1_name, order_part_type2_name = @order_part_type2_name, order_part_type3_name = @order_part_type3_name, order_part_type4_name = @order_part_type4_name, order_part_type5_name = @order_part_type5_name, order_part_type6_name = @order_part_type6_name, unode = @unode, unode_next = @unode_next, unode_wkn = @unode_wkn, unode_wkn_desc = @unode_wkn_desc, unode_wkp_no = @unode_wkp_no, unode_wkp_name = @unode_wkp_name, unode_qty_assigned = @unode_qty_assigned, unode_capability_assigned = @unode_capability_assigned, task_datetime_length = @task_datetime_length, task_resttime_length = @task_resttime_length, task_is_twin = @task_is_twin, task_is_manual = @task_is_manual, task_is_fixed = @task_is_fixed, task_is_closed = @task_is_closed, order_type1 = @order_type1, order_no1 = @order_no1, order_delivery_datetime = @order_delivery_datetime, task_version = @task_version, plan_type = @plan_type, p_id = @p_id, ps_task_rmk11 = @ps_task_rmk11, ps_task_rmk12 = @ps_task_rmk12, ps_task_rmk13 = @ps_task_rmk13, ps_task_rmk14 = @ps_task_rmk14, crt_time = @crt_time, crt_user = @crt_user, crt_user_no = @crt_user_no, crt_user_name = @crt_user_name, crt_host = @crt_host, upd_time = @upd_time, upd_user = @upd_user, upd_user_no = @upd_user_no, upd_user_name = @upd_user_name, upd_host = @upd_host
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<sql id="Delete">
+		<![CDATA[
+			DELETE FROM ps_task
+			WHERE task_id = @task_id;
+		]]>
+	</sql>
+	<!--请在下方书写自定义sql语句-->
+</sqls>
